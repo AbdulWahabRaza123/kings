@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Navbar from "@/components/signin/navbar";
 
 export const metadata: Metadata = {
   title: "Transportation",
@@ -13,7 +14,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <head>
+        <link rel="shortcut icon" href="/logo.svg" type="image/x-icon" />
+      </head>
+      <body>
+        <main className="bg-main w-full relative">
+          <Navbar />
+          <section className="">{children}</section>
+        </main>
+      </body>
     </html>
   );
 }

@@ -32,7 +32,7 @@ export const BusinessFlow = ({
   };
   return (
     <>
-      <section className="w-[440px]">
+      <section className="md:w-[440px] max-md:w-full max-md:px-4">
         {pageNo === 0 && (
           <div>
             <div className="flex flex-col gap-3 text-center relative">

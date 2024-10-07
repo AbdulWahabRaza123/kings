@@ -1,22 +1,22 @@
 "use client";
 import Image from "next/image";
-import React from "react";
-import { PrimaryBtn } from "../ui/buttons/primary-btn";
+import React, { useState } from "react";
 import { SecondaryBtn } from "../ui/buttons/secondary-btn";
 import { SelectInput } from "../ui/inputs/select-input";
 import { Globe } from "lucide-react";
-import { usePathname, useSelectedLayoutSegment } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { NavDrawerComp } from "../ui/drawers/nav-drawer";
 const options = [
   {
     name: "Home",
-    link: "/signin",
+    link: "/",
     inactive: "/assets/icons/inactive/navbar-home.svg",
     active: "/assets/icons/active/navbar-home.svg",
   },
   {
     name: "Orders",
-    link: "#",
+    link: "/orders",
     inactive: "/assets/icons/inactive/navbar-orders.svg",
     active: "/assets/icons/active/navbar-orders.svg",
   },
@@ -33,9 +33,9 @@ const lngOptions = [
 ];
 const Navbar = () => {
   const currentPage = usePathname();
-  const [selectedLng, setSelectedLng] = React.useState(lngOptions[0].value);
+  const [selectedLng, setSelectedLng] = useState(lngOptions[0].value);
   return (
-    <nav className="h-[80px] py-4 px-7 flex items-center justify-between w-full shadow-md">
+    <nav className="bg-main h-[80px] py-4 px-7 flex items-center justify-between w-full shadow-md sticky top-0 z-[10]">
       <div className="flex items-center gap-14">
         <Image
           src="/logo.svg"
@@ -44,7 +44,7 @@ const Navbar = () => {
           alt="logo"
           className="object-cover"
         />
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 max-lg:hidden">
           {options.map((option) => (
             <a
               href={option.link}
@@ -89,7 +89,45 @@ const Navbar = () => {
           </div>
         </SelectInput>
         <SecondaryBtn onClick={() => {}}>Login</SecondaryBtn>
-        <PrimaryBtn onClick={() => {}}>Signup</PrimaryBtn>
+        <SecondaryBtn onClick={() => {}} className="bg-globalPrimary">
+          Signup
+        </SecondaryBtn>
+      </div>
+      <div className="md:hidden">
+        <NavDrawerComp>
+          <div className="flex flex-col items-start gap-4 md:hidden">
+            {options.map((option) => (
+              <a
+                href={option.link}
+                key={option.name}
+                className={cn(
+                  "flex items-center gap-2",
+                  currentPage === option.link && "font-[500] text-primary"
+                )}
+              >
+                <Image
+                  src={
+                    currentPage === option.link
+                      ? option.active
+                      : option.inactive
+                  }
+                  width={24}
+                  height={24}
+                  alt={option.name}
+                  className="object-cover"
+                />
+                <p
+                  className={cn(
+                    " text-[14px]",
+                    currentPage === option.link ? "text-black" : "text-primary"
+                  )}
+                >
+                  {option.name}
+                </p>
+              </a>
+            ))}
+          </div>
+        </NavDrawerComp>
       </div>
     </nav>
   );

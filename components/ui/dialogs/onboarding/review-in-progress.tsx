@@ -33,7 +33,7 @@ export const ReviewInProgressDialog = ({
           onClick={() => {
             setOpen(false);
           }}
-          className="text-white py-3 bg-black"
+          className=" bg-black"
         >
           Got it
         </PrimaryBtn>

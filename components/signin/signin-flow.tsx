@@ -32,7 +32,7 @@ export const SigninProfile = ({
   return (
     <>
       <ResetPasswordDialog open={openResetPass} setOpen={setOpenResetPass} />
-      <section className="w-[440px]">
+      <section className="md:w-[440px] max-md:w-full max-md:px-4">
         {pageNo === 0 && (
           <div>
             <div className="flex flex-col gap-3 text-center">
@@ -84,9 +84,7 @@ export const SigninProfile = ({
               >
                 Forget Password?
               </p>
-              <PrimaryBtn onClick={() => {}} className="text-white py-3">
-                Login
-              </PrimaryBtn>
+              <PrimaryBtn onClick={() => {}}>Login</PrimaryBtn>
               <SecondaryBtn
                 onClick={() => {
                   setIsSignIn(false);
@@ -117,9 +115,7 @@ export const SigninProfile = ({
                   placeholder=""
                   inputStyle="input"
                 />
-                <PrimaryBtn onClick={nextPageNo} className="text-white py-3">
-                  Continue
-                </PrimaryBtn>
+                <PrimaryBtn onClick={nextPageNo}>Continue</PrimaryBtn>
               </div>
             </SignInWrapper>
           </div>
@@ -165,9 +161,7 @@ export const SigninProfile = ({
                     Resend code in 60s
                   </p>
                 </div>
-                <PrimaryBtn onClick={nextPageNo} className="text-white py-3">
-                  Verify
-                </PrimaryBtn>
+                <PrimaryBtn onClick={nextPageNo}>Verify</PrimaryBtn>
               </div>
             </SignInWrapper>
           </div>
@@ -231,7 +225,6 @@ export const SigninProfile = ({
                   onClick={() => {
                     setOpenResetPass(true);
                   }}
-                  className="text-white py-3"
                 >
                   Continue
                 </PrimaryBtn>

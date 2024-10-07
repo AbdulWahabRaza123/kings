@@ -8,7 +8,7 @@ const Signin = () => {
 
   return (
     <>
-      <main className="min-h-screen w-full flex flex-col items-center justify-center">
+      <main className="min-h-[92vh] w-full flex flex-col items-center justify-center py-10">
         {isSignIn && <SigninProfile setIsSignIn={setIsSignIn} />}
         {!isSignIn && <BusinessFlow setIsSignIn={setIsSignIn} />}
       </main>

@@ -17,7 +17,7 @@ export const PrimaryBtn = ({
       disabled={loading || undefined}
       onClick={onClick || undefined}
       className={cn(
-        "px-3 py-2 rounded-[17px] border-[#00DBBA] border-[1px] bg-[#00DBBA] w-full text-[14px] font-[500] hover:opacity-[0.8] active:opacity-[0.9] text-black",
+        "px-3 py-3 rounded-[17px] border-primary border-[1px] bg-globalPrimary w-full text-[14px] font-[500] hover:opacity-[0.8] active:opacity-[0.9] text-white",
         className
       )}
     >

@@ -10,8 +10,7 @@
 body {
   font-family: "Poppins", sans-serif;
 }
-.bg-primary {
-  /* background-color: #effbfa; */
+.bg-main {
   background: radial-gradient(circle, #ffffff, #e7fbf8);
 }
 .text-main-primary {
@@ -20,6 +19,9 @@ body {
 .text-primary {
   color: #121212;
 }
+.bg-black {
+  background-color: #121212;
+}
 .text-secondary {
   color: #818181;
 }
@@ -27,4 +29,15 @@ body {
 .react-tel-input .form-control {
   width: 100% !important;
   height: 45px !important;
+}
+
+/* Hide scrollbar for Chrome, Safari, and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }

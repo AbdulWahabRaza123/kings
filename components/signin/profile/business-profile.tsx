@@ -74,9 +74,7 @@ export const BusinessAccount = ({
                     placeholder=""
                     inputStyle="input"
                   />
-                  <PrimaryBtn onClick={nextPageNo} className="text-white py-3">
-                    Continue
-                  </PrimaryBtn>
+                  <PrimaryBtn onClick={nextPageNo}>Continue</PrimaryBtn>
                 </div>
               </SignInWrapper>
             </div>
@@ -124,9 +122,7 @@ export const BusinessAccount = ({
                       Resend code in 60s
                     </p>
                   </div>
-                  <PrimaryBtn onClick={nextPageNo} className="text-white py-3">
-                    Verify
-                  </PrimaryBtn>
+                  <PrimaryBtn onClick={nextPageNo}>Verify</PrimaryBtn>
                 </div>
               </SignInWrapper>
             </div>
@@ -197,9 +193,7 @@ export const BusinessAccount = ({
                       );
                     })}
                   </div>
-                  <PrimaryBtn onClick={nextPageNo} className="text-white py-3">
-                    Continue
-                  </PrimaryBtn>
+                  <PrimaryBtn onClick={nextPageNo}>Continue</PrimaryBtn>
                 </div>
               </SignInWrapper>
             </div>
@@ -260,10 +254,7 @@ export const BusinessAccount = ({
                     inputStyle="tel"
                   />
 
-                  <PrimaryBtn
-                    onClick={handleConfirmReview}
-                    className="text-white py-3"
-                  >
+                  <PrimaryBtn onClick={handleConfirmReview}>
                     Complete
                   </PrimaryBtn>
                 </div>

@@ -90,9 +90,7 @@ export const CompanyAccount = ({
                     placeholder=""
                     inputStyle="input"
                   />
-                  <PrimaryBtn onClick={nextPageNo} className="text-white py-3">
-                    Continue
-                  </PrimaryBtn>
+                  <PrimaryBtn onClick={nextPageNo}>Continue</PrimaryBtn>
                 </div>
               </SignInWrapper>
             </div>
@@ -140,9 +138,7 @@ export const CompanyAccount = ({
                       Resend code in 60s
                     </p>
                   </div>
-                  <PrimaryBtn onClick={nextPageNo} className="text-white py-3">
-                    Verify
-                  </PrimaryBtn>
+                  <PrimaryBtn onClick={nextPageNo}>Verify</PrimaryBtn>
                 </div>
               </SignInWrapper>
             </div>
@@ -213,9 +209,7 @@ export const CompanyAccount = ({
                       );
                     })}
                   </div>
-                  <PrimaryBtn onClick={nextPageNo} className="text-white py-3">
-                    Continue
-                  </PrimaryBtn>
+                  <PrimaryBtn onClick={nextPageNo}>Continue</PrimaryBtn>
                 </div>
               </SignInWrapper>
             </div>
@@ -286,9 +280,7 @@ export const CompanyAccount = ({
                     inputStyle="image"
                   />
 
-                  <PrimaryBtn onClick={nextPageNo} className="text-white py-3">
-                    Continue
-                  </PrimaryBtn>
+                  <PrimaryBtn onClick={nextPageNo}>Continue</PrimaryBtn>
                 </div>
               </SignInWrapper>
             </div>
@@ -352,7 +344,6 @@ export const CompanyAccount = ({
                     onClick={() => {
                       setOpenReviewInProgress(true);
                     }}
-                    className="text-white py-3"
                   >
                     Complete
                   </PrimaryBtn>

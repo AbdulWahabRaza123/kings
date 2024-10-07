@@ -32,7 +32,6 @@ export const ResetPasswordDialog = ({
           onClick={() => {
             setOpen(false);
           }}
-          className="text-white py-3"
         >
           Login
         </PrimaryBtn>

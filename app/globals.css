@@ -30,7 +30,19 @@ body {
   width: 100% !important;
   height: 45px !important;
 }
-
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #363636 !important;
+  font-weight: 500;
+}
+.ant-tabs-tab .ant-tabs-tab-btn:hover {
+  color: #00c7a9 !important;
+  font-weight: 500;
+}
+.ant-tabs-ink-bar {
+  position: absolute;
+  background: #000000 !important;
+  pointer-events: none;
+}
 /* Hide scrollbar for Chrome, Safari, and Opera */
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
@@ -40,4 +52,33 @@ body {
 .hide-scrollbar {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+::-webkit-scrollbar {
+  /* display: none; */
+  background: #efefef;
+  width: 7px;
+  /* color: white; */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #959595;
+  border-radius: 10px; /* Rounded corners on the thumb */
+}
+
+.ant-picker-cell-in-view.ant-picker-cell-range-start .ant-picker-cell-inner {
+  background-color: #00c7a9 !important;
+}
+
+.ant-picker-cell-in-view.ant-picker-cell-range-end .ant-picker-cell-inner {
+  background-color: #00c7a9 !important;
+}
+.ant-picker-outlined:hover {
+  border-color: #00c7a9 !important;
+}
+.ant-picker-cell-in-view.ant-picker-cell-today .ant-picker-cell-inner::before {
+  border-color: #00c7a9 !important;
+}
+.ant-picker-outlined:focus-within {
+  border-color: #00c7a9 !important;
 }

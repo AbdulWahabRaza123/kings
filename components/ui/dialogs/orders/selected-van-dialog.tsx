@@ -4,40 +4,8 @@ import { DialogComp } from "../dialog";
 import { VanCardComp } from "../../cards/van-card";
 import { LabledCheckbox } from "../../inputs/labled-checkbox";
 import { PrimaryBtn } from "../../buttons/primary-btn";
-const vansData = [
-  {
-    iconSrc: "/assets/vehicles/van.svg",
-    name: "Van",
-    suitable: "xxxxxxxxxxx",
-    capacity: "6 x 2 x 2",
-    maxLoad: "xxx",
-    price: "80",
-  },
-  {
-    iconSrc: "/assets/vehicles/ton-lorry-5.5.svg",
-    name: "5.5 ton Lorry",
-    suitable: "xxxxxxxxxxx",
-    capacity: "6 x 2 x 2",
-    maxLoad: "xxx",
-    price: "120",
-  },
-  {
-    iconSrc: "/assets/vehicles/ton-lorry-9.svg",
-    name: "8 ton Lorry",
-    suitable: "xxxxxxxxxxx",
-    capacity: "6 x 2 x 2",
-    maxLoad: "xxx",
-    price: "200",
-  },
-  {
-    iconSrc: "/assets/vehicles/private-car.svg",
-    name: "Private Car",
-    suitable: "xxxxxxxxxxx",
-    capacity: "6 x 2 x 2",
-    maxLoad: "xxx",
-    price: "300",
-  },
-];
+import { vansData } from "@/utils/van-data";
+
 export const SelectedVanDialog = ({
   open,
   setOpen,

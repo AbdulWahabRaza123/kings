@@ -3,19 +3,11 @@ import { PrimaryBtn } from "@/components/ui/buttons/primary-btn";
 import { PrimaryInputWithIcons } from "@/components/ui/inputs/primary-input";
 import { SelectInput } from "@/components/ui/inputs/select-input";
 import { OverflowListComp } from "@/components/ui/lists/overflow-list";
+import { pickupTime } from "@/utils/pickup-time";
 import { Clock7 } from "lucide-react";
 import Image from "next/image";
 import React, { useState } from "react";
-const pickupTime = [
-  {
-    label: "10 AM",
-    value: "10",
-  },
-  {
-    label: "12 PM",
-    value: "13",
-  },
-];
+
 const promotionalData = [
   {
     id: 1,

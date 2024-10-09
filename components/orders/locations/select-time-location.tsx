@@ -8,20 +8,7 @@ import { RecentSavedDropwdown } from "../recent-saved-dropdown";
 import { SelectInput } from "@/components/ui/inputs/select-input";
 import { Clock7 } from "lucide-react";
 import { PrimaryBtn } from "@/components/ui/buttons/primary-btn";
-const pickupTime = [
-  {
-    label: "10 AM",
-    value: "10",
-  },
-  {
-    label: "12 PM",
-    value: "13",
-  },
-  {
-    label: "Custom",
-    value: "custom",
-  },
-];
+import { pickupTime } from "@/utils/pickup-time";
 interface SelectedLocationProps {
   setOpenRecSavedDropdown: (val: boolean) => void;
   openRecSavedDropdown: boolean;

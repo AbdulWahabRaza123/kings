@@ -5,20 +5,8 @@ import { Calendar, Clock7 } from "lucide-react";
 import { PrimaryBtn } from "@/components/ui/buttons/primary-btn";
 import { DatePicker, DatePickerProps } from "antd";
 import { SecondaryBtn } from "@/components/ui/buttons/secondary-btn";
-const pickupTime = [
-  {
-    label: "10 AM",
-    value: "10",
-  },
-  {
-    label: "12 PM",
-    value: "13",
-  },
-  {
-    label: "Custom",
-    value: "custom",
-  },
-];
+import { pickupTime } from "@/utils/pickup-time";
+
 interface SelectedCustomTimeProps {
   selectedDate: string;
   setSelectedDate: (val: string) => void;

@@ -5,22 +5,34 @@ import { VanCardComp } from "../../cards/van-card";
 import { LabledCheckbox } from "../../inputs/labled-checkbox";
 import { PrimaryBtn } from "../../buttons/primary-btn";
 import { vansData } from "@/utils/van-data";
+import {
+  continueText,
+  IAgreeText,
+  proceedWithDescText,
+  proceedWithText,
+} from "@/utils/constants";
 
 export const SelectedVanDialog = ({
   open,
   setOpen,
   selectedItem,
+  step,
+  setStep,
 }: {
   open: boolean;
   setOpen: (value: boolean) => void;
   selectedItem: number;
+  step: number;
+  setStep: (val: number) => void;
 }) => {
   const [confirmCheck, setConfirmCheck] = useState(false);
   return (
     <DialogComp open={open} setOpen={setOpen}>
       <div className="flex flex-col gap-3">
         <div>
-          <h1 className="text-[18px] font-[600]">Proceed with private car</h1>
+          <h1 className="text-[18px] font-[600]">
+            {proceedWithText} private car
+          </h1>
         </div>
         <div className="flex flex-col gap-3 justify-start items-start py-3">
           <VanCardComp
@@ -31,18 +43,20 @@ export const SelectedVanDialog = ({
               setOpen(false);
             }}
           />
-          <p className="text-secondary text-p2">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor. Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit, sed do eiusmod tempor.
-          </p>
+          <p className="text-secondary text-p2">{proceedWithDescText}</p>
           <LabledCheckbox
             value={confirmCheck}
             setValue={setConfirmCheck}
-            title="I agree the Terms and Conditions and Privacy Policies."
+            title={IAgreeText}
           />
-          <PrimaryBtn onClick={() => {}} className="">
-            Continue
+          <PrimaryBtn
+            onClick={() => {
+              setStep(step + 1);
+              setOpen(false);
+            }}
+            className=""
+          >
+            {continueText}
           </PrimaryBtn>
         </div>
       </div>

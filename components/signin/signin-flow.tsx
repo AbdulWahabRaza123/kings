@@ -12,6 +12,23 @@ import {
 import { useState } from "react";
 import Image from "next/image";
 import { SignInWrapper } from "../ui/wrappers/signin-wrapper";
+import {
+  businessEmailText,
+  changePasswordDescText,
+  continueText,
+  enterBusinessEmailText,
+  forgetPasswordDesc,
+  forgetPasswordText,
+  loginText,
+  passwordText,
+  resetPasswordText,
+  setupBusinessAccountText,
+  verificationCodeSendToText,
+  verificationCodeText,
+  verifyYourBusinessEmailText,
+  welcomeBackDesc,
+  welcomeBackText,
+} from "@/utils/constants";
 export const SigninProfile = ({
   setIsSignIn,
 }: {
@@ -37,18 +54,16 @@ export const SigninProfile = ({
           <div>
             <div className="flex flex-col gap-3 text-center">
               <h1 className="text-[24px] text-primary font-[600]">
-                Welcome back
+                {welcomeBackText}
               </h1>
-              <p className="text-[14px] text-secondary">
-                Log in to your Power King Business account.
-              </p>
+              <p className="text-[14px] text-secondary">{welcomeBackDesc}</p>
             </div>
             <div className="mt-10 flex flex-col items-center gap-4">
               <TextInput
                 value={email}
                 setValue={setEmail}
                 type="email"
-                title="Business email"
+                title={businessEmailText}
                 placeholder=""
                 inputStyle="input"
               />
@@ -57,7 +72,7 @@ export const SigninProfile = ({
                   value={password}
                   setValue={setPassword}
                   type={show ? "text" : "password"}
-                  title="Password"
+                  title={passwordText}
                   placeholder=""
                   inputClassName="relative w-full"
                   inputStyle="input"
@@ -82,16 +97,16 @@ export const SigninProfile = ({
                 onClick={nextPageNo}
                 className="text-main-primary text-[12px] cursor-pointer"
               >
-                Forget Password?
+                {forgetPasswordText}
               </p>
-              <PrimaryBtn onClick={() => {}}>Login</PrimaryBtn>
+              <PrimaryBtn onClick={() => {}}>{loginText}</PrimaryBtn>
               <SecondaryBtn
                 onClick={() => {
                   setIsSignIn(false);
                 }}
                 className="text-black py-3"
               >
-                Set up business account
+                {setupBusinessAccountText}
               </SecondaryBtn>
             </div>
           </div>
@@ -101,21 +116,20 @@ export const SigninProfile = ({
             <SignInWrapper
               prevPageNo={prevPageNo}
               pageNo={pageNo}
-              title="Forgot password"
-              subTitle="Enter business email"
-              desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor."
+              title={forgetPasswordText}
+              subTitle={enterBusinessEmailText}
+              desc={forgetPasswordDesc}
             >
               <div className="mt-10 flex flex-col items-center gap-6">
                 <TextInput
                   value={email}
                   setValue={setEmail}
                   type="email"
-                  title="Business email"
+                  title={businessEmailText}
                   placeholder=""
                   inputStyle="input"
                 />
-                <PrimaryBtn onClick={nextPageNo}>Continue</PrimaryBtn>
+                <PrimaryBtn onClick={nextPageNo}>{continueText}</PrimaryBtn>
               </div>
             </SignInWrapper>
           </div>
@@ -125,14 +139,16 @@ export const SigninProfile = ({
             <SignInWrapper
               prevPageNo={prevPageNo}
               pageNo={pageNo}
-              title="Forgot password"
-              subTitle="Verify your business email"
-              desc="Enter the verification code sent to."
+              title={forgetPasswordText}
+              subTitle={verifyYourBusinessEmailText}
+              desc={verificationCodeSendToText}
               showOtpEmail={true}
             >
               <div className="mt-10 flex flex-col items-center gap-6">
                 <div className="flex flex-col items-start gap-1">
-                  <p className="font-[500] text-[14px]">Verification code</p>
+                  <p className="font-[500] text-[14px]">
+                    {verificationCodeText}
+                  </p>
                   <InputOTP
                     maxLength={6}
                     value={code}
@@ -171,10 +187,9 @@ export const SigninProfile = ({
             <SignInWrapper
               prevPageNo={prevPageNo}
               pageNo={pageNo}
-              title="Forgot password"
-              subTitle="Reset password"
-              desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor."
+              title={forgetPasswordText}
+              subTitle={resetPasswordText}
+              desc={changePasswordDescText}
             >
               <div className="mt-7 flex flex-col items-center gap-4">
                 <div className="relative w-full">
@@ -182,7 +197,7 @@ export const SigninProfile = ({
                     value={password}
                     setValue={setPassword}
                     type={show ? "text" : "password"}
-                    title="Password"
+                    title={passwordText}
                     placeholder=""
                     inputClassName="relative w-full"
                     inputStyle="input"
@@ -226,7 +241,7 @@ export const SigninProfile = ({
                     setOpenResetPass(true);
                   }}
                 >
-                  Continue
+                  {continueText}
                 </PrimaryBtn>
               </div>
             </SignInWrapper>

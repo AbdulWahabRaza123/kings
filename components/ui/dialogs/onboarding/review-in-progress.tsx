@@ -3,6 +3,11 @@ import React from "react";
 import Image from "next/image";
 import { PrimaryBtn } from "../../buttons/primary-btn";
 import { DialogComp } from "../dialog";
+import {
+  gotItText,
+  reviewInProgressDescText,
+  reviewInProgressText,
+} from "@/utils/constants";
 
 export const ReviewInProgressDialog = ({
   open,
@@ -14,7 +19,7 @@ export const ReviewInProgressDialog = ({
   return (
     <DialogComp open={open} setOpen={setOpen}>
       <div className="flex flex-col gap-3">
-        <h1 className="text-[18px] font-[600]">Review in progress</h1>
+        <h1 className="text-[18px] font-[600]">{reviewInProgressText}</h1>
         <div className="flex flex-col gap-3 justify-center items-center py-3">
           <Image
             src="/assets/icons/done.svg"
@@ -25,9 +30,7 @@ export const ReviewInProgressDialog = ({
           />
         </div>
         <p className="text-secondary text-[14px] py-2">
-          Thank you for providing your company information. Your company’s
-          business profile is under review. You will be notified shortly by
-          email for the result.
+          {reviewInProgressDescText}
         </p>
         <PrimaryBtn
           onClick={() => {
@@ -35,7 +38,7 @@ export const ReviewInProgressDialog = ({
           }}
           className=" bg-black"
         >
-          Got it
+          {gotItText}
         </PrimaryBtn>
       </div>
     </DialogComp>

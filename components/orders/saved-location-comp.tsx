@@ -1,16 +1,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { SavedPlaceDialog } from "../ui/dialogs/orders/save-place-dialog";
-const savedLocationsData = [
-  {
-    title: "17 Hoi Wan St",
-    address: "Room 101G, 10/F, 17 Hoi Wan St, Quarry Bay, Hong Kong",
-  },
-  {
-    title: "17 Hoi Wan St",
-    address: "Room 101G, 10/F, 17 Hoi Wan St, Quarry Bay, Hong Kong",
-  },
-];
+import { savedLocationsData } from "@/utils/saved-location-data";
 export const SavedLocationComp = () => {
   const [openAddNewDialog, setOpenAddNewDialog] = useState(false);
   return (

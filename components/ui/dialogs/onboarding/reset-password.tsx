@@ -3,6 +3,11 @@ import React from "react";
 import Image from "next/image";
 import { PrimaryBtn } from "../../buttons/primary-btn";
 import { DialogComp } from "../dialog";
+import {
+  loginText,
+  passwordHasBeenResetDescText,
+  passwordHasBeenResetText,
+} from "@/utils/constants";
 
 export const ResetPasswordDialog = ({
   open,
@@ -14,7 +19,7 @@ export const ResetPasswordDialog = ({
   return (
     <DialogComp open={open} setOpen={setOpen}>
       <div className="flex flex-col gap-3">
-        <h1 className="text-[18px] font-[600]">Password has been reset</h1>
+        <h1 className="text-[18px] font-[600]">{passwordHasBeenResetText}</h1>
         <div className="flex flex-col gap-3 justify-center items-center py-3">
           <Image
             src="/assets/icons/done.svg"
@@ -25,15 +30,14 @@ export const ResetPasswordDialog = ({
           />
         </div>
         <p className="text-secondary text-[14px] py-2">
-          Your password has been reset successfully. Please login to your
-          account.
+          {passwordHasBeenResetDescText}
         </p>
         <PrimaryBtn
           onClick={() => {
             setOpen(false);
           }}
         >
-          Login
+          {loginText}
         </PrimaryBtn>
       </div>
     </DialogComp>

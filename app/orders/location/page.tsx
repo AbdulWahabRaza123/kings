@@ -1,4 +1,5 @@
 "use client";
+import { DeliveryDetailsComp } from "@/components/orders/delivery-details/delivery-details";
 import { SelectCustomTimeComp } from "@/components/orders/locations/select-custom-time";
 import { SelectLocationComp } from "@/components/orders/locations/select-time-location";
 import { SelectedVehicleComp } from "@/components/orders/vehicle/selected-vehicle";
@@ -31,6 +32,8 @@ const SelectLocationPage = () => {
       <SelectedVanDialog
         open={openConfirmDialog}
         setOpen={setOpenConfirmDialog}
+        step={step}
+        setStep={setStep}
         selectedItem={selectedVan}
       />
       <main>
@@ -71,6 +74,14 @@ const SelectLocationPage = () => {
                 openConfirmDialog={openConfirmDialog}
                 selectedVan={selectedVan}
                 setOpenConfirmDialog={setOpenConfirmDialog}
+                setSelectedVan={setSelectedVan}
+                setStep={setStep}
+                step={step}
+              />
+            )}
+            {step === 2 && (
+              <DeliveryDetailsComp
+                selectedVan={selectedVan}
                 setSelectedVan={setSelectedVan}
                 setStep={setStep}
                 step={step}

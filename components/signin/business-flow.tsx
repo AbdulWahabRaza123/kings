@@ -3,6 +3,10 @@ import { ArrowLeft, Briefcase, Building } from "lucide-react";
 import { useState } from "react";
 import { BusinessAccount } from "./profile/business-profile";
 import { CompanyAccount } from "./profile/company-profile";
+import {
+  setupBusinessAccountText,
+  whatDoYouWantToDoText,
+} from "@/utils/constants";
 
 const cardData = [
   {
@@ -44,10 +48,10 @@ export const BusinessFlow = ({
               >
                 <ArrowLeft className="" />
               </div>
-              <p className="font-[600] py-2">Set up business account</p>
+              <p className="font-[600] py-2">{setupBusinessAccountText}</p>
 
               <h1 className="text-[24px] text-primary font-[600]">
-                What do you want to do?
+                {whatDoYouWantToDoText}
               </h1>
               <div className="flex flex-col gap-2 mt-5">
                 {cardData.map((item, index) => (

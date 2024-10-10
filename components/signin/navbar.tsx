@@ -7,6 +7,7 @@ import { Globe } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { NavDrawerComp } from "../ui/drawers/nav-drawer";
+import { loginText, signupText } from "@/utils/constants";
 const options = [
   {
     name: "Home",
@@ -88,9 +89,9 @@ const Navbar = () => {
             <p>{selectedLng === "en" ? "English" : "French"}</p>
           </div>
         </SelectInput>
-        <SecondaryBtn onClick={() => {}}>Login</SecondaryBtn>
+        <SecondaryBtn onClick={() => {}}>{loginText}</SecondaryBtn>
         <SecondaryBtn onClick={() => {}} className="bg-globalPrimary">
-          Signup
+          {signupText}
         </SecondaryBtn>
       </div>
       <div className="md:hidden">

@@ -11,6 +11,28 @@ import { useState } from "react";
 import { SignInWrapper } from "../../ui/wrappers/signin-wrapper";
 import { ReviewInProgressDialog } from "../../ui/dialogs/onboarding/review-in-progress";
 import { cn } from "@/lib/utils";
+import {
+  businessEmailText,
+  businessProfileDescText,
+  companyNameText,
+  completeText,
+  continueText,
+  createBusinessProfileText,
+  didNotReceivedCodeText,
+  enterBusinessEmailText,
+  enterCompanyInfoText,
+  firstNameText,
+  lastNameText,
+  mobileNoText,
+  resendCodeIn60Secs,
+  resetPasswordDescText,
+  resetPasswordText,
+  roleText,
+  verificationCodeSendToText,
+  verificationCodeText,
+  verifyText,
+  verifyYourBusinessEmailText,
+} from "@/utils/constants";
 
 export const BusinessAccount = ({
   isBusiness,
@@ -60,21 +82,20 @@ export const BusinessAccount = ({
               <SignInWrapper
                 prevPageNo={prevPageNo}
                 pageNo={pageNo}
-                title="Create business profile"
-                subTitle="Enter business email"
-                desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor."
+                title={createBusinessProfileText}
+                subTitle={enterBusinessEmailText}
+                desc={businessProfileDescText}
               >
                 <div className="mt-10 flex flex-col items-center gap-6">
                   <TextInput
                     value={email}
                     setValue={setEmail}
                     type="email"
-                    title="Business email"
+                    title={businessEmailText}
                     placeholder=""
                     inputStyle="input"
                   />
-                  <PrimaryBtn onClick={nextPageNo}>Continue</PrimaryBtn>
+                  <PrimaryBtn onClick={nextPageNo}>{continueText}</PrimaryBtn>
                 </div>
               </SignInWrapper>
             </div>
@@ -86,14 +107,16 @@ export const BusinessAccount = ({
               <SignInWrapper
                 prevPageNo={prevPageNo}
                 pageNo={pageNo}
-                title="Create business profile"
-                subTitle="Verify your business email"
-                desc="Enter the verification code sent to"
+                title={createBusinessProfileText}
+                subTitle={verifyYourBusinessEmailText}
+                desc={verificationCodeSendToText}
                 showOtpEmail={true}
               >
                 <div className="mt-10 flex flex-col items-center gap-6">
                   <div className="flex flex-col items-start gap-1">
-                    <p className="font-[500] text-[14px]">Verification code</p>
+                    <p className="font-[500] text-[14px]">
+                      {verificationCodeText}
+                    </p>
                     <InputOTP
                       maxLength={6}
                       value={code}
@@ -116,13 +139,13 @@ export const BusinessAccount = ({
                   </div>
                   <div className="flex flex-col items-center text-center gap-1">
                     <p className="text-[12px] text-secondary">
-                      Didn't receive the code?
+                      {didNotReceivedCodeText}
                     </p>
                     <p className="text-[12px] text-main-primary cursor-pointer">
-                      Resend code in 60s
+                      {resendCodeIn60Secs}
                     </p>
                   </div>
-                  <PrimaryBtn onClick={nextPageNo}>Verify</PrimaryBtn>
+                  <PrimaryBtn onClick={nextPageNo}>{verifyText}</PrimaryBtn>
                 </div>
               </SignInWrapper>
             </div>
@@ -134,10 +157,9 @@ export const BusinessAccount = ({
               <SignInWrapper
                 prevPageNo={prevPageNo}
                 pageNo={pageNo}
-                title="Create business profile"
-                subTitle="Reset password"
-                desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor."
+                title={createBusinessProfileText}
+                subTitle={resetPasswordText}
+                desc={resetPasswordDescText}
               >
                 <div className="mt-7 flex flex-col items-center gap-4">
                   <div className="relative w-full">
@@ -193,7 +215,7 @@ export const BusinessAccount = ({
                       );
                     })}
                   </div>
-                  <PrimaryBtn onClick={nextPageNo}>Continue</PrimaryBtn>
+                  <PrimaryBtn onClick={nextPageNo}>{continueText}</PrimaryBtn>
                 </div>
               </SignInWrapper>
             </div>
@@ -205,26 +227,25 @@ export const BusinessAccount = ({
               <SignInWrapper
                 prevPageNo={prevPageNo}
                 pageNo={pageNo}
-                title="Create business profile"
-                subTitle="Enter company info"
-                desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor."
+                title={createBusinessProfileText}
+                subTitle={enterCompanyInfoText}
+                desc={businessProfileDescText}
               >
                 <div className="mt-7 flex flex-col items-center gap-4 w-full">
                   <TextInput
                     value={companyName}
                     setValue={setCompanyName}
                     type="text"
-                    title="Company name"
-                    placeholder="Company Name"
+                    title={companyNameText}
+                    placeholder={companyNameText}
                     inputStyle="input"
                   />
                   <TextInput
                     value={ownerRole}
                     setValue={setOwnerRole}
                     type="text"
-                    title="Role"
-                    placeholder="Role"
+                    title={roleText}
+                    placeholder={roleText}
                     inputStyle="input"
                   />
 
@@ -232,7 +253,7 @@ export const BusinessAccount = ({
                     value={ownerFName}
                     setValue={setOwnerFName}
                     type="text"
-                    title="First Name"
+                    title={firstNameText}
                     placeholder=""
                     inputStyle="input"
                   />
@@ -241,7 +262,7 @@ export const BusinessAccount = ({
                     value={ownerLName}
                     setValue={setOwnerLName}
                     type="text"
-                    title="Last Name"
+                    title={lastNameText}
                     placeholder=""
                     inputStyle="input"
                   />
@@ -249,13 +270,13 @@ export const BusinessAccount = ({
                     value={phone}
                     setValue={setPhone}
                     type="tel"
-                    title="Mobile number"
+                    title={mobileNoText}
                     placeholder=""
                     inputStyle="tel"
                   />
 
                   <PrimaryBtn onClick={handleConfirmReview}>
-                    Complete
+                    {completeText}
                   </PrimaryBtn>
                 </div>
               </SignInWrapper>

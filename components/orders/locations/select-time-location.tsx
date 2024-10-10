@@ -8,7 +8,14 @@ import { RecentSavedDropwdown } from "../recent-saved-dropdown";
 import { SelectInput } from "@/components/ui/inputs/select-input";
 import { Clock7 } from "lucide-react";
 import { PrimaryBtn } from "@/components/ui/buttons/primary-btn";
-import { pickupTime } from "@/utils/pickup-time";
+import { pickupTime } from "@/utils/pickup-time-data";
+import {
+  addAStopText,
+  arrangeADeliveryText,
+  continueText,
+  pickupLocText,
+  pickupNowText,
+} from "@/utils/constants";
 interface SelectedLocationProps {
   setOpenRecSavedDropdown: (val: boolean) => void;
   openRecSavedDropdown: boolean;
@@ -45,14 +52,14 @@ export const SelectLocationComp = ({
     setDropupLoc(updatedDropupLoc);
   };
   return (
-    <MapStepWrapperComp title="Arrange a delivery" back={false}>
+    <MapStepWrapperComp title={arrangeADeliveryText} back={false}>
       <div className="flex flex-col gap-4 mt-6">
         <PrimaryInputWithIcons
           icon={"/assets/icons/pickup-loc.svg"}
           onIconClick={() => {
             setOpenRecSavedDropdown(!openRecSavedDropdown);
           }}
-          placeholder="Pickup location"
+          placeholder={pickupLocText}
           type="text"
           value={pickupLoc}
           setValue={setPickupLoc}
@@ -79,7 +86,7 @@ export const SelectLocationComp = ({
                     ? "/assets/icons/plus.svg"
                     : "/assets/icons/trash.svg"
                 }
-                placeholder="Add a stop"
+                placeholder={addAStopText}
                 type="text"
                 value={val.address}
                 setValue={(address) => handleInputChange(index, address)}
@@ -99,7 +106,7 @@ export const SelectLocationComp = ({
             <p>
               {pickupTime?.filter((val) => {
                 return val.value === selectedPickupTime;
-              })[0]?.label || "Pickup Now"}
+              })[0]?.label || pickupNowText}
             </p>
           </div>
         </SelectInput>
@@ -108,7 +115,7 @@ export const SelectLocationComp = ({
             setStep(1);
           }}
         >
-          Continue
+          {continueText}
         </PrimaryBtn>
       </div>
     </MapStepWrapperComp>

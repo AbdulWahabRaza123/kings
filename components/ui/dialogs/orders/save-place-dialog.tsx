@@ -3,6 +3,12 @@ import React, { useState } from "react";
 import { DialogComp } from "../dialog";
 import Image from "next/image";
 import { TextInput } from "../../inputs/text-input";
+import {
+  addPlaceText,
+  addressText,
+  labelText,
+  searchAddressText,
+} from "@/utils/constants";
 const savedLocationsData = [
   {
     title: "17 Hoi Wan St",
@@ -74,7 +80,7 @@ export const SavedPlaceDialog = ({
     <DialogComp open={open} setOpen={setOpen}>
       <div className="flex flex-col gap-3">
         <div>
-          <h1 className="text-[18px] font-[600]">Add Place</h1>
+          <h1 className="text-[18px] font-[600]">{addPlaceText}</h1>
         </div>
         <div className="flex flex-col gap-3 justify-start items-start py-3">
           <div className="flex flex-col gap-3 w-full">
@@ -82,7 +88,7 @@ export const SavedPlaceDialog = ({
               value={label}
               setValue={setLabel}
               type="text"
-              title="Label"
+              title={labelText}
               placeholder=""
               inputStyle="input"
             />
@@ -90,8 +96,8 @@ export const SavedPlaceDialog = ({
               value={address}
               setValue={setAddress}
               type="text"
-              title="Address"
-              placeholder="Search Address"
+              title={addressText}
+              placeholder={searchAddressText}
               inputStyle="input"
             />
           </div>

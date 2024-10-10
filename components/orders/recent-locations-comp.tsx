@@ -1,119 +1,8 @@
+import { useCurrentLocationText } from "@/utils/constants";
+import { recLocationsData } from "@/utils/location-data";
 import Image from "next/image";
 import React from "react";
-const recLocationsData = [
-  {
-    title: "17 Hoi Wan St",
-    address: "Room 101G, 10/F, 17 Hoi Wan St, Quarry Bay, Hong Kong",
-  },
-  {
-    title: "17 Hoi Wan St",
-    address: "Room 101G, 10/F, 17 Hoi Wan St, Quarry Bay, Hong Kong",
-  },
-  {
-    title: "17 Hoi Wan St",
-    address: "Room 101G, 10/F, 17 Hoi Wan St, Quarry Bay, Hong Kong",
-  },
-  {
-    title: "17 Hoi Wan St",
-    address: "Room 101G, 10/F, 17 Hoi Wan St, Quarry Bay, Hong Kong",
-  },
-  {
-    title: "17 Hoi Wan St",
-    address: "Room 101G, 10/F, 17 Hoi Wan St, Quarry Bay, Hong Kong",
-  },
-  {
-    title: "17 Hoi Wan St",
-    address: "Room 101G, 10/F, 17 Hoi Wan St, Quarry Bay, Hong Kong",
-  },
-  {
-    title: "17 Hoi Wan St",
-    address: "Room 101G, 10/F, 17 Hoi Wan St, Quarry Bay, Hong Kong",
-  },
-  {
-    title: "17 Hoi Wan St",
-    address: "Room 101G, 10/F, 17 Hoi Wan St, Quarry Bay, Hong Kong",
-  },
-  {
-    title: "17 Hoi Wan St",
-    address: "Room 101G, 10/F, 17 Hoi Wan St, Quarry Bay, Hong Kong",
-  },
-  {
-    title: "17 Hoi Wan St",
-    address: "Room 101G, 10/F, 17 Hoi Wan St, Quarry Bay, Hong Kong",
-  },
-  {
-    title: "17 Hoi Wan St",
-    address: "Room 101G, 10/F, 17 Hoi Wan St, Quarry Bay, Hong Kong",
-  },
-  {
-    title: "17 Hoi Wan St",
-    address: "Room 101G, 10/F, 17 Hoi Wan St, Quarry Bay, Hong Kong",
-  },
-  {
-    title: "17 Hoi Wan St",
-    address: "Room 101G, 10/F, 17 Hoi Wan St, Quarry Bay, Hong Kong",
-  },
-  {
-    title: "17 Hoi Wan St",
-    address: "Room 101G, 10/F, 17 Hoi Wan St, Quarry Bay, Hong Kong",
-  },
-  {
-    title: "17 Hoi Wan St",
-    address: "Room 101G, 10/F, 17 Hoi Wan St, Quarry Bay, Hong Kong",
-  },
-  {
-    title: "17 Hoi Wan St",
-    address: "Room 101G, 10/F, 17 Hoi Wan St, Quarry Bay, Hong Kong",
-  },
-  {
-    title: "17 Hoi Wan St",
-    address: "Room 101G, 10/F, 17 Hoi Wan St, Quarry Bay, Hong Kong",
-  },
-  {
-    title: "17 Hoi Wan St",
-    address: "Room 101G, 10/F, 17 Hoi Wan St, Quarry Bay, Hong Kong",
-  },
-  {
-    title: "17 Hoi Wan St",
-    address: "Room 101G, 10/F, 17 Hoi Wan St, Quarry Bay, Hong Kong",
-  },
-  {
-    title: "17 Hoi Wan St",
-    address: "Room 101G, 10/F, 17 Hoi Wan St, Quarry Bay, Hong Kong",
-  },
-  {
-    title: "17 Hoi Wan St",
-    address: "Room 101G, 10/F, 17 Hoi Wan St, Quarry Bay, Hong Kong",
-  },
-  {
-    title: "17 Hoi Wan St",
-    address: "Room 101G, 10/F, 17 Hoi Wan St, Quarry Bay, Hong Kong",
-  },
-  {
-    title: "17 Hoi Wan St",
-    address: "Room 101G, 10/F, 17 Hoi Wan St, Quarry Bay, Hong Kong",
-  },
-  {
-    title: "17 Hoi Wan St",
-    address: "Room 101G, 10/F, 17 Hoi Wan St, Quarry Bay, Hong Kong",
-  },
-  {
-    title: "17 Hoi Wan St",
-    address: "Room 101G, 10/F, 17 Hoi Wan St, Quarry Bay, Hong Kong",
-  },
-  {
-    title: "17 Hoi Wan St",
-    address: "Room 101G, 10/F, 17 Hoi Wan St, Quarry Bay, Hong Kong",
-  },
-  {
-    title: "17 Hoi Wan St",
-    address: "Room 101G, 10/F, 17 Hoi Wan St, Quarry Bay, Hong Kong",
-  },
-  {
-    title: "17 Hoi Wan St",
-    address: "Room 101G, 10/F, 17 Hoi Wan St, Quarry Bay, Hong Kong",
-  },
-];
+
 export const RecentLocationComp = () => {
   return (
     <section className="flex flex-col gap-2">
@@ -126,7 +15,7 @@ export const RecentLocationComp = () => {
           className="object-cover"
         />
         <p className="text-globalPrimary text-p2 font-[500]">
-          Use Current Location
+          {useCurrentLocationText}
         </p>
       </div>
       <div className="flex flex-col gap-2">

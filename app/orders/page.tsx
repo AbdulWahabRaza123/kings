@@ -3,62 +3,29 @@ import { PrimaryBtn } from "@/components/ui/buttons/primary-btn";
 import { PrimaryInputWithIcons } from "@/components/ui/inputs/primary-input";
 import { SelectInput } from "@/components/ui/inputs/select-input";
 import { OverflowListComp } from "@/components/ui/lists/overflow-list";
-import { pickupTime } from "@/utils/pickup-time";
+import { pickupTime } from "@/utils/pickup-time-data";
 import { Clock7 } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
-
-const promotionalData = [
-  {
-    id: 1,
-    src: "/assets/mockups/cover-img.svg",
-    title: "May Discount",
-    desc: "Special discount just for May",
-  },
-  {
-    id: 2,
-    src: "/assets/mockups/cover-img.svg",
-    title: "May Discount",
-    desc: "Special discount just for May",
-  },
-  {
-    id: 3,
-    src: "/assets/mockups/cover-img.svg",
-    title: "May Discount",
-    desc: "Special discount just for May",
-  },
-  {
-    id: 4,
-    src: "/assets/mockups/cover-img.svg",
-    title: "May Discount",
-    desc: "Special discount just for May",
-  },
-  {
-    id: 5,
-    src: "/assets/mockups/cover-img.svg",
-    title: "May Discount",
-    desc: "Special discount just for May",
-  },
-  {
-    id: 6,
-    src: "/assets/mockups/cover-img.svg",
-    title: "May Discount",
-    desc: "Special discount just for May",
-  },
-  {
-    id: 7,
-    src: "/assets/mockups/cover-img.svg",
-    title: "May Discount",
-    desc: "Special discount just for May",
-  },
-  {
-    id: 8,
-    src: "/assets/mockups/cover-img.svg",
-    title: "May Discount",
-    desc: "Special discount just for May",
-  },
-];
+import { promotionalData } from "@/utils/promotional-data";
+import {
+  arrangeADeliveryText,
+  continueText,
+  deliverWithPoweKingText,
+  deliverWithPowerKingDescText,
+  deliveryAppText,
+  downloadAppText,
+  driverAppText,
+  dropoffLocText,
+  phoneText,
+  pickupLocText,
+  pickupNowText,
+  promotionsText,
+  rewardText,
+} from "@/utils/constants";
 const OrdersPage = () => {
+  const router = useRouter();
   const [pickupLoc, setPickupLoc] = useState("");
   const [dropupLoc, setDropupLoc] = useState("");
   const [selectedPickupTime, setSelectedPickupTime] = useState("");
@@ -75,19 +42,18 @@ const OrdersPage = () => {
         <div className="md:max-w-[600px] max-md:w-full max-md:px-4 flex flex-col gap-4">
           <div className="flex flex-col items-start justify-center">
             <h1 className="md:text-h1 max-md:text-h3 text-globalSecondary font-[600]">
-              Deliver with Power King
+              {deliverWithPoweKingText}
             </h1>
             <p className="text-secondary text-start">
-              Our convenient delivery service brings the products right to your
-              chosen destination.
+              {deliverWithPowerKingDescText}
             </p>
           </div>
           <div className="bg-white rounded-[7px] w-full py-6 px-6">
-            <h6 className="text-h6 font-[600]">Arrange a delivery</h6>
+            <h6 className="text-h6 font-[600]">{arrangeADeliveryText}</h6>
             <div className="flex flex-col gap-4 mt-6">
               <PrimaryInputWithIcons
                 icon={"/assets/icons/pickup-loc.svg"}
-                placeholder="Pickup location"
+                placeholder={pickupLocText}
                 type="text"
                 value={pickupLoc}
                 setValue={setPickupLoc}
@@ -95,7 +61,7 @@ const OrdersPage = () => {
               />
               <PrimaryInputWithIcons
                 icon={"/assets/icons/plus.svg"}
-                placeholder="Dropoff location"
+                placeholder={dropoffLocText}
                 type="text"
                 value={dropupLoc}
                 setValue={setDropupLoc}
@@ -113,38 +79,42 @@ const OrdersPage = () => {
                   <p>
                     {pickupTime?.filter((val) => {
                       return val.value === selectedPickupTime;
-                    })[0]?.label || "Pickup Now"}
+                    })[0]?.label || pickupNowText}
                   </p>
                 </div>
               </SelectInput>
-              <PrimaryBtn onClick={() => {}}>Continue</PrimaryBtn>
+              <PrimaryBtn
+                onClick={() => {
+                  router.push("/orders/location");
+                }}
+              >
+                {continueText}
+              </PrimaryBtn>
             </div>
           </div>
         </div>
       </section>
       <section>
-        <OverflowListComp data={promotionalData} title="Promotions" />
+        <OverflowListComp data={promotionalData} title={promotionsText} />
       </section>
       <section>
-        <OverflowListComp data={promotionalData} title="Rewards" />
+        <OverflowListComp data={promotionalData} title={rewardText} />
       </section>
       <section className="py-20 relative">
         <div className="flex items-center justify-between bg-globalPrimary py-20 px-7 max-md:flex-wrap">
           <div className="flex flex-col items-start gap-4">
-            <h1 className="text-h3 text-white font-[700]">
-              Download the app to delivery anywhere, any time
-            </h1>
+            <h1 className="text-h3 text-white font-[700]">{downloadAppText}</h1>
             <div className="flex items-center gap-10 max-md:flex-wrap">
               <Image
                 src="/assets/orders/download-section/delivery-app.svg"
-                alt="delivery app"
+                alt={deliveryAppText}
                 width={320}
                 height={200}
                 className="object-cover max-md:w-full"
               />
               <Image
                 src="/assets/orders/download-section/driver-app.svg"
-                alt="driver app"
+                alt={driverAppText}
                 width={320}
                 height={200}
                 className="object-cover max-md:w-full"
@@ -153,7 +123,7 @@ const OrdersPage = () => {
           </div>
           <Image
             src="/assets/orders/download-section/phone.svg"
-            alt="phone"
+            alt={phoneText}
             width={600}
             height={700}
             className="object-cover aspect-square lg:absolute lg:right-[10px]"

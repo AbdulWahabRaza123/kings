@@ -27,6 +27,21 @@ const SelectLocationPage = () => {
   const [selectedVan, setSelectedVan] = useState(0);
   const [openConfirmDialog, setOpenConfirmDialog] = useState(false);
 
+  //delivery details
+  const [passengerVal, setPassengerVal] = useState(0);
+  const [rentCartVal, setRentCartVal] = useState(0);
+  const [rentCartPrice, setRentCartPrice] = useState(0);
+  const [goodsLongerThan6FtsChecked, setGoodsLongerThan6FtsChecked] =
+    useState(false);
+  const [goodsLongerThan6FtsPrice, setGoodsLongerThan6FtsPrice] = useState(0);
+  const [newVanChecked, setNewVanChecked] = useState(false);
+  const [newVanPrice, setNewVanPrice] = useState(0);
+  const [petFreindlyDriverChecked, setPetFreindlyDriverChecked] =
+    useState(false);
+  const [petFreindlyDriverPrice, setPetFreindlyDriverPrice] = useState(0);
+  const [englishDriverChecked, setEnglishDriverChecked] = useState(false);
+  const [englishDriverPrice, setEnglishDriverPrice] = useState(0);
+
   return (
     <>
       <SelectedVanDialog
@@ -85,6 +100,28 @@ const SelectLocationPage = () => {
                 setSelectedVan={setSelectedVan}
                 setStep={setStep}
                 step={step}
+                passengerVal={passengerVal}
+                setPassengerVal={setPassengerVal}
+                rentCartVal={rentCartVal}
+                setRentCartVal={setRentCartVal}
+                rentCartPrice={rentCartPrice}
+                setRentCartPrice={setRentCartPrice}
+                goodsLongerThan6FtsChecked={goodsLongerThan6FtsChecked}
+                setGoodsLongerThan6FtsChecked={setGoodsLongerThan6FtsChecked}
+                goodsLongerThan6FtsPrice={goodsLongerThan6FtsPrice}
+                setGoodsLongerThan6FtsPrice={setGoodsLongerThan6FtsPrice}
+                newVanChecked={newVanChecked}
+                setNewVanChecked={setNewVanChecked}
+                newVanPrice={newVanPrice}
+                setNewVanPrice={setNewVanPrice}
+                petFreindlyDriverChecked={petFreindlyDriverChecked}
+                setPetFreindlyDriverChecked={setPetFreindlyDriverChecked}
+                petFreindlyDriverPrice={petFreindlyDriverPrice}
+                setPetFreindlyDriverPrice={setPetFreindlyDriverPrice}
+                englishDriverChecked={englishDriverChecked}
+                setEnglishDriverChecked={setEnglishDriverChecked}
+                englishDriverPrice={englishDriverPrice}
+                setEnglishDriverPrice={setEnglishDriverPrice}
               />
             )}
           </div>

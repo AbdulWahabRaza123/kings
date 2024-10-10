@@ -1,5 +1,5 @@
-import { Square, SquareCheckBig } from "lucide-react";
 import React from "react";
+import { Checkbox } from "./checkbox-input";
 
 export const LabledCheckbox = ({
   value,
@@ -12,14 +12,7 @@ export const LabledCheckbox = ({
 }) => {
   return (
     <div className="flex items-center relative">
-      <input
-        type="checkbox"
-        checked={value}
-        onChange={(e: any) => {
-          setValue(e?.target?.checked);
-        }}
-        className="w-4 h-4 accent-[#F2DA36]"
-      />
+      <Checkbox value={value} setValue={setValue} />
       <label
         htmlFor={title}
         className="flex items-center cursor-pointer relative p-2 gap-1 text-p2"

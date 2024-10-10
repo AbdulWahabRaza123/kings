@@ -87,3 +87,7 @@ export const searchAddressText = "Search Address"
 export const proceedWithText = "Proceed with"
 export const proceedWithDescText = "You have selected the vehicle; please review its details and confirm your choice"
 export const IAgreeText = "I agree the Terms and Conditions and Privacy Policies."
+
+
+//delivery details
+export const deliveryDetailsText = "Delivery Details"

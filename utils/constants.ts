@@ -94,3 +94,35 @@ export const deliveryDetailsText = "Delivery Details"
 
 //order details
 export const orderDetailsText = "Order details"
+
+
+//topup details
+export const topupCompanyWalletText = "Top up company wallet"
+export const pointText = "point"
+export const hkText = "HK"
+export const paymentMethodText = "Payment method"
+export const creditOrDebitCardText = "Credit or debit card"
+export const visaText = "Visa"
+export const cancelText = "Cancel"
+export const continueTopupText = "Continue top up"
+export const addCreditOrDebitCardText = "Add a credit or debit card"
+export const otherMethodsText = "Other methods"
+export const bankInText = "Bank in"
+export const addText = "Add"
+
+//order details
+export const notEnoughPointBalanceText = "Not enough point balance"
+export const notEnoughPointBalanceDesc = " Please contact company admin to top up the Company Wallet to proceed the order."
+export const topupText = "Topup"
+export const driverWillCallYouConfirmationText = "Driver will call to confirm quote after order is placed."
+export const qouteText = "Quote"
+export const placeOrderText = "Place Order"
+export const estimatedTotalText = "Estimated total"
+
+//delivery details
+export const passengetText = "Passenger"
+export const rentCartText = "Rent Cart"
+export const goodsLongerThan6ftsText = "Goods longer than 6ft"
+export const petFreindlyDriverText = "Pet friendly driver"
+export const newVanText = "New Van"
+export const englishDriverText = "English driver"

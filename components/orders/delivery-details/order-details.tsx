@@ -8,7 +8,17 @@ import { OrderContactDialog } from "@/components/ui/dialogs/orders/order-contact
 import { OrderNoteDialog } from "@/components/ui/dialogs/orders/order-note";
 import { TopupDialog } from "@/components/ui/dialogs/payments/top-up-dialog";
 import { MapStepWrapperComp } from "@/components/ui/wrappers/map-step-wrapper";
-import { orderDetailsText } from "@/utils/constants";
+import {
+  driverWillCallYouConfirmationText,
+  estimatedTotalText,
+  hkText,
+  notEnoughPointBalanceDesc,
+  notEnoughPointBalanceText,
+  orderDetailsText,
+  placeOrderText,
+  qouteText,
+  topupText,
+} from "@/utils/constants";
 import { TriangleAlert } from "lucide-react";
 import React, { useState } from "react";
 interface OrderContactDetails {
@@ -79,10 +89,11 @@ export const OrderDetailsComp = ({
                   <TriangleAlert className="w-6 h-6" />
                 </div>
                 <div className="flex flex-col items-start">
-                  <p className="text-p1 font-[600]">Not enough point balance</p>
+                  <p className="text-p1 font-[600]">
+                    {notEnoughPointBalanceText}
+                  </p>
                   <p className="text-p2 text-secondary">
-                    Please contact company admin to top up the Company Wallet to
-                    proceed the order.
+                    {notEnoughPointBalanceDesc}
                   </p>
                 </div>
               </div>
@@ -92,7 +103,7 @@ export const OrderDetailsComp = ({
                 }}
                 className="bg-black"
               >
-                Topup
+                {topupText}
               </PrimaryBtn>
             </div>
 
@@ -134,20 +145,22 @@ export const OrderDetailsComp = ({
           <div className="absolute bottom-0 border-t-gray-400/40 border-t-[1px] w-[94%] h-[100px]">
             <div className=" flex flex-col items-center gap-3 justify-center w-full py-3">
               <p className="text-p3 text-secondary">
-                Driver will call to confirm quote after order is placed.
+                {driverWillCallYouConfirmationText}
               </p>
               <div className="w-full flex items-center justify-between text-p2">
-                <p>Estimated total</p>
+                <p>{estimatedTotalText}</p>
                 <div className="flex items-center gap-1">
-                  <p className="line-through text-p3">HK$ 115</p>
-                  <p className="font-[600]">HK$ 103 + Quote</p>
+                  <p className="line-through text-p3">{hkText}$ 115</p>
+                  <p className="font-[600]">
+                    {hkText}$ 103 + {qouteText}
+                  </p>
                 </div>
               </div>
               <PrimaryBtn
                 onClick={() => {}}
                 className="bg-[#B6B6B6] text-white"
               >
-                Place Order
+                {placeOrderText}
               </PrimaryBtn>
             </div>
           </div>

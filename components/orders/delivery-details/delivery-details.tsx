@@ -2,7 +2,16 @@ import { DeliveryDetailsCard } from "@/components/ui/cards/delivery-details-card
 import { DestinationEditCardComp } from "@/components/ui/cards/edit-card";
 import { VanCardComp } from "@/components/ui/cards/van-card";
 import { MapStepWrapperComp } from "@/components/ui/wrappers/map-step-wrapper";
-import { arrangeADeliveryText, deliveryDetailsText } from "@/utils/constants";
+import {
+  arrangeADeliveryText,
+  deliveryDetailsText,
+  englishDriverText,
+  goodsLongerThan6ftsText,
+  newVanText,
+  passengetText,
+  petFreindlyDriverText,
+  rentCartText,
+} from "@/utils/constants";
 import {
   fromDestination,
   pickupDateAndTime,
@@ -94,7 +103,7 @@ export const DeliveryDetailsComp = ({
             <DeliveryDetailsCard
               value={passengerVal}
               setValue={setPassengerVal}
-              title="Passenger"
+              title={passengetText}
               iconUrl="/assets/icons/delivery-details/passenger.svg"
               type="counter"
               showPrice={false}
@@ -103,7 +112,7 @@ export const DeliveryDetailsComp = ({
             <DeliveryDetailsCard
               value={rentCartVal}
               setValue={setRentCartVal}
-              title="Rent Cart"
+              title={rentCartText}
               iconUrl="/assets/icons/delivery-details/cart.svg"
               type="counter"
               showPrice={true}
@@ -113,7 +122,7 @@ export const DeliveryDetailsComp = ({
             <DeliveryDetailsCard
               value={goodsLongerThan6FtsChecked}
               setValue={setGoodsLongerThan6FtsChecked}
-              title="Goods longer than 6ft"
+              title={goodsLongerThan6ftsText}
               iconUrl="/assets/icons/delivery-details/goods-longer-than-6fts.svg"
               type="checkbox"
               showPrice={true}
@@ -122,7 +131,7 @@ export const DeliveryDetailsComp = ({
             <DeliveryDetailsCard
               value={petFreindlyDriverChecked}
               setValue={setPetFreindlyDriverChecked}
-              title="Pet friendly driver"
+              title={petFreindlyDriverText}
               iconUrl="/assets/icons/delivery-details/pet.svg"
               type="checkbox"
               showPrice={true}
@@ -131,7 +140,7 @@ export const DeliveryDetailsComp = ({
             <DeliveryDetailsCard
               value={newVanChecked}
               setValue={setNewVanChecked}
-              title="New Van"
+              title={newVanText}
               iconUrl="/assets/icons/delivery-details/new-van.svg"
               type="checkbox"
               showPrice={true}
@@ -141,7 +150,7 @@ export const DeliveryDetailsComp = ({
             <DeliveryDetailsCard
               value={englishDriverChecked}
               setValue={setEnglishDriverChecked}
-              title="English driver"
+              title={englishDriverText}
               iconUrl="/assets/icons/delivery-details/english-driver.svg"
               type="checkbox"
               showPrice={true}

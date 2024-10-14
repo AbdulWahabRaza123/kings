@@ -2,11 +2,24 @@
 import React, { useState } from "react";
 import { DialogComp } from "../dialog";
 import { PrimaryBtn } from "../../buttons/primary-btn";
-import { cn } from "@/lib/utils";
 import { TextInput } from "../../inputs/text-input";
 import { ArrowLeft, Check, ChevronRight, Info, Plus } from "lucide-react";
 import { SecondaryBtn } from "../../buttons/secondary-btn";
 import Image from "next/image";
+import {
+  addCreditOrDebitCardText,
+  addText,
+  bankInText,
+  cancelText,
+  continueTopupText,
+  creditOrDebitCardText,
+  hkText,
+  otherMethodsText,
+  paymentMethodText,
+  pointText,
+  topupCompanyWalletText,
+  visaText,
+} from "@/utils/constants";
 
 export const TopupDialog = ({
   open,
@@ -29,7 +42,7 @@ export const TopupDialog = ({
       {step === 0 && (
         <div className="flex flex-col gap-3">
           <div>
-            <h1 className="text-[18px] font-[600]">Top up company wallet</h1>
+            <h1 className="text-[18px] font-[600]">{topupCompanyWalletText}</h1>
           </div>
           <div className="flex flex-col gap-3 justify-start items-start py-3 w-full">
             <TextInput
@@ -42,12 +55,14 @@ export const TopupDialog = ({
             />
             <div className="flex items-center gap-2">
               <Info className="text-secondary w-4 h-4" />
-              <p className="text-secondary text-p3">HK$1 = 1 point</p>
+              <p className="text-secondary text-p3">
+                {hkText}$1 = 1 {pointText}
+              </p>
             </div>
             <div className="flex flex-col w-full">
               <div className="border-[1px] border-gray-400/40 rounded-[7px] w-full p-4 flex flex-col justify-center relative">
-                <p className="font-[500] text-p2">Payment method</p>
-                <p className="text-p2 text-secondary">VISA ****1234</p>
+                <p className="font-[500] text-p2">{paymentMethodText}</p>
+                <p className="text-p2 text-secondary">{visaText} ****1234</p>
 
                 <ChevronRight
                   onClick={() => {
@@ -64,7 +79,7 @@ export const TopupDialog = ({
                     setOpen(false);
                   }}
                 >
-                  Cancel
+                  {cancelText}
                 </SecondaryBtn>
                 <PrimaryBtn
                   onClick={() => {
@@ -72,7 +87,7 @@ export const TopupDialog = ({
                   }}
                   className="bg-black rounded-full"
                 >
-                  Continue top up
+                  {continueTopupText}
                 </PrimaryBtn>
               </div>
             </div>
@@ -90,11 +105,11 @@ export const TopupDialog = ({
             >
               <ArrowLeft className="w-4 h-4" />
             </div>
-            <h1 className="text-[18px] font-[600]">Payment method</h1>
+            <h1 className="text-[18px] font-[600]">{paymentMethodText}</h1>
           </div>
           <div className="flex flex-col gap-3 justify-start items-start py-3 w-full">
             <div className="flex flex-col gap-1 w-full">
-              <h1 className="font-[600]">Credit or debit card</h1>
+              <h1 className="font-[600]">{creditOrDebitCardText}</h1>
               <div className="relative flex flex-row items-center gap-4 p-2 border-gray-400/40 border-[1px] rounded-[7px] w-full bg-[#EFF1F0]">
                 <Image
                   src="/assets/icons/payment/visa.svg"
@@ -104,7 +119,7 @@ export const TopupDialog = ({
                   className="objct-cover"
                 />
                 <div className="flex flex-col items-start">
-                  <p className="text-p2 font-[500]">Visa</p>
+                  <p className="text-p2 font-[500]">{visaText}</p>
                   <p className="text-secondary text-p3">**** 1234</p>
                 </div>
                 <Check className="w-6 h-6 text-secondary absolute right-[10px]" />
@@ -117,10 +132,10 @@ export const TopupDialog = ({
               className="rounded-full font-[500] hover:text-black px-2 py-1.5 border-[1px] border-gray-400/40 text-p2 flex items-center gap-1"
             >
               <Plus className="w-4 h-4" />
-              <p>Add a credit or debit card</p>
+              <p>{addCreditOrDebitCardText}</p>
             </button>
             <div className="flex flex-col gap-1 w-full">
-              <h1 className="font-[600]">Other methods</h1>
+              <h1 className="font-[600]">{otherMethodsText}</h1>
               <div className="relative flex flex-row items-center gap-4 p-2 border-gray-400/40 border-[1px] rounded-[7px] w-full bg-[#EFF1F0]">
                 <Image
                   src="/assets/icons/payment/bank.svg"
@@ -130,7 +145,7 @@ export const TopupDialog = ({
                   className="objct-cover"
                 />
                 <div className="flex flex-col items-start">
-                  <p className="text-p2 font-[500]">Bank in</p>
+                  <p className="text-p2 font-[500]">{bankInText}</p>
                 </div>
               </div>
             </div>
@@ -141,7 +156,7 @@ export const TopupDialog = ({
                 }}
                 className="rounded-full"
               >
-                Continue top up
+                {continueTopupText}
               </PrimaryBtn>
             </div>
           </div>
@@ -158,10 +173,11 @@ export const TopupDialog = ({
             >
               <ArrowLeft className="w-4 h-4" />
             </div>
-            <h1 className="text-[18px] font-[600]">Add a credit/debit card</h1>
+            <h1 className="text-[18px] font-[600]">
+              {addCreditOrDebitCardText}
+            </h1>
           </div>
           <div className="flex flex-col gap-3 justify-start items-start py-3 w-full">
-            {/* Card Number Input */}
             <TextInput
               inputStyle="input"
               type="number"
@@ -177,7 +193,6 @@ export const TopupDialog = ({
             />
 
             <div className="flex items-end gap-4 w-full">
-              {/* Expiration Date Input */}
               <TextInput
                 inputStyle="input"
                 type="text"
@@ -193,7 +208,6 @@ export const TopupDialog = ({
                 }}
               />
 
-              {/* CVV Input */}
               <TextInput
                 inputStyle="input"
                 type="number"
@@ -214,7 +228,7 @@ export const TopupDialog = ({
                   setStep(step - 1);
                 }}
               >
-                Cancel
+                {cancelText}
               </SecondaryBtn>
               <PrimaryBtn
                 onClick={() => {
@@ -222,7 +236,7 @@ export const TopupDialog = ({
                 }}
                 className="bg-black rounded-full"
               >
-                Add
+                {addText}
               </PrimaryBtn>
             </div>
           </div>

@@ -91,3 +91,6 @@ export const IAgreeText = "I agree the Terms and Conditions and Privacy Policies
 
 //delivery details
 export const deliveryDetailsText = "Delivery Details"
+
+//order details
+export const orderDetailsText = "Order details"

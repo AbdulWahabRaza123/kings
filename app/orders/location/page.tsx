@@ -1,10 +1,13 @@
 "use client";
 import { DeliveryDetailsComp } from "@/components/orders/delivery-details/delivery-details";
+import { OrderDetailsComp } from "@/components/orders/delivery-details/order-details";
 import { SelectCustomTimeComp } from "@/components/orders/locations/select-custom-time";
 import { SelectLocationComp } from "@/components/orders/locations/select-time-location";
 import { SelectedVehicleComp } from "@/components/orders/vehicle/selected-vehicle";
+import { OrderNoteDialog } from "@/components/ui/dialogs/orders/order-note";
 import { SelectedVanDialog } from "@/components/ui/dialogs/orders/selected-van-dialog";
 import GoogleMapComponent from "@/components/ui/map/google-map";
+import { cn } from "@/lib/utils";
 import React, { useState } from "react";
 const SelectLocationPage = () => {
   const [pickupLoc, setPickupLoc] = useState("");
@@ -42,6 +45,15 @@ const SelectLocationPage = () => {
   const [englishDriverChecked, setEnglishDriverChecked] = useState(false);
   const [englishDriverPrice, setEnglishDriverPrice] = useState(0);
 
+  //order details
+  const [orderContact, setOrderContact] = useState({
+    fName: "",
+    lName: "",
+    number: "",
+  });
+  const [driverNote, setDriverNote] = useState("");
+  const [voucherId, setVoucherId] = useState(1);
+  const [paymentMethodId, setPaymentMethodId] = useState(1);
   return (
     <>
       <SelectedVanDialog
@@ -51,6 +63,7 @@ const SelectLocationPage = () => {
         setStep={setStep}
         selectedItem={selectedVan}
       />
+
       <main>
         <section className="flex items-start max-md:flex-wrap gap-4 py-4 px-4 w-full">
           <div className="lg:w-[30%] max-lg:w-[40%] max-md:w-full">
@@ -125,7 +138,30 @@ const SelectLocationPage = () => {
               />
             )}
           </div>
-          <div className="lg:w-[70%] max-lg:w-[60%] max-md:w-full shadow-md border-[1px] border-gray-400/40 h-screen rounded-[7px] overflow-auto">
+          {step === 2 && (
+            <div className="lg:w-[30%] max-lg:w-full">
+              <OrderDetailsComp
+                step={step}
+                setStep={setStep}
+                orderContact={orderContact}
+                setOrderContact={setOrderContact}
+                driverNote={driverNote}
+                setDriverNote={setDriverNote}
+                voucherId={voucherId}
+                setVoucherId={setVoucherId}
+                paymentMethodId={paymentMethodId}
+                setPaymentMethodId={setPaymentMethodId}
+              />
+            </div>
+          )}
+          <div
+            className={cn(
+              "shadow-md border-[1px] border-gray-400/40 h-screen rounded-[7px] overflow-auto",
+              step === 2
+                ? "lg:w-[40%] max-lg:w-[30%] max-md:w-full"
+                : "lg:w-[70%] max-lg:w-[60%] max-md:w-full"
+            )}
+          >
             <GoogleMapComponent />
           </div>
         </section>

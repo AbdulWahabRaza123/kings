@@ -26,7 +26,7 @@ export const CounterInput = ({
             setValue(value - 1);
           }
         }}
-        className="w-4 h-4 text-secondary"
+        className="w-4 h-4 text-secondary cursor-pointer"
       />
       <p className="text-p2">{value}</p>
       <Plus
@@ -35,7 +35,7 @@ export const CounterInput = ({
             setValue(value + 1);
           }
         }}
-        className="w-4 h-4"
+        className="w-4 h-4 cursor-pointer"
       />
     </div>
   );

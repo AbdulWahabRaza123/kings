@@ -33,6 +33,38 @@ export const PrimaryInput = ({
     />
   );
 };
+interface TextareaProps {
+  value: string;
+  setValue: (value: string) => void;
+  rows: number;
+  placeholder: string;
+  className?: string;
+  disabled?: boolean | undefined;
+}
+export const PrimaryTextarea = ({
+  value,
+  setValue,
+  rows = 3,
+  placeholder,
+  className,
+  disabled,
+}: TextareaProps) => {
+  return (
+    <textarea
+      rows={rows}
+      placeholder={placeholder}
+      disabled={disabled || undefined}
+      className={cn(
+        "p-3 rounded-[8px] border-gray-400/40 border-[1px] bg-[#FFFFFFCC] w-full",
+        className
+      )}
+      value={value}
+      onChange={(e: any) => {
+        setValue(e.target.value);
+      }}
+    />
+  );
+};
 interface IconInputProps extends InputProps {
   icon: string;
   onIconClick?: () => void;

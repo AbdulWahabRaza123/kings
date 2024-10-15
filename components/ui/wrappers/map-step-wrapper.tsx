@@ -15,7 +15,7 @@ export const MapStepWrapperComp = ({
   return (
     <>
       <aside className="w-full relative shadow-md border-[1px] border-gray-400/40 h-screen rounded-[7px] p-4 flex flex-col gap-2 overflow-y-auto">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 relative">
           {back && (
             <div
               onClick={() => {

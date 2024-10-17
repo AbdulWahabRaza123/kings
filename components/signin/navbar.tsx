@@ -3,11 +3,15 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { SecondaryBtn } from "../ui/buttons/secondary-btn";
 import { SelectInput } from "../ui/inputs/select-input";
-import { Bell, Globe } from "lucide-react";
+import { Bell, ChevronDown, ChevronRight, Globe } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { NavDrawerComp } from "../ui/drawers/nav-drawer";
+import { NavDrawerAfterLoginComp } from "../ui/drawers/nav-drawer";
 import { loginText, signupText } from "@/utils/constants";
+import { PrimaryBtn } from "../ui/buttons/primary-btn";
+import { Progress } from "antd";
+import Link from "next/link";
+import { MembershipCard } from "../ui/cards/membership-card";
 const options = [
   {
     name: "Home",
@@ -22,6 +26,45 @@ const options = [
     active: "/assets/icons/active/navbar-orders.svg",
   },
 ];
+const accountPagesData = [
+  {
+    name: "Account",
+    link: "/order/account",
+    icon: "/assets/icons/user.svg",
+  },
+  {
+    name: "My Profile",
+    link: "/order/account/profile",
+    icon: "/assets/icons/sidebar/my-profile.svg",
+  },
+  {
+    name: "Saved places",
+    link: "/order/account/places",
+    icon: "/assets/icons/sidebar/saved-places.svg",
+  },
+  {
+    name: "Business center",
+    link: "/order/account/business",
+    icon: "/assets/icons/sidebar/business-center.svg",
+  },
+  {
+    name: "Communication settings",
+    link: "/order/account/communication",
+    icon: "/assets/icons/sidebar/communication-setting.svg",
+  },
+];
+const generalPagesData = [
+  {
+    name: "Help",
+    link: "/order/general/help",
+    icon: "/assets/icons/sidebar/help.svg",
+  },
+  {
+    name: "About",
+    link: "/order/general/about",
+    icon: "/assets/icons/sidebar/about.svg",
+  },
+];
 const lngOptions = [
   {
     label: "English",
@@ -32,22 +75,18 @@ const lngOptions = [
     value: "fr",
   },
 ];
-const pagesOptions = [
-  {
-    label: "Account",
-    value: "/order/account",
-  },
-  {
-    label: "Management",
-    value: "/order/management",
-  },
-];
 
 const Navbar = () => {
   const currentPage = usePathname();
   const [selectedLng, setSelectedLng] = useState(lngOptions[0].value);
-  const [selectedPage, setSelectedPage] = useState(pagesOptions[0].value);
+  const [selectedPage, setSelectedPage] = useState({
+    name: "Account",
+    link: "/order/account",
+    icon: "/assets/icons/user.svg",
+  });
+  const [openSideDrawer, setOpenSideDrawer] = useState(false);
   const currentUsr = true;
+
   return (
     <nav className="bg-main h-[80px] py-4 px-7 flex items-center justify-between w-full shadow-md sticky top-0 z-[10]">
       <div className="flex items-center gap-14">
@@ -119,34 +158,118 @@ const Navbar = () => {
             >
               <Bell className="w-5 h-5 text-secondary" />
             </SecondaryBtn>
-            <SelectInput
-              active={selectedPage}
-              setActive={setSelectedPage}
-              options={pagesOptions}
-              className="bg-globalPrimary rounded-full h-[43px]"
-            >
-              <div className="flex items-center gap-2">
-                <Image
-                  src="/assets/icons/user.svg"
-                  alt="user"
-                  width={20}
-                  height={20}
-                  className="object-cover"
-                />
-                <p className="text=p2 font-[500] pb-0">
-                  {
-                    pagesOptions?.filter((val) => val.value === selectedPage)[0]
-                      .label
-                  }
-                </p>
-              </div>
-            </SelectInput>
+            <div>
+              <NavDrawerAfterLoginComp
+                open={openSideDrawer}
+                setOpen={setOpenSideDrawer}
+                title="Business Account"
+                selectedPage={selectedPage}
+                setSelectedPage={setSelectedPage}
+              >
+                <MembershipCard />
+              </NavDrawerAfterLoginComp>
+            </div>
           </>
         )}
       </div>
-
-      <div className="md:hidden">
-        <NavDrawerComp>
+      <div className="lg:hidden">
+        <NavDrawerAfterLoginComp
+          open={openSideDrawer}
+          setOpen={setOpenSideDrawer}
+          title="Business Account"
+          selectedPage={selectedPage}
+          setSelectedPage={setSelectedPage}
+        >
+          <div className="flex flex-col gap-4">
+            <div className=" flex flex-row items-center justify-between">
+              <h3 className="text-h3 text-primary font-[700]">Hi, Tony</h3>
+              <Image
+                src="/assets/mockups/profile.svg"
+                alt="profile"
+                width={80}
+                height={80}
+                className="object-cover aspect-square"
+              />
+            </div>
+            <MembershipCard />
+            <div className="flex flex-col h-[110px] justify-center p-4 bg-globalPrimary relative rounded-[7px]">
+              <Image
+                src="/assets/icons/sidebar/wallet-bg.svg"
+                width={200}
+                height={200}
+                className="object-cover absolute right-0 z-0"
+                alt="wallt bg"
+              />
+              <h5 className="text-white text-h5 z-[10] font-[700]">
+                Company Wallet
+              </h5>
+              <div className="flex items-center gap-1 text-primary text-h5 font-[700] z-[10]">
+                <h5 className="mb-0">1,288 points</h5>
+                <ChevronRight className="w-5 h-5 mt-1 mb-0" />
+              </div>
+            </div>
+            <div className="flex flex-col gap-2">
+              <p className="font-[700] text-h5">Account</p>
+              <div className="">
+                {accountPagesData?.map((val) => {
+                  return (
+                    <>
+                      <div
+                        key={val.name}
+                        className="flex items-center gap-2 py-2"
+                      >
+                        <Image
+                          src={val.icon}
+                          alt={val.name}
+                          width={20}
+                          height={20}
+                          className="object-cover"
+                        />
+                        <Link href={val?.link || "#"} className="">
+                          {val.name}
+                        </Link>
+                      </div>
+                    </>
+                  );
+                })}
+              </div>
+            </div>
+            <div className="flex flex-col gap-2">
+              <p className="font-[700] text-h5">General</p>
+              <div className="">
+                {generalPagesData?.map((val) => {
+                  return (
+                    <>
+                      <div
+                        key={val.name}
+                        className="flex items-center gap-2 py-2"
+                      >
+                        <Image
+                          src={val.icon}
+                          alt={val.name}
+                          width={20}
+                          height={20}
+                          className="object-cover"
+                        />
+                        <Link href={val?.link || "#"} className="">
+                          {val.name}
+                        </Link>
+                      </div>
+                    </>
+                  );
+                })}
+              </div>
+            </div>
+            <div className="flex items-center justify-center w-full py-4">
+              <div className="rounded-full border-[1px] border-gray-400/40 py-1 px-4 font-[600] cursor-pointer hover:opacity-[0.8]">
+                Sign out
+              </div>
+            </div>
+          </div>
+        </NavDrawerAfterLoginComp>
+      </div>
+      {/* <div className="md:hidden">
+        <NavDrawerComp open={openSideDrawer} setOpen={setOpenSideDrawer}>
           <div className="flex flex-col items-start gap-4 md:hidden">
             {options.map((option) => (
               <a
@@ -180,7 +303,7 @@ const Navbar = () => {
             ))}
           </div>
         </NavDrawerComp>
-      </div>
+      </div> */}
     </nav>
   );
 };

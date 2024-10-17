@@ -6,6 +6,14 @@ import { cn } from "@/lib/utils";
 import { PrimaryInput } from "../../inputs/primary-input";
 import { SecondaryBtn } from "../../buttons/secondary-btn";
 import { PrimaryBtn } from "../../buttons/primary-btn";
+import {
+  amountDetailsText,
+  cancelDescText,
+  cancellationPolicyText,
+  cancelText,
+  saveText,
+  specifyReasonText,
+} from "@/utils/constants";
 const reasonData = [
   {
     reason: "Driver did not arrive",
@@ -33,15 +41,10 @@ export const CancelOrderDialog = ({
     <DialogComp open={open} setOpen={setOpen}>
       <div className="flex flex-col gap-3">
         <div>
-          <h1 className="text-[18px] font-[600]">Amount details</h1>
+          <h1 className="text-[18px] font-[600]">{amountDetailsText}</h1>
         </div>
-        <p className="text-p2">
-          Are you sure you want to cancel the order? You can cancel it before
-          the vehicle arrive.
-        </p>
-        <p className="text-p2">
-          Please specify your reason for canceling the order.
-        </p>
+        <p className="text-p2">{cancelDescText}</p>
+        <p className="text-p2">{specifyReasonText}</p>
         <div className="flex flex-col gap-3 justify-center items-center rounded-[7px]">
           {reasonData?.map((val, index) => {
             return (
@@ -79,7 +82,7 @@ export const CancelOrderDialog = ({
         </div>
         <div className="flex items-center justify-start">
           <p className="cursor-pointer text-globalPrimary text-p3">
-            Cancellation policies
+            {cancellationPolicyText}
           </p>
         </div>
         <div className="flex items-center justify-center gap-2 mt-4">
@@ -88,7 +91,7 @@ export const CancelOrderDialog = ({
               setOpen(false);
             }}
           >
-            Cancel
+            {cancelText}
           </SecondaryBtn>
           <PrimaryBtn
             onClick={() => {
@@ -96,7 +99,7 @@ export const CancelOrderDialog = ({
             }}
             className="bg-black rounded-full"
           >
-            Save
+            {saveText}
           </PrimaryBtn>
         </div>
       </div>

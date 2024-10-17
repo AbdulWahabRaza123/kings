@@ -5,6 +5,7 @@ import { PrimaryBtn } from "../../buttons/primary-btn";
 import { cn } from "@/lib/utils";
 import { Check } from "lucide-react";
 import { voucherData } from "@/utils/voucher-data";
+import { applyText, availableVoucherText } from "@/utils/constants";
 
 export const AvailableVoucherDialog = ({
   open,
@@ -21,7 +22,7 @@ export const AvailableVoucherDialog = ({
     <DialogComp open={open} setOpen={setOpen}>
       <div className="flex flex-col gap-3">
         <div>
-          <h1 className="text-[18px] font-[600]">Available Voucher</h1>
+          <h1 className="text-[18px] font-[600]">{availableVoucherText}</h1>
         </div>
         <div className="flex flex-col gap-3 justify-start items-start py-3 w-full">
           {voucherData?.map((val) => {
@@ -59,7 +60,7 @@ export const AvailableVoucherDialog = ({
               }}
               className="rounded-full"
             >
-              Apply
+              {applyText}
             </PrimaryBtn>
           </div>
         </div>

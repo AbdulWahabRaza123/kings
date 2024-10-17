@@ -6,6 +6,11 @@ import { SecondaryBtn } from "../../buttons/secondary-btn";
 import { PrimaryTextarea } from "../../inputs/primary-input";
 import { Rate } from "antd";
 import Image from "next/image";
+import {
+  leaveCommentText,
+  rateYourDriverText,
+  submitText,
+} from "@/utils/constants";
 const desc = ["terrible", "bad", "normal", "good", "wonderful"];
 export const OrderRatingDialog = ({
   open,
@@ -57,7 +62,7 @@ export const OrderRatingDialog = ({
               </div>
             </div>
           </div>
-          <h4 className="text-h4 font-[700]">Rate your driver</h4>
+          <h4 className="text-h4 font-[700]">{rateYourDriverText}</h4>
           <Rate
             tooltips={desc}
             onChange={setRating}
@@ -65,7 +70,7 @@ export const OrderRatingDialog = ({
             className="text-[37px]"
           />
 
-          <h4 className="text-h4 font-[700]">Leave Comment</h4>
+          <h4 className="text-h4 font-[700]">{leaveCommentText}</h4>
           <div className="flex flex-col gap-3 w-full">
             <PrimaryTextarea
               placeholder=""
@@ -80,7 +85,7 @@ export const OrderRatingDialog = ({
                 }}
                 className="rounded-full w-full"
               >
-                Submit
+                {submitText}
               </PrimaryBtn>
             </div>
           </div>

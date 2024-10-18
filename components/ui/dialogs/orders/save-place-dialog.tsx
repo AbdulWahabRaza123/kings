@@ -9,6 +9,7 @@ import {
   labelText,
   searchAddressText,
 } from "@/utils/constants";
+import { CircleX } from "lucide-react";
 const savedLocationsData = [
   {
     title: "17 Hoi Wan St",
@@ -70,9 +71,11 @@ const savedLocationsData = [
 export const SavedPlaceDialog = ({
   open,
   setOpen,
+  edit = false,
 }: {
   open: boolean;
   setOpen: (value: boolean) => void;
+  edit?: boolean;
 }) => {
   const [label, setLabel] = useState("");
   const [address, setAddress] = useState("");
@@ -80,7 +83,9 @@ export const SavedPlaceDialog = ({
     <DialogComp open={open} setOpen={setOpen}>
       <div className="flex flex-col gap-3">
         <div>
-          <h1 className="text-[18px] font-[600]">{addPlaceText}</h1>
+          <h1 className="text-[18px] font-[600]">
+            {edit ? "Edit Saved Place" : addPlaceText}
+          </h1>
         </div>
         <div className="flex flex-col gap-3 justify-start items-start py-3">
           <div className="flex flex-col gap-3 w-full">
@@ -124,6 +129,12 @@ export const SavedPlaceDialog = ({
               );
             })}
           </div>
+          {edit && (
+            <div className="flex items-center gap-2 cursor-pointer text-rose-600 text-p3 mt-4">
+              <CircleX className="w-4 h-4" />
+              <p>Remove saved place</p>
+            </div>
+          )}
         </div>
       </div>
     </DialogComp>

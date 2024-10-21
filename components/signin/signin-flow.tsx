@@ -16,18 +16,15 @@ import {
   businessEmailText,
   changePasswordDescText,
   continueText,
-  didntReceieveTheCodeText,
   enterBusinessEmailText,
   forgetPasswordDesc,
   forgetPasswordText,
   loginText,
   passwordText,
-  resendCodeIn60Secs,
   resetPasswordText,
   setupBusinessAccountText,
   verificationCodeSendToText,
   verificationCodeText,
-  verifyText,
   verifyYourBusinessEmailText,
   welcomeBackDesc,
   welcomeBackText,
@@ -174,13 +171,13 @@ export const SigninProfile = ({
                 </div>
                 <div className="flex flex-col items-center text-center gap-1">
                   <p className="text-[12px] text-secondary">
-                    {didntReceieveTheCodeText}
+                    Didn't receive the code?
                   </p>
                   <p className="text-[12px] text-main-primary cursor-pointer">
-                    {resendCodeIn60Secs}
+                    Resend code in 60s
                   </p>
                 </div>
-                <PrimaryBtn onClick={nextPageNo}>{verifyText}</PrimaryBtn>
+                <PrimaryBtn onClick={nextPageNo}>Verify</PrimaryBtn>
               </div>
             </SignInWrapper>
           </div>

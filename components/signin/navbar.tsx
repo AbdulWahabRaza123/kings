@@ -7,14 +7,7 @@ import { Bell, ChevronDown, ChevronRight, Globe } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { NavDrawerAfterLoginComp } from "../ui/drawers/nav-drawer";
-import {
-  AccountText,
-  companyWalletText,
-  generalText,
-  loginText,
-  signOutText,
-  signupText,
-} from "@/utils/constants";
+import { loginText, signupText } from "@/utils/constants";
 import { PrimaryBtn } from "../ui/buttons/primary-btn";
 import { Progress } from "antd";
 import Link from "next/link";
@@ -208,7 +201,7 @@ const Navbar = () => {
                 alt="wallt bg"
               />
               <h5 className="text-white text-h5 z-[10] font-[700]">
-                {companyWalletText}
+                Company Wallet
               </h5>
               <div className="flex items-center gap-1 text-primary text-h5 font-[700] z-[10]">
                 <h5 className="mb-0">1,288 points</h5>
@@ -216,7 +209,7 @@ const Navbar = () => {
               </div>
             </div>
             <div className="flex flex-col gap-2">
-              <p className="font-[700] text-h5"> {AccountText}</p>
+              <p className="font-[700] text-h5">Account</p>
               <div className="">
                 {accountPagesData?.map((val) => {
                   return (
@@ -242,7 +235,7 @@ const Navbar = () => {
               </div>
             </div>
             <div className="flex flex-col gap-2">
-              <p className="font-[700] text-h5">{generalText}</p>
+              <p className="font-[700] text-h5">General</p>
               <div className="">
                 {generalPagesData?.map((val) => {
                   return (
@@ -269,7 +262,7 @@ const Navbar = () => {
             </div>
             <div className="flex items-center justify-center w-full py-4">
               <div className="rounded-full border-[1px] border-gray-400/40 py-1 px-4 font-[600] cursor-pointer hover:opacity-[0.8]">
-                {signOutText}
+                Sign out
               </div>
             </div>
           </div>

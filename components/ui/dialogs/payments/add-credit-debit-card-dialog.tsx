@@ -10,6 +10,7 @@ import {
 } from "@/utils/constants";
 import { CreditOrDebitCardInput } from "../../common/credit-or-debit-card-inputs";
 import { CircleX } from "lucide-react";
+import { ConfirmationDialog } from "../confirmation-dialog";
 
 export const AddCreditOrDebitDialog = ({
   open,
@@ -24,8 +25,16 @@ export const AddCreditOrDebitDialog = ({
   const [expiryDate, setExpiryDate] = useState("");
   const [cvv, setCvv] = useState("");
   const [openConfirm, setOpenConfirm] = useState(false);
+  const handleDelete = () => {};
   return (
     <>
+      <ConfirmationDialog
+        onSubmit={handleDelete}
+        open={openConfirm}
+        setOpen={setOpenConfirm}
+        title="Remove staff"
+        desc="Are you sure you want to remove this staff member? It cannot be undone."
+      />
       <DialogComp open={open} setOpen={setOpen}>
         <div className="flex flex-col gap-3">
           <div className="flex items-center gap-2">

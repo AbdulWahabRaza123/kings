@@ -61,7 +61,6 @@ export const generalText = "General";
 export const signOutText = "Sign Out";
 export const powerKingText = "Power King";
 
-
 //
 
 //for signin

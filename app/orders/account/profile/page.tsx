@@ -1,9 +1,9 @@
 "use client";
 import { BussinessCenterComp } from "@/components/account/profile/business-center";
+import { CommunicationComp } from "@/components/account/profile/communication";
 import { MyProfileComp } from "@/components/account/profile/my-profile";
 import { SavedPlacesComp } from "@/components/account/profile/saved-places";
 import { cn } from "@/lib/utils";
-import { AccountText } from "@/utils/constants";
 import Image from "next/image";
 
 import React, { useState } from "react";
@@ -37,7 +37,7 @@ const Profile = () => {
     <>
       <main className="w-full min-h-screen py-10 flex flex-col items-center bg-[#FAFAFA]">
         <section className="lg:w-[70%] md:w-[80%] max-md:w-full max-md:px-4 flex flex-col items-start gap-7">
-          <h5 className="text-h5 font-[700]">{AccountText}</h5>
+          <h5 className="text-h5 font-[700]">Account</h5>
           <div className="w-full flex flex-row items-start gap-7">
             <div className="w-[30%] bg-white rounded-[7px] p-4">
               {profileSettingsData?.map((val, index) => {
@@ -79,6 +79,11 @@ const Profile = () => {
               {activeTab === 2 && (
                 <>
                   <BussinessCenterComp />
+                </>
+              )}
+              {activeTab === 3 && (
+                <>
+                  <CommunicationComp />
                 </>
               )}
             </div>

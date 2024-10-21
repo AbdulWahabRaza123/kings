@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { estTimeText, stopsDescText } from "@/utils/constants";
+import { stopsDescText } from "@/utils/constants";
 import { stopsData } from "@/utils/stops-data";
 import Image from "next/image";
 
@@ -41,7 +41,7 @@ export const StopsComp = () => {
                   </p>
 
                   <p className="text-p2 font-[600] line-clamp-1 text-ellipsis">
-                    {estTimeText} {val.estTime}
+                    Est time. {val.estTime}
                   </p>
                 </div>
               </>

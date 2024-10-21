@@ -14,7 +14,6 @@ import { ReviewInProgressDialog } from "@/components/ui/dialogs/onboarding/revie
 import { cn } from "@/lib/utils";
 import {
   businessRegistrationCertificateText,
-  byContinuingText,
   companyContactNoOptionalText,
   companyEmailText,
   companyInfoTextDesc,
@@ -24,22 +23,17 @@ import {
   completeText,
   continueText,
   createBusinessProfileText,
-  didntReceieveTheCodeText,
   enterCompanyInfoText,
   firstNameText,
   industryText,
   lastNameText,
   passwordText,
   pleaseSpecifyText,
-  privacyPoliciesText,
-  resendCodeIn60Secs,
   resetPasswordDescText,
   resetPasswordText,
   roleText,
-  termsAndConditionsText,
   verificationCodeSendToText,
   verificationCodeText,
-  verifyText,
   verifyYourBusinessEmailText,
 } from "@/utils/constants";
 const industryOptions = [
@@ -120,7 +114,7 @@ export const CompanyAccount = ({
                     placeholder=""
                     inputStyle="input"
                   />
-                  <PrimaryBtn onClick={nextPageNo}>{continueText}</PrimaryBtn>
+                  <PrimaryBtn onClick={nextPageNo}>Continue</PrimaryBtn>
                 </div>
               </SignInWrapper>
             </div>
@@ -164,13 +158,13 @@ export const CompanyAccount = ({
                   </div>
                   <div className="flex flex-col items-center text-center gap-1">
                     <p className="text-[12px] text-secondary">
-                      {didntReceieveTheCodeText}
+                      Didn't receive the code?
                     </p>
                     <p className="text-[12px] text-main-primary cursor-pointer">
-                      {resendCodeIn60Secs}
+                      Resend code in 60s
                     </p>
                   </div>
-                  <PrimaryBtn onClick={nextPageNo}>{verifyText}</PrimaryBtn>
+                  <PrimaryBtn onClick={nextPageNo}>Verify</PrimaryBtn>
                 </div>
               </SignInWrapper>
             </div>
@@ -360,13 +354,13 @@ export const CompanyAccount = ({
                     inputStyle="tel"
                   />
                   <p className="text-secondary text-start text-[12px]">
-                    {byContinuingText}{" "}
+                    By continuing you agree that you read the{" "}
                     <span className="text-[#DCC631] underline">
-                      {termsAndConditionsText}
+                      Terms and Conditions
                     </span>{" "}
                     and{" "}
                     <span className="text-[#DCC631] underline">
-                      {privacyPoliciesText}
+                      Privacy Policies
                     </span>
                     .
                   </p>

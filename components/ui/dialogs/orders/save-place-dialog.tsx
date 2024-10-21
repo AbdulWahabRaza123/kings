@@ -7,6 +7,7 @@ import {
   addPlaceText,
   addressText,
   labelText,
+  removeSavedPlaceText,
   searchAddressText,
 } from "@/utils/constants";
 import { CircleX } from "lucide-react";
@@ -132,7 +133,7 @@ export const SavedPlaceDialog = ({
           {edit && (
             <div className="flex items-center gap-2 cursor-pointer text-rose-600 text-p3 mt-4">
               <CircleX className="w-4 h-4" />
-              <p>Remove saved place</p>
+              <p>{removeSavedPlaceText} </p>
             </div>
           )}
         </div>

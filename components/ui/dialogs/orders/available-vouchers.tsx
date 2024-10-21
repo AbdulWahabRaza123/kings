@@ -5,7 +5,13 @@ import { PrimaryBtn } from "../../buttons/primary-btn";
 import { cn } from "@/lib/utils";
 import { Check } from "lucide-react";
 import { voucherData } from "@/utils/voucher-data";
-import { applyText, availableVoucherText } from "@/utils/constants";
+import {
+  applyText,
+  availableVoucherText,
+  discountNextText,
+  expiresOnText,
+  hkText,
+} from "@/utils/constants";
 
 export const AvailableVoucherDialog = ({
   open,
@@ -41,10 +47,10 @@ export const AvailableVoucherDialog = ({
                 >
                   <h1 className="text-p2 font-[500]">{val.title}</h1>
                   <p className="text-p2">
-                    HK${val.discount} discount on your next order
+                    {hkText}${val.discount} {discountNextText}
                   </p>
                   <p className="text-p3 text-secondary">
-                    Expires on {val.date}{" "}
+                    {expiresOnText} {val.date}{" "}
                   </p>
                   {selectedVoucherId === val.id && (
                     <Check className="text-secondary absolute right-[10px] w-6 h-6 text-secondary" />

@@ -4,6 +4,7 @@ import { DialogComp } from "../dialog";
 import { PrimaryBtn } from "../../buttons/primary-btn";
 import { SecondaryBtn } from "../../buttons/secondary-btn";
 import { TextInput } from "../../inputs/text-input";
+import { cancelText, phoneText, updateText } from "@/utils/constants";
 
 export const PhoneDialog = ({
   open,
@@ -18,7 +19,7 @@ export const PhoneDialog = ({
     <DialogComp open={open} setOpen={setOpen}>
       <div className="flex flex-col gap-3">
         <div>
-          <h1 className="text-[18px] font-[600]">Phone</h1>
+          <h1 className="text-[18px] font-[600]">{phoneText}</h1>
         </div>
         <div className="flex flex-col gap-3 justify-start items-start py-3">
           <div className="flex flex-col gap-3 w-full">
@@ -37,7 +38,7 @@ export const PhoneDialog = ({
                   setOpen(false);
                 }}
               >
-                Cancel
+                {cancelText}
               </SecondaryBtn>
               <PrimaryBtn
                 onClick={() => {
@@ -45,7 +46,7 @@ export const PhoneDialog = ({
                 }}
                 className="bg-black rounded-full"
               >
-                Update
+                {updateText}
               </PrimaryBtn>
             </div>
           </div>

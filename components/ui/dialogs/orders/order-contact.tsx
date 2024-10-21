@@ -2,7 +2,14 @@
 import React from "react";
 import { DialogComp } from "../dialog";
 import { TextInput } from "../../inputs/text-input";
-import { firstNameText, lastNameText, mobileNoText } from "@/utils/constants";
+import {
+  cancelText,
+  firstNameText,
+  lastNameText,
+  mobileNoText,
+  orderContactText,
+  saveText,
+} from "@/utils/constants";
 import { PrimaryBtn } from "../../buttons/primary-btn";
 import { SecondaryBtn } from "../../buttons/secondary-btn";
 
@@ -35,7 +42,7 @@ export const OrderContactDialog = ({
     <DialogComp open={open} setOpen={setOpen}>
       <div className="flex flex-col gap-3">
         <div>
-          <h1 className="text-[18px] font-[600]">Order Contact</h1>
+          <h1 className="text-[18px] font-[600]">{orderContactText}</h1>
         </div>
         <div className="flex flex-col gap-3 justify-start items-start py-3">
           <div className="flex flex-col gap-3 w-full">
@@ -69,7 +76,7 @@ export const OrderContactDialog = ({
                   setOpen(false);
                 }}
               >
-                Cancel
+                {cancelText}
               </SecondaryBtn>
               <PrimaryBtn
                 onClick={() => {
@@ -78,7 +85,7 @@ export const OrderContactDialog = ({
                 }}
                 className="bg-black rounded-full"
               >
-                Save
+                {saveText}
               </PrimaryBtn>
             </div>
           </div>

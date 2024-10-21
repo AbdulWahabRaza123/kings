@@ -1,4 +1,9 @@
 "use client";
+import {
+  allTopicsText,
+  helpText,
+  membershipAndLoyaltyText,
+} from "@/utils/constants";
 import { Breadcrumb } from "antd";
 import { ChevronRight, List } from "lucide-react";
 import React, { useState } from "react";
@@ -22,11 +27,11 @@ const AboutPage = () => {
     <>
       <main className="w-full min-h-screen py-10 flex flex-col items-center bg-[#FAFAFA]">
         <section className="lg:w-[50%] md:w-[70%] max-md:w-full max-md:px-4 flex flex-col gap-7">
-          <h1 className="text-h6 font-[600]">Help</h1>
+          <h1 className="text-h6 font-[600]">{helpText}</h1>
           {pageNo === 0 && (
             <div>
               <div className="flex flex-col rounded-[7px] p-6 bg-white">
-                <h1 className="font-[600] text-p1">All topics</h1>
+                <h1 className="font-[600] text-p1">{allTopicsText}</h1>
                 <div className="flex flex-col gap-2 py-4">
                   {helpPagesData?.map((val, index) => {
                     return (
@@ -66,7 +71,7 @@ const AboutPage = () => {
                           setPageNo(0);
                         }}
                       >
-                        Help
+                        {helpText}
                       </p>
                     ),
                   },
@@ -76,7 +81,9 @@ const AboutPage = () => {
                 ]}
               />
               <div className="flex flex-col rounded-[7px] p-6 bg-white">
-                <h1 className="font-[600] text-p1">Membership and loyalty</h1>
+                <h1 className="font-[600] text-p1">
+                  {membershipAndLoyaltyText}
+                </h1>
                 <div className="flex flex-col gap-2 py-4">Hello</div>
               </div>
             </div>

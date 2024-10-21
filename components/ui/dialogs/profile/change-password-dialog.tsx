@@ -4,7 +4,12 @@ import { DialogComp } from "../dialog";
 import { PrimaryBtn } from "../../buttons/primary-btn";
 import { SecondaryBtn } from "../../buttons/secondary-btn";
 import { TextInput } from "../../inputs/text-input";
-import { passwordText } from "@/utils/constants";
+import {
+  cancelText,
+  changePasswordText,
+  passwordText,
+  updateText,
+} from "@/utils/constants";
 import { Check, EyeIcon, EyeOff } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -31,7 +36,7 @@ export const ChangePasswordDialog = ({
     <DialogComp open={open} setOpen={setOpen}>
       <div className="flex flex-col gap-3">
         <div>
-          <h1 className="text-[18px] font-[600]">Change Password</h1>
+          <h1 className="text-[18px] font-[600]">{changePasswordText}</h1>
         </div>
         <div className="flex flex-col gap-3 w-full">
           <div className="mt-7 flex flex-col items-center gap-4">
@@ -118,7 +123,7 @@ export const ChangePasswordDialog = ({
                   setOpen(false);
                 }}
               >
-                Cancel
+                {cancelText}
               </SecondaryBtn>
               <PrimaryBtn
                 onClick={() => {
@@ -126,7 +131,7 @@ export const ChangePasswordDialog = ({
                 }}
                 className="bg-black rounded-full"
               >
-                Update
+                {updateText}
               </PrimaryBtn>
             </div>
           </div>

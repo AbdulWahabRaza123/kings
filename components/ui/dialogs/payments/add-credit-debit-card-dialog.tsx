@@ -7,6 +7,7 @@ import {
   addCreditOrDebitCardText,
   addText,
   cancelText,
+  removeCardText,
 } from "@/utils/constants";
 import { CreditOrDebitCardInput } from "../../common/credit-or-debit-card-inputs";
 import { CircleX } from "lucide-react";
@@ -59,7 +60,7 @@ export const AddCreditOrDebitDialog = ({
                 className="flex items-center gap-2 cursor-pointer text-rose-600 text-p3 mt-4"
               >
                 <CircleX className="w-4 h-4" />
-                <p>Remove card</p>
+                <p>{removeCardText}</p>
               </div>
             )}
             <div className="flex items-center justify-center gap-2 mt-4 w-full">

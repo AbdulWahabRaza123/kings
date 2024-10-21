@@ -7,8 +7,12 @@ import { PrimaryTextarea } from "../../inputs/primary-input";
 import { TextInput } from "../../inputs/text-input";
 import { MapStepWrapperComp } from "../../wrappers/map-step-wrapper";
 import {
+  businessEmailText,
+  cancelText,
+  saveText,
   verificationCodeText,
   verifyYourBusinessEmailText,
+  verifyYourEmailText,
 } from "@/utils/constants";
 import { InputOTP, InputOTPGroup, InputOTPSlot } from "../../input-otp";
 import Image from "next/image";
@@ -29,7 +33,7 @@ export const EmailDialog = ({
       <div className="flex flex-col gap-3">
         <div>
           {step === 0 && (
-            <h1 className="text-[18px] font-[600]">Business email</h1>
+            <h1 className="text-[18px] font-[600]">{businessEmailText}</h1>
           )}
           {step === 1 && (
             <div className="flex items-center gap-2 relative">
@@ -42,7 +46,7 @@ export const EmailDialog = ({
                 <ArrowLeft className="w-4 h-4" />
               </div>
 
-              <h6 className="text-h6 font-[600]">Verify your business email</h6>
+              <h6 className="text-h6 font-[600]">{verifyYourEmailText}</h6>
             </div>
           )}
         </div>
@@ -63,7 +67,7 @@ export const EmailDialog = ({
                     setOpen(false);
                   }}
                 >
-                  Cancel
+                  {cancelText}
                 </SecondaryBtn>
                 <PrimaryBtn
                   onClick={() => {
@@ -71,7 +75,7 @@ export const EmailDialog = ({
                   }}
                   className="bg-black rounded-full"
                 >
-                  Save
+                  {saveText}
                 </PrimaryBtn>
               </div>
             </div>

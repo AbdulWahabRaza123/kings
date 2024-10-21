@@ -9,6 +9,7 @@ import Image from "next/image";
 import {
   addCreditOrDebitCardText,
   addText,
+  bankInformationText,
   bankInText,
   cancelText,
   continueTopupText,
@@ -17,8 +18,10 @@ import {
   otherMethodsText,
   paymentMethodText,
   pointText,
+  proofOfPaymentText,
   topupCompanyWalletText,
   visaText,
+  yourTopUpPointstext,
 } from "@/utils/constants";
 import { CreditOrDebitCardInput } from "../../common/credit-or-debit-card-inputs";
 const bankDetailsData = [
@@ -254,10 +257,10 @@ export const TopupDialog = ({
             >
               <ArrowLeft className="w-4 h-4" />
             </div>
-            <h1 className="text-[18px] font-[600]">Payment Method</h1>
+            <h1 className="text-[18px] font-[600]">{paymentMethodText}</h1>
           </div>
           <div className="flex flex-col gap-3 justify-start items-start py-3 w-full">
-            <h1 className="text-[18px] font-[600]">Bank Information</h1>
+            <h1 className="text-[18px] font-[600]">{bankInformationText}</h1>
             <div>
               {bankDetailsData.map((item, index) => {
                 return (
@@ -271,7 +274,7 @@ export const TopupDialog = ({
                 );
               })}
               <div className="py-4">
-                <h1 className="text-[18px] font-[600]">Proof of payment</h1>
+                <h1 className="text-[18px] font-[600]">{proofOfPaymentText}</h1>
                 <TextInput
                   value={bankReceipt}
                   setValue={setBankReceipt}
@@ -284,10 +287,7 @@ export const TopupDialog = ({
             </div>
             <div className="flex items-center gap-2">
               <Info className="w-4 h-4 text-secondary" />
-              <p className="text-p3 text-secondary">
-                Your top-up points will be updated in 3 working days after
-                confirming the bank transfer.
-              </p>
+              <p className="text-p3 text-secondary">{yourTopUpPointstext}</p>
             </div>
             <div className="flex items-center justify-center gap-2 mt-4 w-full">
               <SecondaryBtn

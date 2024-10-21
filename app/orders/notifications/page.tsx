@@ -1,5 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
+import { notificationsText } from "@/utils/constants";
 import React from "react";
 const notificationsData = [
   {
@@ -48,7 +49,7 @@ const NotificationPage = () => {
     <>
       <main className="w-full min-h-screen py-10 flex flex-col items-center bg-[#FAFAFA]">
         <section className="lg:w-[50%] md:w-[70%] max-md:w-full max-md:px-4 flex flex-col gap-7">
-          <h1 className="text-h6 font-[600]">Notifications</h1>
+          <h1 className="text-h6 font-[600]">{notificationsText}</h1>
           <div className="flex flex-col p-6 gap-2">
             {notificationsData?.map((val) => {
               return (

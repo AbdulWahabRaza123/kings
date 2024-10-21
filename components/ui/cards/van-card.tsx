@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { capacityText, maxLoadText, suitableForText } from "@/utils/constants";
 import Image from "next/image";
 import React from "react";
 interface VanCardProps {
@@ -43,9 +44,15 @@ export const VanCardComp = ({
       <div className="flex items-start gap-2">
         <div className="flex flex-col">
           <h6 className="text-h5 font-[500]">{name}</h6>
-          <p className="text-gray-400 text-p3">Suitable for {suitable}</p>
-          <p className="text-gray-400 text-p3">Capacity {capacity} meter</p>
-          <p className="text-gray-400 text-p3">Max load {maxLoad} kg</p>
+          <p className="text-gray-400 text-p3">
+            {suitableForText} {suitable}
+          </p>
+          <p className="text-gray-400 text-p3">
+            {capacityText} {capacity} meter
+          </p>
+          <p className="text-gray-400 text-p3">
+            {maxLoadText} {maxLoad} kg
+          </p>
         </div>
         <h6 className="text-h5 font-[500]">${price}</h6>
       </div>

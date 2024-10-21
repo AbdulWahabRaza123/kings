@@ -4,7 +4,13 @@ import { TextInput } from "@/components/ui/inputs/text-input";
 import { DatePicker, DatePickerProps } from "antd";
 import { Calendar } from "lucide-react";
 import { SelectInput } from "@/components/ui/inputs/select-input";
-import { selectText } from "@/utils/constants";
+import {
+  cancelText,
+  datePeriodText,
+  exportPointText,
+  exportText,
+  selectText,
+} from "@/utils/constants";
 import { SecondaryBtn } from "@/components/ui/buttons/secondary-btn";
 import { PrimaryBtn } from "@/components/ui/buttons/primary-btn";
 const typeOptions = [
@@ -31,9 +37,7 @@ export const ExportTransactionHistoryDialog = ({
       <DialogComp open={open} setOpen={setOpen}>
         <div className="flex flex-col gap-3">
           <div>
-            <h1 className="text-[18px] font-[600]">
-              Export point transaction history
-            </h1>
+            <h1 className="text-[18px] font-[600]">{exportPointText}</h1>
           </div>
           <div className="py-4 flex flex-col gap-2">
             <TextInput
@@ -46,7 +50,7 @@ export const ExportTransactionHistoryDialog = ({
               placeholder=""
             />
             <div className="flex flex-col gap-2">
-              <p className="text-secondary text-p3">Date period</p>
+              <p className="text-secondary text-p3">{datePeriodText}</p>
               <div className="custom-date-picker relative">
                 <DatePicker
                   style={{ width: "100%" }}
@@ -74,7 +78,7 @@ export const ExportTransactionHistoryDialog = ({
                   setOpen(false);
                 }}
               >
-                Cancel
+                {cancelText}
               </SecondaryBtn>
               <PrimaryBtn
                 onClick={() => {
@@ -82,7 +86,7 @@ export const ExportTransactionHistoryDialog = ({
                 }}
                 className="bg-black rounded-full"
               >
-                Export
+                {exportText}
               </PrimaryBtn>
             </div>
           </div>

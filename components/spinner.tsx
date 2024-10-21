@@ -1,3 +1,4 @@
+import { loadingText } from "@/utils/constants";
 import React from "react";
 
 export const Spinner = () => {
@@ -20,7 +21,7 @@ export const Spinner = () => {
             fill="currentFill"
           />
         </svg>
-        <span className="sr-only">Loading...</span>
+        <span className="sr-only">{loadingText}...</span>
       </div>
     </>
   );

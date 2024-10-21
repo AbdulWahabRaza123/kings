@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { DialogComp } from "./dialog";
 import { SecondaryBtn } from "@/components/ui/buttons/secondary-btn";
 import { PrimaryBtn } from "@/components/ui/buttons/primary-btn";
+import { cancelText, yesText } from "@/utils/constants";
 export const ConfirmationDialog = ({
   open,
   setOpen,
@@ -29,7 +30,7 @@ export const ConfirmationDialog = ({
                 setOpen(false);
               }}
             >
-              Cancel
+              {cancelText}
             </SecondaryBtn>
             <PrimaryBtn
               onClick={() => {
@@ -37,7 +38,7 @@ export const ConfirmationDialog = ({
               }}
               className="bg-black rounded-full"
             >
-              Yes
+              {yesText}
             </PrimaryBtn>
           </div>
         </div>

@@ -4,6 +4,7 @@ import { DialogComp } from "../dialog";
 import { PrimaryBtn } from "../../buttons/primary-btn";
 import { SecondaryBtn } from "../../buttons/secondary-btn";
 import { TextInput } from "../../inputs/text-input";
+import { cancelText, roleText, updateText } from "@/utils/constants";
 
 export const RoleDialog = ({
   open,
@@ -18,7 +19,7 @@ export const RoleDialog = ({
     <DialogComp open={open} setOpen={setOpen}>
       <div className="flex flex-col gap-3">
         <div>
-          <h1 className="text-[18px] font-[600]">Role</h1>
+          <h1 className="text-[18px] font-[600]">{roleText}</h1>
         </div>
         <div className="flex flex-col gap-3 justify-start items-start py-3">
           <div className="flex flex-col gap-3 w-full">
@@ -36,7 +37,7 @@ export const RoleDialog = ({
                   setOpen(false);
                 }}
               >
-                Cancel
+                {cancelText}
               </SecondaryBtn>
               <PrimaryBtn
                 onClick={() => {
@@ -44,7 +45,7 @@ export const RoleDialog = ({
                 }}
                 className="bg-black rounded-full"
               >
-                Update
+                {updateText}
               </PrimaryBtn>
             </div>
           </div>

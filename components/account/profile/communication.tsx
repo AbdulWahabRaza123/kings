@@ -1,3 +1,9 @@
+import {
+  communicationSettingsText,
+  marketingPreferencesText,
+  orderNotificationPreferencesText,
+  promotionalOffersText,
+} from "@/utils/constants";
 import { Switch } from "antd";
 import React, { useState } from "react";
 const orderNotification = [
@@ -24,12 +30,12 @@ export const CommunicationComp = () => {
   return (
     <>
       <div className="p-4 flex flex-col gap-2 bg-white rounded-[7px]">
-        <h5 className="text-h5 font-[600]">Communication settings</h5>
+        <h5 className="text-h5 font-[600]">{communicationSettingsText}</h5>
 
         <div className="flex flex-col gap-4 py-4">
           <div className="flex flex-col">
             <h1 className="text-p1 font-[600]">
-              Order notification prferences
+              {orderNotificationPreferencesText}
             </h1>
             <p className="text-secondary text-p3">
               Updates from delivery orders.
@@ -59,10 +65,8 @@ export const CommunicationComp = () => {
         </div>
         <div className="flex flex-col gap-4 py-4">
           <div className="flex flex-col">
-            <h1 className="text-p1 font-[600]">Marketing preferences</h1>
-            <p className="text-secondary text-p3">
-              Promotional offers, discounts and membership benefits.
-            </p>
+            <h1 className="text-p1 font-[600]">{marketingPreferencesText}</h1>
+            <p className="text-secondary text-p3">{promotionalOffersText}</p>
           </div>
           <div className="flex flex-col gap-4">
             {marketingNotification?.map((val) => {

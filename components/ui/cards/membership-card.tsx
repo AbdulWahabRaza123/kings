@@ -1,4 +1,5 @@
 "use client";
+import { tierExpiresText } from "@/utils/constants";
 import { Progress } from "antd";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
@@ -120,7 +121,7 @@ export const MembershipCard = () => {
         </div>
         <div className="flex flex-col">
           <p className="text-p2 text-white">{selectMeAPlanGradient().desc}</p>
-          <p className="text-p3 text-white">Tier expires on 29 May 2025</p>
+          <p className="text-p3 text-white">{tierExpiresText} 29 May 2025</p>
         </div>
       </div>
     </div>

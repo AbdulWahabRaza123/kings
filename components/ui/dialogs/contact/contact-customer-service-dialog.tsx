@@ -5,6 +5,12 @@ import { PrimaryBtn } from "../../buttons/primary-btn";
 import { SecondaryBtn } from "../../buttons/secondary-btn";
 import { PrimaryTextarea } from "../../inputs/primary-input";
 import { TextInput } from "../../inputs/text-input";
+import {
+  cancelText,
+  contactCustomerServiceText,
+  leaveYourMessageText,
+  saveText,
+} from "@/utils/constants";
 
 export const ContactCustomerServiceDialog = ({
   open,
@@ -23,11 +29,8 @@ export const ContactCustomerServiceDialog = ({
       <div className="flex flex-col gap-3">
         <div>
           <div className="flex flex-col items-start gap-2 relative">
-            <h6 className="text-h6 font-[600]">Contact Customer Service</h6>
-            <p className="text-p2 text-secondary">
-              Leave your message here. Our Customer Service will contact you via
-              email within 3 business days.
-            </p>
+            <h6 className="text-h6 font-[600]">{contactCustomerServiceText}</h6>
+            <p className="text-p2 text-secondary">{leaveYourMessageText}</p>
           </div>
         </div>
         <div className="flex flex-col gap-3 justify-start items-start py-3">
@@ -68,7 +71,7 @@ export const ContactCustomerServiceDialog = ({
                   setOpen(false);
                 }}
               >
-                Cancel
+                {cancelText}
               </SecondaryBtn>
               <PrimaryBtn
                 onClick={() => {
@@ -76,7 +79,7 @@ export const ContactCustomerServiceDialog = ({
                 }}
                 className="bg-black rounded-full"
               >
-                Save
+                {saveText}
               </PrimaryBtn>
             </div>
           </div>

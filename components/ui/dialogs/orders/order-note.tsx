@@ -4,6 +4,7 @@ import { DialogComp } from "../dialog";
 import { PrimaryBtn } from "../../buttons/primary-btn";
 import { SecondaryBtn } from "../../buttons/secondary-btn";
 import { PrimaryTextarea } from "../../inputs/primary-input";
+import { cancelText, noteToDriverText, saveText } from "@/utils/constants";
 
 export const OrderNoteDialog = ({
   open,
@@ -20,7 +21,7 @@ export const OrderNoteDialog = ({
     <DialogComp open={open} setOpen={setOpen}>
       <div className="flex flex-col gap-3">
         <div>
-          <h1 className="text-[18px] font-[600]">Note to driver</h1>
+          <h1 className="text-[18px] font-[600]">{noteToDriverText}</h1>
         </div>
         <div className="flex flex-col gap-3 justify-start items-start py-3">
           <div className="flex flex-col gap-3 w-full">
@@ -36,7 +37,7 @@ export const OrderNoteDialog = ({
                   setOpen(false);
                 }}
               >
-                Cancel
+                {cancelText}
               </SecondaryBtn>
               <PrimaryBtn
                 onClick={() => {
@@ -45,7 +46,7 @@ export const OrderNoteDialog = ({
                 }}
                 className="bg-black rounded-full"
               >
-                Save
+                {saveText}
               </PrimaryBtn>
             </div>
           </div>

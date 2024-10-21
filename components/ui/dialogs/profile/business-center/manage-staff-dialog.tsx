@@ -120,6 +120,7 @@ export const ManageStaffDialog = ({
                         </PrimaryBtn>
                         <Switch
                           defaultChecked
+                          value={isActive}
                           onChange={(checked) => {
                             setIsActive(checked);
                           }}

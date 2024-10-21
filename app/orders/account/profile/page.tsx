@@ -1,5 +1,6 @@
 "use client";
 import { BussinessCenterComp } from "@/components/account/profile/business-center";
+import { CommunicationComp } from "@/components/account/profile/communication";
 import { MyProfileComp } from "@/components/account/profile/my-profile";
 import { SavedPlacesComp } from "@/components/account/profile/saved-places";
 import { cn } from "@/lib/utils";
@@ -78,6 +79,11 @@ const Profile = () => {
               {activeTab === 2 && (
                 <>
                   <BussinessCenterComp />
+                </>
+              )}
+              {activeTab === 3 && (
+                <>
+                  <CommunicationComp />
                 </>
               )}
             </div>

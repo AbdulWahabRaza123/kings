@@ -60,7 +60,52 @@ export const privacyPoliciesText = "Privacy Policies";
 export const generalText = "General";
 export const signOutText = "Sign Out";
 export const powerKingText = "Power King";
+export const notificationsText = "Notifications";
+export const loadingText = "Loading";
+export const helpText = "Help";
+export const allTopicsText = "All Topics";
+export const needHelpText = "Need Help?";
+export const membershipAndLoyaltyText = "Membership and loyalty";
+export const communicationSettingsText = "Communication settings";
+export const orderNotificationPreferencesText = "Order notification prferences";
+export const marketingPreferencesText = "Marketing preferences";
+export const promotionalOffersText =
+  "Promotional offers, discounts and membership benefits.";
+export const leaveYourMessageText =
+  "Leave your message here. Our Customer Service will contact you via email within 3 business days.";
 
+export const tierExpiresText = "Tier expires on";
+export const yourPaymentInfoText = "Your payment info is stored securely";
+export const yesText = "Yes";
+export const removeCardText = "Remove card";
+export const bankInformationText = "Bank Information";
+export const proofOfPaymentText = "Proof of payment";
+export const yourTopUpPointstext =
+  " Your top-up points will be updated in 3 working days after confirming the bank transfer.";
+export const removeSavedPlaceText = "Remove saved place";
+export const deliverToText = "Deliver To";
+export const noteToDriver = "Note To Driver";
+export const discountNextText = "discount on your next order";
+export const expiresOnText = "Expires On";
+export const suitableForText = "Suitable for";
+export const capacityText = "Capacity";
+export const maxLoadText = "Max load";
+export const reorderText = "Re-order";
+export const changePasswordText = "Change Password";
+export const updateText = "Update";
+export const selectProfileText = "Select profile photo";
+export const nameText = "Name";
+export const verifyYourEmailText = "Verify your business email";
+export const closeText = "Close";
+export const exportPointText = "Export point transaction history";
+export const datePeriodText = "Date period";
+// export const exportText = "Export";
+export const staffDetailsText = "Staff details";
+export const anInvitationEmailText =
+  "An invitation email with an account set up link will be se to the staff member’s business email. The staff has to set  up the account via Powder King mobile app.";
+export const accountStatusText = "Account Status";
+export const activeText = "Active";
+export const removeStaffText = "Remove Staff";
 //
 
 //for signin

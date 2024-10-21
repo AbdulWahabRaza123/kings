@@ -8,6 +8,7 @@ import {
   balanceText,
   companyWalletText,
   estimatedTotalText,
+  hkText,
   paymentMethodText,
   pointsText,
 } from "@/utils/constants";
@@ -76,7 +77,9 @@ export const AmountDetailsDialog = ({
             <p className="text-p2">{companyWalletText}</p>
             <div className="flex items-center gap-2">
               <Info className="text-secondary w-4 h-4" />
-              <p className="text-secondary text-p3">HK$1 = 1 {pointsText}</p>
+              <p className="text-secondary text-p3">
+                {hkText}$1 = 1 {pointsText}
+              </p>
             </div>
           </div>
           <div className="flex flex-row items-center gap-1">

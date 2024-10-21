@@ -4,6 +4,7 @@ import { DialogComp } from "../dialog";
 import { PrimaryBtn } from "../../buttons/primary-btn";
 import { SecondaryBtn } from "../../buttons/secondary-btn";
 import { TextInput } from "../../inputs/text-input";
+import { cancelText, nameText, updateText } from "@/utils/constants";
 
 export const NameDialog = ({
   open,
@@ -19,7 +20,7 @@ export const NameDialog = ({
     <DialogComp open={open} setOpen={setOpen}>
       <div className="flex flex-col gap-3">
         <div>
-          <h1 className="text-[18px] font-[600]">Name</h1>
+          <h1 className="text-[18px] font-[600]">{nameText}</h1>
         </div>
         <div className="flex flex-col gap-3 justify-start items-start py-3">
           <div className="flex flex-col gap-3 w-full">
@@ -45,7 +46,7 @@ export const NameDialog = ({
                   setOpen(false);
                 }}
               >
-                Cancel
+                {cancelText}
               </SecondaryBtn>
               <PrimaryBtn
                 onClick={() => {
@@ -53,7 +54,7 @@ export const NameDialog = ({
                 }}
                 className="bg-black rounded-full"
               >
-                Update
+                {updateText}
               </PrimaryBtn>
             </div>
           </div>

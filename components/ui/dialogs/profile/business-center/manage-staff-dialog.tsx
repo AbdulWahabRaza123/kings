@@ -7,6 +7,17 @@ import { DetailCard } from "@/components/ui/cards/detail-card";
 import { ArrowLeft, CircleX, Info } from "lucide-react";
 import { TextInput } from "@/components/ui/inputs/text-input";
 import { ConfirmationDialog } from "../../confirmation-dialog";
+import {
+  accountStatusText,
+  activeText,
+  activityText,
+  addText,
+  anInvitationEmailText,
+  cancelText,
+  removeStaffText,
+  staffDetailsText,
+  updateText,
+} from "@/utils/constants";
 export const ManageStaffDialog = ({
   open,
   setOpen,
@@ -50,7 +61,7 @@ export const ManageStaffDialog = ({
                       <ArrowLeft className="w-4 h-4" />
                     </div>
                   )}
-                  <h1 className="text-[18px] font-[600]">Staff details</h1>
+                  <h1 className="text-[18px] font-[600]">{staffDetailsText}</h1>
                 </div>
               ) : (
                 "Add a staff member"
@@ -78,11 +89,7 @@ export const ManageStaffDialog = ({
                 />
                 <div className="flex items-center gap-2 text-secondary">
                   <Info className="w-4 h-4" />
-                  <p className="text-p3">
-                    An invitation email with an account set up link will be sent
-                    to the staff member’s business email. The staff has to set
-                    up the account via Powder King mobile app.
-                  </p>
+                  <p className="text-p3">{anInvitationEmailText}</p>
                 </div>
                 <div className="flex items-center justify-center gap-2 mt-4 w-full">
                   <SecondaryBtn
@@ -90,7 +97,7 @@ export const ManageStaffDialog = ({
                       setOpen(false);
                     }}
                   >
-                    Cancel
+                    {cancelText}
                   </SecondaryBtn>
                   <PrimaryBtn
                     onClick={() => {
@@ -98,7 +105,7 @@ export const ManageStaffDialog = ({
                     }}
                     className="bg-black rounded-full"
                   >
-                    Add
+                    {addText}
                   </PrimaryBtn>
                 </div>
               </div>
@@ -110,13 +117,15 @@ export const ManageStaffDialog = ({
                 <div>
                   <div className="py-4 flex flex-col">
                     <div className="flex items-center justify-between py-4">
-                      <h1 className="text-p2 font-[500]">Account Status</h1>
+                      <h1 className="text-p2 font-[500]">
+                        {accountStatusText}
+                      </h1>
                       <div className="flex items-center gap-2">
                         <PrimaryBtn
                           onClick={() => {}}
                           className="w-auto bg-[#67D08D] text-black py-1"
                         >
-                          Active
+                          {activeText}
                         </PrimaryBtn>
                         <Switch
                           defaultChecked
@@ -154,7 +163,7 @@ export const ManageStaffDialog = ({
                       className="flex items-center gap-2 cursor-pointer text-rose-600 text-p3 mt-4"
                     >
                       <CircleX className="w-4 h-4" />
-                      <p>Remove staff</p>
+                      <p>{removeStaffText}</p>
                     </div>
                   )}
                 </div>
@@ -175,7 +184,7 @@ export const ManageStaffDialog = ({
                         setOpen(false);
                       }}
                     >
-                      Cancel
+                      {cancelText}
                     </SecondaryBtn>
                     <PrimaryBtn
                       onClick={() => {
@@ -183,7 +192,7 @@ export const ManageStaffDialog = ({
                       }}
                       className="bg-black rounded-full"
                     >
-                      Update
+                      {updateText}
                     </PrimaryBtn>
                   </div>
                 </>
@@ -204,7 +213,7 @@ export const ManageStaffDialog = ({
                         setOpen(false);
                       }}
                     >
-                      Cancel
+                      {cancelText}
                     </SecondaryBtn>
                     <PrimaryBtn
                       onClick={() => {
@@ -212,7 +221,7 @@ export const ManageStaffDialog = ({
                       }}
                       className="bg-black rounded-full"
                     >
-                      Update
+                      {updateText}
                     </PrimaryBtn>
                   </div>
                 </>

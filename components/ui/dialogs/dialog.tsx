@@ -3,6 +3,7 @@ import React from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { X } from "lucide-react";
+import { closeText } from "@/utils/constants";
 
 export const DialogComp = ({
   open,
@@ -23,7 +24,7 @@ export const DialogComp = ({
               setOpen(false);
             }}
           />
-          <span className="sr-only">Close</span>
+          <span className="sr-only">{closeText}</span>
         </DialogPrimitive.Close>
         {children}
       </DialogContent>

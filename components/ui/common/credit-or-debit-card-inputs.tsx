@@ -1,6 +1,7 @@
 import React from "react";
 import { TextInput } from "../inputs/text-input";
 import { Info } from "lucide-react";
+import { yourPaymentInfoText } from "@/utils/constants";
 interface CardInterface {
   cardNo: string;
   setCardNo: (val: string) => void;
@@ -65,7 +66,7 @@ export const CreditOrDebitCardInput = ({
       </div>
       <div className="flex items-center gap-2 text-secondary text-p2">
         <Info className="w-4 h-4" />
-        <p>Your payment info is stored securely.</p>
+        <p>{yourPaymentInfoText}.</p>
       </div>
     </div>
   );

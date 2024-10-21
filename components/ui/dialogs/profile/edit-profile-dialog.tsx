@@ -7,6 +7,7 @@ import Slider from "rc-slider";
 import Cropper from "react-easy-crop";
 import "rc-slider/assets/index.css";
 import { Image } from "lucide-react";
+import { cancelText, selectProfileText, updateText } from "@/utils/constants";
 export const EditProfileDialog = ({
   open,
   setOpen,
@@ -26,7 +27,7 @@ export const EditProfileDialog = ({
     <DialogComp open={open} setOpen={setOpen}>
       <div className="flex flex-col gap-3">
         <div>
-          <h1 className="text-[18px] font-[600]">Select profile photo</h1>
+          <h1 className="text-[18px] font-[600]">{selectProfileText}</h1>
         </div>
         <div className="flex flex-col gap-3 justify-start items-start py-3">
           <div className="flex flex-col gap-3 w-full">
@@ -61,7 +62,7 @@ export const EditProfileDialog = ({
                   setOpen(false);
                 }}
               >
-                Cancel
+                {cancelText}
               </SecondaryBtn>
               <PrimaryBtn
                 onClick={() => {
@@ -69,7 +70,7 @@ export const EditProfileDialog = ({
                 }}
                 className="bg-black rounded-full"
               >
-                Update
+                {updateText}
               </PrimaryBtn>
             </div>
           </div>

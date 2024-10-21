@@ -1,3 +1,4 @@
+import { reorderText } from "@/utils/constants";
 import { RotateCcw } from "lucide-react";
 import Image from "next/image";
 
@@ -42,7 +43,7 @@ export const OrderCard = ({
           className="flex items-center gap-2 border-[1px] bg-white border-gray-400/40 rounded-full px-4 py-2 absolute right-[10px] hover:opacity-[0.8]"
         >
           <RotateCcw className="w-4 h-4 text-secondary" />
-          <h1 className="text-secondary text-p2">Re-order</h1>
+          <h1 className="text-secondary text-p2">{reorderText}</h1>
         </button>
       </div>
     </>

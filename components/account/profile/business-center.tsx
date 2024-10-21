@@ -582,7 +582,7 @@ export const BussinessCenterComp = () => {
                 <h6 className="text-h5 font-[600]">My team</h6>
               </div>
             </div>
-            <div className="flex items-center gap-2 justify-between">
+            <div className="flex items-center max-md:flex-wrap gap-2 justify-between">
               <div className="flex items-center gap-2 py-4">
                 {teamBtns?.map((val, index) => {
                   return (

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/signin/navbar";
+import { AuthContextProvider } from "@/content/auth-context";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Transportation",
@@ -18,10 +20,14 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/logo.svg" type="image/x-icon" />
       </head>
       <body>
-        <main className="bg-main w-full relative">
-          <Navbar />
-          <section className="">{children}</section>
-        </main>
+        <Suspense>
+          <AuthContextProvider>
+            <main className="bg-main w-full relative">
+              <Navbar />
+              <section className="">{children}</section>
+            </main>
+          </AuthContextProvider>
+        </Suspense>
       </body>
     </html>
   );

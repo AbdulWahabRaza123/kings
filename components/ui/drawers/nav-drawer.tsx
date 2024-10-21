@@ -33,9 +33,6 @@ export const NavDrawerAfterLoginComp = ({
 
   return (
     <>
-      {/* <Button className="bg-globalPrimary text-white py-4" onClick={showDrawer}>
-        <Menu />
-      </Button> */}
       <PrimaryBtn
         onClick={showDrawer}
         className="bg-globalPrimary rounded-full h-[43px] px-4"

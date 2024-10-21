@@ -11,9 +11,7 @@ import { renderPageNumbers } from "@/components/ui/render-paginated-page-no";
 import { cn } from "@/lib/utils";
 import {
   addCreditOrDebitCardText,
-  bankInText,
   creditOrDebitCardText,
-  otherMethodsText,
   visaText,
 } from "@/utils/constants";
 import {

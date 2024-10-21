@@ -29,7 +29,7 @@ export const SelectInput = ({
       >
         {children}
       </SelectTrigger>
-      <SelectContent className="bg-white">
+      <SelectContent className="bg-white z-[1000]">
         {options.map((option) => (
           <SelectItem key={option.value} value={option.value}>
             {option.label}

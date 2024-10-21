@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/signin/navbar";
 import { AuthContextProvider } from "@/content/auth-context";
 import { Suspense } from "react";
+import QueryProvider from "@/lib/query-provider";
 
 export const metadata: Metadata = {
   title: "Transportation",
@@ -21,12 +22,14 @@ export default function RootLayout({
       </head>
       <body>
         <Suspense>
-          <AuthContextProvider>
-            <main className="bg-main w-full relative">
-              <Navbar />
-              <section className="">{children}</section>
-            </main>
-          </AuthContextProvider>
+          <QueryProvider>
+            <AuthContextProvider>
+              <main className="bg-main w-full relative">
+                <Navbar />
+                <section className="">{children}</section>
+              </main>
+            </AuthContextProvider>
+          </QueryProvider>
         </Suspense>
       </body>
     </html>

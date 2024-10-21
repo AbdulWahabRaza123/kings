@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { SecondaryBtn } from "../ui/buttons/secondary-btn";
 import { SelectInput } from "../ui/inputs/select-input";
 import { Bell, ChevronDown, ChevronRight, Globe } from "lucide-react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { NavDrawerAfterLoginComp } from "../ui/drawers/nav-drawer";
 import { loginText, signupText } from "@/utils/constants";
@@ -12,6 +12,7 @@ import { PrimaryBtn } from "../ui/buttons/primary-btn";
 import { Progress } from "antd";
 import Link from "next/link";
 import { MembershipCard } from "../ui/cards/membership-card";
+import { UserAuthContext } from "@/content/auth-context";
 const options = [
   {
     name: "Home",
@@ -28,57 +29,57 @@ const options = [
 ];
 const accountPagesData = [
   {
-    name: "Account",
-    link: "/order/account",
-    icon: "/assets/icons/user.svg",
-  },
-  {
     name: "My Profile",
-    link: "/order/account/profile",
+    link: "/orders/account/profile",
     icon: "/assets/icons/sidebar/my-profile.svg",
   },
   {
     name: "Saved places",
-    link: "/order/account/places",
+    link: "/orders/account/profile",
     icon: "/assets/icons/sidebar/saved-places.svg",
   },
   {
     name: "Business center",
-    link: "/order/account/business",
+    link: "/orders/account/profile",
     icon: "/assets/icons/sidebar/business-center.svg",
   },
   {
     name: "Communication settings",
-    link: "/order/account/communication",
+    link: "/orders/account/profile",
     icon: "/assets/icons/sidebar/communication-setting.svg",
   },
 ];
 const generalPagesData = [
   {
     name: "Help",
-    link: "/order/general/help",
+    link: "/help",
     icon: "/assets/icons/sidebar/help.svg",
   },
   {
     name: "About",
-    link: "/order/general/about",
+    link: "/about",
     icon: "/assets/icons/sidebar/about.svg",
   },
 ];
 const lngOptions = [
   {
     label: "English",
-    value: "en",
+    value: "english",
   },
   {
-    label: "French",
-    value: "fr",
+    label: "Simplified Chinese",
+    value: "simplifiedChinese",
+  },
+  {
+    label: "Traditional Chinese",
+    value: "traditionalChinese",
   },
 ];
 
 const Navbar = () => {
+  const router = useRouter();
   const currentPage = usePathname();
-  const [selectedLng, setSelectedLng] = useState(lngOptions[0].value);
+  const { lng, setLng } = UserAuthContext();
   const [selectedPage, setSelectedPage] = useState({
     name: "Account",
     link: "/order/account",
@@ -95,7 +96,10 @@ const Navbar = () => {
           width={250}
           height={40}
           alt="logo"
-          className="object-cover"
+          className="object-cover cursor-pointer"
+          onClick={() => {
+            router.push("/");
+          }}
         />
         <div className="flex items-center gap-3 max-lg:hidden">
           {options.map((option) => (
@@ -132,14 +136,20 @@ const Navbar = () => {
 
       <div className="flex flex-row items-center gap-3 max-lg:hidden">
         <SelectInput
-          active={selectedLng}
-          setActive={setSelectedLng}
+          active={lng}
+          setActive={setLng}
           options={lngOptions}
           className="border-none w-auto"
         >
           <div className="flex items-center gap-2 pe-2">
             <Globe className="w-4 h-4" />
-            <p>{selectedLng === "en" ? "English" : "French"}</p>
+            <p>
+              {
+                lngOptions.filter((val) => {
+                  return val.value === lng;
+                })[0].label
+              }
+            </p>
           </div>
         </SelectInput>
         {!currentUsr && (
@@ -153,7 +163,9 @@ const Navbar = () => {
         {currentUsr && (
           <>
             <SecondaryBtn
-              onClick={() => {}}
+              onClick={() => {
+                router.push("/orders/notifications");
+              }}
               className="rounded-full w-auto bg-white"
             >
               <Bell className="w-5 h-5 text-secondary" />
@@ -216,7 +228,11 @@ const Navbar = () => {
                     <>
                       <div
                         key={val.name}
-                        className="flex items-center gap-2 py-2"
+                        className="flex items-center gap-2 py-2 cursor-pointer"
+                        onClick={() => {
+                          router.push(val?.link || "#");
+                          setOpenSideDrawer(false);
+                        }}
                       >
                         <Image
                           src={val.icon}
@@ -225,9 +241,7 @@ const Navbar = () => {
                           height={20}
                           className="object-cover"
                         />
-                        <Link href={val?.link || "#"} className="">
-                          {val.name}
-                        </Link>
+                        <p>{val.name}</p>
                       </div>
                     </>
                   );
@@ -243,6 +257,10 @@ const Navbar = () => {
                       <div
                         key={val.name}
                         className="flex items-center gap-2 py-2"
+                        onClick={() => {
+                          router.push(val?.link || "#");
+                          setOpenSideDrawer(false);
+                        }}
                       >
                         <Image
                           src={val.icon}
@@ -251,9 +269,7 @@ const Navbar = () => {
                           height={20}
                           className="object-cover"
                         />
-                        <Link href={val?.link || "#"} className="">
-                          {val.name}
-                        </Link>
+                        <p>{val.name}</p>
                       </div>
                     </>
                   );

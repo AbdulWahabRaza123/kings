@@ -38,8 +38,8 @@ const Profile = () => {
       <main className="w-full min-h-screen py-10 flex flex-col items-center bg-[#FAFAFA]">
         <section className="lg:w-[70%] md:w-[80%] max-md:w-full max-md:px-4 flex flex-col items-start gap-7">
           <h5 className="text-h5 font-[700]">Account</h5>
-          <div className="w-full flex flex-row items-start gap-7">
-            <div className="w-[30%] bg-white rounded-[7px] p-4">
+          <div className="w-full flex md:flex-row max-md:flex-col items-start gap-7">
+            <div className="md:w-[30%] max-md:w-full max-md:flex max-md:items-center max-md:justify-center bg-white rounded-[7px] p-4">
               {profileSettingsData?.map((val, index) => {
                 return (
                   <>
@@ -48,7 +48,7 @@ const Profile = () => {
                         setActiveTab(index);
                       }}
                       className={cn(
-                        "py-4 px-2 flex items-center gap-2 rounded-[7px] hover:opacity-[0.8] cursor-pointer",
+                        "py-4 md:px-2 max-md:px-6 flex items-center gap-2 rounded-[7px] hover:opacity-[0.8] cursor-pointer",
                         activeTab === index && "bg-[#B0F4EA]"
                       )}
                     >
@@ -59,13 +59,13 @@ const Profile = () => {
                         height={20}
                         className="object-cover"
                       />
-                      <p className="text-p2">{val.name}</p>
+                      <p className="text-p2 max-md:hidden">{val.name}</p>
                     </div>
                   </>
                 );
               })}
             </div>
-            <div className="w-[70%]">
+            <div className="md:w-[70%] max-md:w-full">
               {activeTab === 0 && (
                 <>
                   <MyProfileComp />

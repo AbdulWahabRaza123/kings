@@ -44,7 +44,9 @@ export const SavedPlacesComp = () => {
                     <p className="text-secondary text-p3">{val.address}</p>
                   </div>
                   <ChevronRight
-                    onClick={() => {}}
+                    onClick={() => {
+                      setOpenEditSavedPlace(true);
+                    }}
                     className="w-6 h-6 absolute right-[10px] text-secondary cursor-pointer"
                   />
                 </div>

@@ -20,6 +20,7 @@ import {
   topupCompanyWalletText,
   visaText,
 } from "@/utils/constants";
+import { CreditOrDebitCardInput } from "../../common/credit-or-debit-card-inputs";
 const bankDetailsData = [
   {
     title: "Bank",
@@ -49,6 +50,7 @@ const CopyTextComp = ({ title, desc }: { title: string; desc: string }) => {
     </>
   );
 };
+
 export const TopupDialog = ({
   open,
   setOpen,
@@ -212,50 +214,14 @@ export const TopupDialog = ({
             </h1>
           </div>
           <div className="flex flex-col gap-3 justify-start items-start py-3 w-full">
-            <TextInput
-              inputStyle="input"
-              type="number"
-              placeholder=""
-              title="Card number"
-              value={cardNo}
-              setValue={(value) => {
-                // Ensure card number is exactly 16 digits
-                if (value.length <= 16) {
-                  setCardNo(value);
-                }
-              }}
+            <CreditOrDebitCardInput
+              cardNo={cardNo}
+              setCardNo={setCardNo}
+              cvv={cvv}
+              setCvv={setCvv}
+              expiryDate={expiryDate}
+              setExpiryDate={setExpiryDate}
             />
-
-            <div className="flex items-end gap-4 w-full">
-              <TextInput
-                inputStyle="input"
-                type="text"
-                placeholder="MM/YY"
-                title="Expiration date"
-                value={expiryDate}
-                setValue={(value) => {
-                  // Check if the value matches MM/YY format
-                  const expiryRegex = /^(0[1-9]|1[0-2])\/\d{2}$/;
-                  if (expiryRegex.test(value) || value === "") {
-                    setExpiryDate(value);
-                  }
-                }}
-              />
-
-              <TextInput
-                inputStyle="input"
-                type="number"
-                placeholder="123"
-                title="CVV"
-                value={cvv}
-                setValue={(value) => {
-                  // Ensure CVV is 3 or 4 digits
-                  if (value.length <= 4) {
-                    setCvv(value);
-                  }
-                }}
-              />
-            </div>
             <div className="flex items-center justify-center gap-2 mt-4 w-full">
               <SecondaryBtn
                 onClick={() => {

@@ -28,6 +28,7 @@ const config = {
         h3: "32px",
         h5: "20px",
         h6: "18px",
+        p: "16px",
         p2: "14px",
         p3: "12px"
       },

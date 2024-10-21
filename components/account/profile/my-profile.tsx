@@ -1,4 +1,5 @@
 "use client";
+import { DetailCard } from "@/components/ui/cards/detail-card";
 import { ChangePasswordDialog } from "@/components/ui/dialogs/profile/change-password-dialog";
 import { EditProfileDialog } from "@/components/ui/dialogs/profile/edit-profile-dialog";
 import { EmailDialog } from "@/components/ui/dialogs/profile/email-dialog";
@@ -92,19 +93,12 @@ export const MyProfileComp = () => {
           {personalData?.map((val, index) => {
             return (
               <>
-                <div
+                <DetailCard
+                  title={val.title}
+                  description={val.value}
+                  handleEdit={() => handleEdit(index)}
                   key={index}
-                  className="flex flex-col justify-center gap-2 py-4 relative"
-                >
-                  <p className="text-p2 font-[500]">{val.title}</p>
-                  <p className="text-secondary text-p3">{val.value}</p>
-                  <ChevronRight
-                    onClick={() => {
-                      handleEdit(index);
-                    }}
-                    className="w-6 h-6 absolute right-[10px] text-secondary cursor-pointer"
-                  />
-                </div>
+                />
               </>
             );
           })}

@@ -1,4 +1,4 @@
-import { companyWalletText } from "@/utils/constants";
+import { companyWalletText, hkText, pointText } from "@/utils/constants";
 import { Info } from "lucide-react";
 import Image from "next/image";
 
@@ -17,7 +17,9 @@ export const CompanyWalletCard = () => {
           <p className="text-primary text-p2">{companyWalletText}</p>
           <div className="flex items-center gap-2">
             <Info className="text-secondary w-4 h-4" />
-            <p className="text-secondary text-p3">HK$1 = 1 point</p>
+            <p className="text-secondary text-p3">
+              {hkText}$1 = 1 {pointText}
+            </p>
           </div>
         </div>
       </div>

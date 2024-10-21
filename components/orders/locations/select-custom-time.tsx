@@ -8,6 +8,7 @@ import { SecondaryBtn } from "@/components/ui/buttons/secondary-btn";
 import { pickupTime } from "@/utils/pickup-time-data";
 import {
   arrangeADeliveryText,
+  clearText,
   continueText,
   nowText,
   selectText,
@@ -81,7 +82,7 @@ export const SelectCustomTimeComp = ({
           </div>
         </SelectInput>
         <SecondaryBtn onClick={() => {}} className="max-w-[80px] py-2">
-          Clear
+          {clearText}
         </SecondaryBtn>
         <PrimaryBtn onClick={() => {}}>{continueText}</PrimaryBtn>
       </div>

@@ -6,6 +6,7 @@ import { EmailDialog } from "@/components/ui/dialogs/profile/email-dialog";
 import { NameDialog } from "@/components/ui/dialogs/profile/name-dialog";
 import { PhoneDialog } from "@/components/ui/dialogs/profile/phone-dialog";
 import { RoleDialog } from "@/components/ui/dialogs/profile/role-dialog";
+import { addNewText, deleteText, myProfileText } from "@/utils/constants";
 import { ChevronRight, Pencil, Trash } from "lucide-react";
 import Image from "next/image";
 import React, { useState } from "react";
@@ -64,7 +65,7 @@ export const MyProfileComp = () => {
       <EditProfileDialog open={openEditProfile} setOpen={setOpenEditProfile} />
 
       <div className="p-4 flex flex-col gap-2 bg-white rounded-[7px]">
-        <h5 className="text-h5 font-[600]">My Profile</h5>
+        <h5 className="text-h5 font-[600]">{myProfileText}</h5>
         <div className="flex items-center gap-6 py-6">
           <Image
             src="/assets/mockups/profile.svg"
@@ -81,11 +82,11 @@ export const MyProfileComp = () => {
               className="flex items-center gap-1 text-p2 text-globalPrimary cursor-pointer hover:underline"
             >
               <Pencil className="w-4 h-4" />
-              <p>Add New</p>
+              <p>{addNewText}</p>
             </div>
             <div className="flex items-center gap-1 text-p2 text-rose-400 cursor-pointer hover:underline">
               <Trash className="w-4 h-4" />
-              <p className="">Delete</p>
+              <p className="">{deleteText}</p>
             </div>
           </div>
         </div>

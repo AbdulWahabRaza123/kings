@@ -1,5 +1,6 @@
 import { OutlinedBtn } from "@/components/ui/buttons/outline-btn";
 import { SavedPlaceDialog } from "@/components/ui/dialogs/orders/save-place-dialog";
+import { addASavedPlaceText, savedPlacesText } from "@/utils/constants";
 import { ChevronRight, Plus, Star } from "lucide-react";
 import Image from "next/image";
 import React, { useState } from "react";
@@ -29,7 +30,7 @@ export const SavedPlacesComp = () => {
         edit={true}
       />
       <div className="p-4 flex flex-col gap-2 bg-white rounded-[7px]">
-        <h5 className="text-h5 font-[600]">Saved Places</h5>
+        <h5 className="text-h5 font-[600]">{savedPlacesText}</h5>
         <div className="py-4 flex flex-col">
           {savedPlacesData?.map((val, index) => {
             return (
@@ -63,7 +64,7 @@ export const SavedPlacesComp = () => {
           >
             <div className="flex items-center gap-2 text-p2">
               <Plus className="w-5 h-5" />
-              <p>Add a saved place</p>
+              <p>{addASavedPlaceText}</p>
             </div>
           </OutlinedBtn>
         </div>

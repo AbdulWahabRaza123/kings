@@ -1,3 +1,4 @@
+import { powerKingText } from "@/utils/constants";
 import Link from "next/link";
 import React from "react";
 const footerLink = [
@@ -24,7 +25,7 @@ export const FooterComp = () => {
       <div className="md:px-20 max-md:px-4 flex items-start gap-7 justify-between max-lg:flex-wrap">
         <div className="flex flex-col text-p2 text-white md:max-w-[400px]">
           <p>@powerking</p>
-          <p className="font-[500]">Power King</p>
+          <p className="font-[500]">{powerKingText}</p>
           <p>
             6A1, Yee Lim Industrial Building Block A Stage 1, 2-28 Kwai Lok St,
             Kwai Chung

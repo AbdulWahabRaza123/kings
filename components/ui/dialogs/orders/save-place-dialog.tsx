@@ -3,13 +3,6 @@ import React, { useState } from "react";
 import { DialogComp } from "../dialog";
 import Image from "next/image";
 import { TextInput } from "../../inputs/text-input";
-// import {
-//   addPlaceText,
-//   addressText,
-//   labelText,
-//   removeSavedPlaceText,
-//   searchAddressText,
-// } from "@/utils/constants";
 import { CircleX } from "lucide-react";
 import { DictionariesContext } from "@/context/dictionary-context";
 const savedLocationsData = [

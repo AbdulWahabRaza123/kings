@@ -6,12 +6,6 @@ import { SecondaryBtn } from "../../buttons/secondary-btn";
 import { PrimaryTextarea } from "../../inputs/primary-input";
 import { Rate } from "antd";
 import Image from "next/image";
-// import {
-//   deliverToText,
-//   leaveCommentText,
-//   rateYourDriverText,
-//   submitText,
-// } from "@/utils/constants";
 import { DictionariesContext } from "@/context/dictionary-context";
 const desc = ["terrible", "bad", "normal", "good", "wonderful"];
 export const OrderRatingDialog = ({

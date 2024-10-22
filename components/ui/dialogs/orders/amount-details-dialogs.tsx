@@ -2,16 +2,7 @@
 import React from "react";
 import { DialogComp } from "../dialog";
 import { Info } from "lucide-react";
-// import {
-//   amountDescText,
-//   amountDetailsText,
-//   balanceText,
-//   companyWalletText,
-//   estimatedTotalText,
-//   hkText,
-//   paymentMethodText,
-//   pointsText,
-// } from "@/utils/constants";
+
 import { DictionariesContext } from "@/context/dictionary-context";
 const amountData = [
   {

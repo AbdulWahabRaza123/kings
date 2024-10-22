@@ -10,17 +10,6 @@ import { OrderNoteDialog } from "@/components/ui/dialogs/orders/order-note";
 import { TopupDialog } from "@/components/ui/dialogs/payments/top-up-dialog";
 import { MapStepWrapperComp } from "@/components/ui/wrappers/map-step-wrapper";
 import { DictionariesContext } from "@/context/dictionary-context";
-// import {
-//   driverWillCallYouConfirmationText,
-//   estimatedTotalText,
-//   hkText,
-//   notEnoughPointBalanceDesc,
-//   notEnoughPointBalanceText,
-//   orderDetailsText,
-//   placeOrderText,
-//   qouteText,
-//   topupText,
-// } from "@/utils/constants";
 import { TriangleAlert } from "lucide-react";
 import React, { useState } from "react";
 interface OrderContactDetails {

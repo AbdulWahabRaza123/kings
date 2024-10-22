@@ -1,30 +1,11 @@
 "use client";
 import { ContactCustomerServiceDialog } from "@/components/ui/dialogs/contact/contact-customer-service-dialog";
 import { DictionariesContext } from "@/context/dictionary-context";
-// import {
-//   allTopicsText,
-//   contactCustomerServiceText,
-//   helpText,
-//   membershipAndLoyaltyText,
-//   needHelpText,
-// } from "@/utils/constants";
+import { HelpPageDetails } from "@/interface/help-page-interface";
 import { Breadcrumb } from "antd";
 import { ChevronRight, List, UserRound } from "lucide-react";
 import React, { useState } from "react";
-const helpPagesData = [
-  {
-    name: "Help  with a trip",
-  },
-  {
-    name: "Account",
-  },
-  {
-    name: "Help  with a trip",
-  },
-  {
-    name: "Help  with a trip",
-  },
-];
+
 const HelpPage = () => {
   const { dictionaries } = DictionariesContext();
   const {
@@ -33,6 +14,7 @@ const HelpPage = () => {
     helpText,
     membershipAndLoyaltyText,
     needHelpText,
+    helpPagesData,
   } = dictionaries;
   const [openContact, setOpenContact] = useState(false);
   const [pageNo, setPageNo] = useState(0);
@@ -50,7 +32,7 @@ const HelpPage = () => {
               <div className="flex flex-col rounded-[7px] p-6 bg-white">
                 <h1 className="font-[600] text-p1">{allTopicsText}</h1>
                 <div className="flex flex-col gap-2 py-4">
-                  {helpPagesData?.map((val, index) => {
+                  {helpPagesData?.map((val: HelpPageDetails, index: number) => {
                     return (
                       <>
                         <div

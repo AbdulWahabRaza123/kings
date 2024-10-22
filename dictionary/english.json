@@ -224,5 +224,97 @@
   "joinYourCompanyAccountText": "Join your company’s account",
   "joinYourCompanyAccountDescText": "You might do if your company has an account with us",
   "createBusinessProfileForYourCompanyText": "Create business profile for your company",
-  "createBusinessProfileForYourCompanyDescText": "Make reimbursements and personal tracking easier"
+  "createBusinessProfileForYourCompanyDescText": "Make reimbursements and personal tracking easier",
+  "yourTopUpPointstext": "Your top-up points will be updated in 3 working days after confirming the bank transfer.",
+  "noteToDriver": "Note To Driver",
+  "companyProfileDesc": "A company profile is a brief overview of a business, highlighting its mission, products, and key achievements.",
+  "companyInfoTextDescText": "Please enter your company details to help us understand your business better.",
+  "forgetPasswordDesc": "Enter your email address to receive instructions for resetting your password.",
+  "coinsText": "Coins",
+  "notEnoughPointBalanceDesc": "Please contact company admin to top up the Company Wallet to proceed with the order.",
+  "aboutPagesData": [
+    {
+      "name": "Terms & conditions",
+      "link": "/"
+    },
+    {
+      "name": "Privacy policy",
+      "link": "/"
+    },
+    {
+      "name": "Legal policy",
+      "link": "/"
+    },
+    {
+      "name": "Cancellation policy",
+      "link": "/"
+    }
+  ],
+  "helpPagesData": [
+    {
+      "name": "Help  with a trip",
+      "link": "/"
+    },
+    {
+      "name": "Account",
+      "link": "/"
+    },
+    {
+      "name": "Help  with a trip",
+      "link": "/"
+    },
+    {
+      "name": "Help  with a trip",
+      "link": "/"
+    }
+  ],
+  "statusOptions": ["All", "Pending", "On-going", "Completed", "Cancelled"],
+  "profileSettingsData": [
+    {
+      "name": "My Profile",
+      "link": "/order/account/profile",
+      "icon": "/assets/icons/sidebar/my-profile.svg"
+    },
+    {
+      "name": "Saved places",
+      "link": "/order/account/places",
+      "icon": "/assets/icons/sidebar/saved-places.svg"
+    },
+    {
+      "name": "Business center",
+      "link": "/order/account/business",
+      "icon": "/assets/icons/sidebar/business-center.svg"
+    },
+    {
+      "name": "Communication settings",
+      "link": "/order/account/communication",
+      "icon": "/assets/icons/sidebar/communication-setting.svg"
+    }
+  ],
+  "reasonData": [
+    {
+      "reason": "Driver did not arrive"
+    },
+    {
+      "reason": "Price concerns"
+    },
+    {
+      "reason": "Change of mind"
+    },
+    {
+      "reason": "Other"
+    }
+  ],
+  "startSearchingText": "Start searching",
+  "cancelSearchingText": "Cancel searching",
+  "cancelSearchingDescText": "We are searching for a driver for you, it will take about 5 minutes. Are you sure you want to cancel?",
+  "carArriveTimeText": "Estimated car arrival time",
+  "onMyWayText": "I'm on my way",
+  "sendMessageText": "Send message",
+  "driverWillCall15MinutesBeforePickupText": "The driver will call 15 minutes before the pickup time.",
+  "welcomeBackDescText": "Log in to your Power King business account.",
+  "bankText": "Bank",
+  "accountHolderNameText": "Account holder's name",
+  "accountNumberText": "Account number",
+  "label": "Top-up"
 }

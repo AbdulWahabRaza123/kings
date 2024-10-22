@@ -6,29 +6,10 @@ import { cn } from "@/lib/utils";
 import { PrimaryInput } from "../../inputs/primary-input";
 import { SecondaryBtn } from "../../buttons/secondary-btn";
 import { PrimaryBtn } from "../../buttons/primary-btn";
-// import {
-//   amountDetailsText,
-//   cancelDescText,
-//   cancellationPolicyText,
-//   cancelText,
-//   saveText,
-//   specifyReasonText,
-// } from "@/utils/constants";
+
 import { DictionariesContext } from "@/context/dictionary-context";
-const reasonData = [
-  {
-    reason: "Driver did not arrive",
-  },
-  {
-    reason: "Price concerns",
-  },
-  {
-    reason: "Change of mind",
-  },
-  {
-    reason: "Other",
-  },
-];
+import { ReasonDetails } from "@/interface/cancel-order-interface";
+
 export const CancelOrderDialog = ({
   open,
   setOpen,
@@ -44,6 +25,7 @@ export const CancelOrderDialog = ({
     cancelText,
     saveText,
     specifyReasonText,
+    reasonData,
   } = dictionaries;
   const [selectedReason, setSelectedReason] = useState(0);
   const [otherReason, setOtherReason] = useState("");
@@ -56,7 +38,7 @@ export const CancelOrderDialog = ({
         <p className="text-p2">{cancelDescText}</p>
         <p className="text-p2">{specifyReasonText}</p>
         <div className="flex flex-col gap-3 justify-center items-center rounded-[7px]">
-          {reasonData?.map((val, index) => {
+          {reasonData?.map((val: ReasonDetails, index: number) => {
             return (
               <>
                 <div

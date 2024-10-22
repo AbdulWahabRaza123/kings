@@ -4,7 +4,6 @@ import { DialogComp } from "../dialog";
 import { PrimaryBtn } from "../../buttons/primary-btn";
 import { SecondaryBtn } from "../../buttons/secondary-btn";
 import { PrimaryTextarea } from "../../inputs/primary-input";
-// import { cancelText, noteToDriverText, saveText } from "@/utils/constants";
 import { DictionariesContext } from "@/context/dictionary-context";
 
 export const OrderNoteDialog = ({

@@ -15,21 +15,10 @@ import { DictionariesContext } from "@/context/dictionary-context";
 import { cn } from "@/lib/utils";
 import { rideStatus } from "@/types/ride-status-type";
 import { orderData } from "@/utils/account-order-data";
-// import {
-//   addReviewText,
-//   cancellationPolicyText,
-//   cancelOrderText,
-//   checkQuotationAndConfirmOrderText,
-//   contactCustomerServiceText,
-//   driverText,
-//   myOrdersText,
-//   noteToDriverText,
-//   orderContactText,
-// } from "@/utils/constants";
+
 import { NotebookPen, PhoneCall } from "lucide-react";
 import Image from "next/image";
 import React, { useState } from "react";
-const statusOptions = ["All", "Pending", "On-going", "Completed", "Cancelled"];
 
 const MyOrders = () => {
   const { dictionaries } = DictionariesContext();
@@ -43,6 +32,7 @@ const MyOrders = () => {
     myOrdersText,
     noteToDriverText,
     orderContactText,
+    statusOptions,
   } = dictionaries;
   const [step, setStep] = useState(1);
   const [selectedOrderType, setSelectedOrderType] = useState(0);
@@ -81,7 +71,7 @@ const MyOrders = () => {
           <section className="lg:w-[50%] md:w-[70%] max-md:w-full max-md:px-4 flex flex-col gap-7">
             <h1 className="text-h6 font-[600]">{myOrdersText}</h1>
             <div className="flex items-center gap-2">
-              {statusOptions?.map((val, index) => {
+              {statusOptions?.map((val: string, index: number) => {
                 return (
                   <>
                     <div

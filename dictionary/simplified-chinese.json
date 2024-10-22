@@ -229,5 +229,92 @@
   "joinYourCompanyAccountText": "加入您公司的账户",
   "joinYourCompanyAccountDescText": "如果您的公司与我们有账户，您可以这样做",
   "createBusinessProfileForYourCompanyText": "为您的公司创建商业档案",
-  "createBusinessProfileForYourCompanyDescText": "使报销和个人跟踪更容易"
+  "createBusinessProfileForYourCompanyDescText": "使报销和个人跟踪更容易",
+  "yourTopUpPointstext": "您的充值积分将在确认银行转账后3个工作日内更新。",
+  "noteToDriver": "给司机的备注",
+  "companyProfileDesc": "公司简介是对企业的简要概述，强调其使命、产品和主要成就。",
+  "welcomeBackDescText": "登录到您的 Power King 商务账户。",
+  "companyInfoTextDescText": "请填写您的公司信息，以帮助我们更好地了解您的业务。",
+  "coinsText": "硬币",
+  "notEnoughPointBalanceDesc": "请联系公司管理员为公司钱包充值，以继续订单。",
+  "searchingForDriversDescText": "我们将在取件时间前15分钟内帮助匹配司机。",
+  "aboutPagesData": [
+    {
+      "name": "条款与条件",
+      "link": "/"
+    },
+    {
+      "name": "隐私政策",
+      "link": "/"
+    },
+    {
+      "name": "法律政策",
+      "link": "/"
+    },
+    {
+      "name": "取消政策",
+      "link": "/"
+    }
+  ],
+  "helpPagesData": [
+    {
+      "name": "行程帮助",
+      "link": "/"
+    },
+    {
+      "name": "账户",
+      "link": "/"
+    },
+    {
+      "name": "行程帮助",
+      "link": "/"
+    },
+    {
+      "name": "行程帮助",
+      "link": "/"
+    }
+  ],
+  "statusOptions": ["全部", "待处理", "进行中", "已完成", "已取消"],
+  "profileSettingsData": [
+    {
+      "name": "我的个人资料",
+      "link": "/order/account/profile",
+      "icon": "/assets/icons/sidebar/my-profile.svg"
+    },
+    {
+      "name": "保存的地点",
+      "link": "/order/account/places",
+      "icon": "/assets/icons/sidebar/saved-places.svg"
+    },
+    {
+      "name": "商务中心",
+      "link": "/order/account/business",
+      "icon": "/assets/icons/sidebar/business-center.svg"
+    },
+    {
+      "name": "通信设置",
+      "link": "/order/account/communication",
+      "icon": "/assets/icons/sidebar/communication-setting.svg"
+    }
+  ],
+  "reasonData": [
+    {
+      "reason": "司机未到"
+    },
+    {
+      "reason": "价格问题"
+    },
+    {
+      "reason": "改变主意"
+    },
+    {
+      "reason": "其他"
+    }
+  ],
+  "bankText": "银行",
+  "accountHolderNameText": "账户持有人姓名",
+  "accountNumberText": "账户号码",
+  "label": "充值",
+  "forgetPasswordDesc": "输入您的电子邮件地址以接收重置密码的指示。",
+  "aboutText": "关于"
 }

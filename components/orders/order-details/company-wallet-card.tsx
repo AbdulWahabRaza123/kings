@@ -1,6 +1,5 @@
 "use client";
 import { DictionariesContext } from "@/context/dictionary-context";
-// import { companyWalletText, hkText, pointText } from "@/utils/constants";
 import { Info } from "lucide-react";
 import Image from "next/image";
 

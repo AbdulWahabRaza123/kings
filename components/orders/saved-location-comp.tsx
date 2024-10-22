@@ -2,6 +2,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { SavedPlaceDialog } from "../ui/dialogs/orders/save-place-dialog";
 import { savedLocationsData } from "@/utils/saved-location-data";
+import { addNewText } from "@/utils/constants";
 export const SavedLocationComp = () => {
   const [openAddNewDialog, setOpenAddNewDialog] = useState(false);
   return (
@@ -21,7 +22,7 @@ export const SavedLocationComp = () => {
             alt="location"
             className="object-cover rounded-full"
           />
-          <p className="text-globalPrimary text-p2 font-[500]">Add New</p>
+          <p className="text-globalPrimary text-p2 font-[500]">{addNewText}</p>
         </div>
         <div className="flex flex-col gap-2">
           {savedLocationsData?.map((val) => {

@@ -3,6 +3,7 @@ import {
   marketingPreferencesText,
   orderNotificationPreferencesText,
   promotionalOffersText,
+  updatesFromDeliveryText,
 } from "@/utils/constants";
 import { Switch } from "antd";
 import React, { useState } from "react";
@@ -37,9 +38,7 @@ export const CommunicationComp = () => {
             <h1 className="text-p1 font-[600]">
               {orderNotificationPreferencesText}
             </h1>
-            <p className="text-secondary text-p3">
-              Updates from delivery orders.
-            </p>
+            <p className="text-secondary text-p3">{updatesFromDeliveryText}</p>
           </div>
           <div className="flex flex-col gap-4">
             {orderNotification?.map((val) => {

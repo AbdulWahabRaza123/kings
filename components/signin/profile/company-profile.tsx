@@ -13,16 +13,20 @@ import { SignInWrapper } from "@/components/ui/wrappers/signin-wrapper";
 import { ReviewInProgressDialog } from "@/components/ui/dialogs/onboarding/review-in-progress";
 import { cn } from "@/lib/utils";
 import {
+  businessEmailText,
   businessRegistrationCertificateText,
   companyContactNoOptionalText,
   companyEmailText,
-  companyInfoTextDesc,
+  companyInfoTextDescText,
   companyNameText,
+  companyProfileDesc,
   completeOwnerInfoDescText,
   completeOwnerInfoText,
   completeText,
   continueText,
   createBusinessProfileText,
+  didNotReceivedCodeText,
+  enterBusinessEmailText,
   enterCompanyInfoText,
   firstNameText,
   industryText,
@@ -100,21 +104,20 @@ export const CompanyAccount = ({
               <SignInWrapper
                 prevPageNo={prevPageNo}
                 pageNo={pageNo}
-                title="Create business profile"
-                subTitle="Enter business email"
-                desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor."
+                title={createBusinessProfileText}
+                subTitle={enterBusinessEmailText}
+                desc={companyProfileDesc}
               >
                 <div className="mt-10 flex flex-col items-center gap-6">
                   <TextInput
                     value={email}
                     setValue={setEmail}
                     type="email"
-                    title="Business email"
+                    title={businessEmailText}
                     placeholder=""
                     inputStyle="input"
                   />
-                  <PrimaryBtn onClick={nextPageNo}>Continue</PrimaryBtn>
+                  <PrimaryBtn onClick={nextPageNo}>{continueText}</PrimaryBtn>
                 </div>
               </SignInWrapper>
             </div>
@@ -158,7 +161,7 @@ export const CompanyAccount = ({
                   </div>
                   <div className="flex flex-col items-center text-center gap-1">
                     <p className="text-[12px] text-secondary">
-                      Didn't receive the code?
+                      {didNotReceivedCodeText}
                     </p>
                     <p className="text-[12px] text-main-primary cursor-pointer">
                       Resend code in 60s
@@ -248,7 +251,7 @@ export const CompanyAccount = ({
                 pageNo={pageNo}
                 title={createBusinessProfileText}
                 subTitle={enterCompanyInfoText}
-                desc={companyInfoTextDesc}
+                desc={companyInfoTextDescText}
               >
                 <div className="mt-7 flex flex-col items-center gap-4 w-full">
                   <TextInput

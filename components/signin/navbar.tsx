@@ -7,12 +7,22 @@ import { Bell, ChevronDown, ChevronRight, Globe } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { NavDrawerAfterLoginComp } from "../ui/drawers/nav-drawer";
-import { loginText, signupText } from "@/utils/constants";
+import {
+  AccountText,
+  companyWalletText,
+  generalText,
+  loginText,
+  notificationsText,
+  pointsText,
+  quickLinksText,
+  signOutText,
+  signupText,
+} from "@/utils/constants";
 import { PrimaryBtn } from "../ui/buttons/primary-btn";
 import { Progress } from "antd";
 import Link from "next/link";
 import { MembershipCard } from "../ui/cards/membership-card";
-import { UserAuthContext } from "@/content/auth-context";
+import { UserAuthContext } from "@/context/auth-context";
 const options = [
   {
     name: "Home",
@@ -232,26 +242,26 @@ const Navbar = () => {
                 className="object-cover absolute right-0 z-0"
                 alt="wallt bg"
               />
-              <h5 className="text-white text-h5 z-[10] font-[700]">
-                Company Wallet
+              <h5 className="text-white text-h5 z-[10] font-[700] capitalize">
+                {companyWalletText}
               </h5>
               <div className="flex items-center gap-1 text-primary text-h5 font-[700] z-[10]">
-                <h5 className="mb-0">1,288 points</h5>
+                <h5 className="mb-0">1,288 {pointsText}</h5>
                 <ChevronRight className="w-5 h-5 mt-1 mb-0" />
               </div>
             </div>
             <div className="flex flex-col gap-2 lg:hidden">
-              <p className="font-[700] text-h5">Quick Links</p>
+              <p className="font-[700] text-h5 capitalize">{quickLinksText}</p>
               <div className="">
                 <div
-                  className="flex items-center gap-2 py-2 cursor-pointer"
+                  className="flex items-center gap-2 py-2 cursor-pointer capitalize"
                   onClick={() => {
                     router.push("/orders/notifications");
                     setOpenSideDrawer(false);
                   }}
                 >
                   <Bell className="w-4 h-4 text-secondary" />
-                  <p>Notifications</p>
+                  <p>{notificationsText}</p>
                 </div>
                 {options?.map((val) => {
                   return (
@@ -279,7 +289,7 @@ const Navbar = () => {
               </div>
             </div>
             <div className="flex flex-col gap-2">
-              <p className="font-[700] text-h5">Account</p>
+              <p className="font-[700] text-h5">{AccountText}</p>
               <div className="">
                 {accountPagesData?.map((val) => {
                   return (
@@ -307,7 +317,7 @@ const Navbar = () => {
               </div>
             </div>
             <div className="flex flex-col gap-2">
-              <p className="font-[700] text-h5">General</p>
+              <p className="font-[700] text-h5">{generalText}</p>
               <div className="">
                 {generalPagesData?.map((val) => {
                   return (
@@ -336,7 +346,7 @@ const Navbar = () => {
             </div>
             <div className="flex items-center justify-center w-full py-4">
               <div className="rounded-full border-[1px] border-gray-400/40 py-1 px-4 font-[600] cursor-pointer hover:opacity-[0.8]">
-                Sign out
+                {signOutText}
               </div>
             </div>
           </div>

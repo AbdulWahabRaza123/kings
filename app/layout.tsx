@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/signin/navbar";
-import { AuthContextProvider } from "@/content/auth-context";
+import { AuthContextProvider } from "@/context/auth-context";
 import { Suspense } from "react";
 import QueryProvider from "@/lib/query-provider";
 

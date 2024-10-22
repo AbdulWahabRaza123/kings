@@ -29,7 +29,7 @@ export const RoleDialog = ({
               value={role}
               inputStyle="input"
               type="text"
-              title="Role"
+              title={roleText}
             />
             <div className="flex items-center justify-center gap-2 mt-4">
               <SecondaryBtn

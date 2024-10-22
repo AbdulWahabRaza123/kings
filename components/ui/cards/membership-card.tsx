@@ -1,5 +1,5 @@
 "use client";
-import { tierExpiresText } from "@/utils/constants";
+import { coinsText, tierExpiresText } from "@/utils/constants";
 import { Progress } from "antd";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
@@ -111,7 +111,7 @@ export const MembershipCard = () => {
             height={16}
             className="object-cover aspect-square rounded-full"
           />
-          <h4 className="text-p2 font-[300]">300 Coins</h4>
+          <h4 className="text-p2 font-[300]">300 {coinsText}</h4>
         </div>
         <div className="flex items-center gap-2 w-full text-white z-[10]">
           <div className="w-[70%]">

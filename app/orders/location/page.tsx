@@ -4,7 +4,6 @@ import { OrderDetailsComp } from "@/components/orders/delivery-details/order-det
 import { SelectCustomTimeComp } from "@/components/orders/locations/select-custom-time";
 import { SelectLocationComp } from "@/components/orders/locations/select-time-location";
 import { SelectedVehicleComp } from "@/components/orders/vehicle/selected-vehicle";
-import { OrderNoteDialog } from "@/components/ui/dialogs/orders/order-note";
 import { SelectedVanDialog } from "@/components/ui/dialogs/orders/selected-van-dialog";
 import GoogleMapComponent from "@/components/ui/map/google-map";
 import { cn } from "@/lib/utils";

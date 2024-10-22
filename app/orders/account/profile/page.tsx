@@ -4,6 +4,7 @@ import { CommunicationComp } from "@/components/account/profile/communication";
 import { MyProfileComp } from "@/components/account/profile/my-profile";
 import { SavedPlacesComp } from "@/components/account/profile/saved-places";
 import { cn } from "@/lib/utils";
+import { AccountText } from "@/utils/constants";
 import Image from "next/image";
 
 import React, { useState } from "react";
@@ -37,7 +38,7 @@ const Profile = () => {
     <>
       <main className="w-full min-h-screen py-10 flex flex-col items-center bg-[#FAFAFA]">
         <section className="lg:w-[70%] md:w-[80%] max-md:w-full max-md:px-4 flex flex-col items-start gap-7">
-          <h5 className="text-h5 font-[700]">Account</h5>
+          <h5 className="text-h5 font-[700]">{AccountText}</h5>
           <div className="w-full flex md:flex-row max-md:flex-col items-start gap-7">
             <div className="md:w-[30%] max-md:w-full max-md:flex max-md:items-center max-md:justify-center bg-white rounded-[7px] p-4">
               {profileSettingsData?.map((val, index) => {

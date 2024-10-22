@@ -4,7 +4,13 @@ import { DialogComp } from "../dialog";
 import { PrimaryBtn } from "../../buttons/primary-btn";
 import { SecondaryBtn } from "../../buttons/secondary-btn";
 import { TextInput } from "../../inputs/text-input";
-import { cancelText, nameText, updateText } from "@/utils/constants";
+import {
+  cancelText,
+  firstNameText,
+  lastNameText,
+  nameText,
+  updateText,
+} from "@/utils/constants";
 
 export const NameDialog = ({
   open,
@@ -30,7 +36,7 @@ export const NameDialog = ({
               value={fName}
               inputStyle="input"
               type="text"
-              title="First Name"
+              title={firstNameText}
             />
             <TextInput
               placeholder=""
@@ -38,7 +44,7 @@ export const NameDialog = ({
               value={lName}
               inputStyle="input"
               type="text"
-              title="Last Name"
+              title={lastNameText}
             />
             <div className="flex items-center justify-center gap-2 mt-4">
               <SecondaryBtn

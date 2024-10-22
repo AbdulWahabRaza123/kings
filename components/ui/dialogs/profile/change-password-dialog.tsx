@@ -7,6 +7,7 @@ import { TextInput } from "../../inputs/text-input";
 import {
   cancelText,
   changePasswordText,
+  currentPasswordText,
   passwordText,
   updateText,
 } from "@/utils/constants";
@@ -45,7 +46,7 @@ export const ChangePasswordDialog = ({
                 value={password}
                 setValue={setPassword}
                 type={show ? "text" : "password"}
-                title="Current Password"
+                title={currentPasswordText}
                 placeholder=""
                 inputClassName="relative w-full"
                 inputStyle="input"
@@ -71,7 +72,7 @@ export const ChangePasswordDialog = ({
                 value={newPassword}
                 setValue={setNewPassword}
                 type={show ? "text" : "password"}
-                title="Current Password"
+                title={currentPasswordText}
                 placeholder=""
                 inputClassName="relative w-full"
                 inputStyle="input"

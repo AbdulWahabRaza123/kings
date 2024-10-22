@@ -13,8 +13,10 @@ import {
   activityText,
   addText,
   anInvitationEmailText,
+  businessEmailText,
   cancelText,
   removeStaffText,
+  roleText,
   staffDetailsText,
   updateText,
 } from "@/utils/constants";
@@ -42,7 +44,7 @@ export const ManageStaffDialog = ({
         onSubmit={handleDelete}
         open={openConfirm}
         setOpen={setOpenConfirm}
-        title="Remove staff"
+        title={removeStaffText}
         desc="Are you sure you want to remove this staff member? It cannot be undone."
       />
       <DialogComp open={open} setOpen={setOpen}>
@@ -77,7 +79,7 @@ export const ManageStaffDialog = ({
                   type="email"
                   inputStyle="input"
                   placeholder=""
-                  title="Business email"
+                  title={businessEmailText}
                 />
                 <TextInput
                   value={role}
@@ -85,7 +87,7 @@ export const ManageStaffDialog = ({
                   type="text"
                   inputStyle="input"
                   placeholder=""
-                  title="Role"
+                  title={roleText}
                 />
                 <div className="flex items-center gap-2 text-secondary">
                   <Info className="w-4 h-4" />
@@ -137,9 +139,9 @@ export const ManageStaffDialog = ({
                       </div>
                     </div>
                     {[
-                      { title: "Business email", desc: "tony@gmail.com" },
+                      { title: businessEmailText, desc: "tony@gmail.com" },
                       {
-                        title: "Role",
+                        title: roleText,
                         desc: "Operational",
                       },
                     ].map((val, index) => {
@@ -176,7 +178,7 @@ export const ManageStaffDialog = ({
                     type="email"
                     inputStyle="input"
                     placeholder=""
-                    title="Business email"
+                    title={businessEmailText}
                   />
                   <div className="flex items-center justify-center gap-2 mt-4 w-full">
                     <SecondaryBtn
@@ -205,7 +207,7 @@ export const ManageStaffDialog = ({
                     type="text"
                     inputStyle="input"
                     placeholder=""
-                    title="Role"
+                    title={roleText}
                   />
                   <div className="flex items-center justify-center gap-2 mt-4 w-full">
                     <SecondaryBtn

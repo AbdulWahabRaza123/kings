@@ -106,6 +106,7 @@ export const anInvitationEmailText =
 export const accountStatusText = "Account Status";
 export const activeText = "Active";
 export const removeStaffText = "Remove Staff";
+export const updatesFromDeliveryText = " Updates from delivery orders."
 //
 
 //for signin
@@ -126,6 +127,7 @@ export const businessProfileDescText =
   "A business profile effectively showcases your brand identity, mission, and unique offerings to potential clients";
 export const resetPasswordDescText =
   "Reset your password and regain access to your account securely.";
+export const companyProfileDesc = "A company profile is a brief overview of a business, highlighting its mission, products, and key achievements."
 
 //home
 export const welcomeBackText = " Welcome back";
@@ -138,7 +140,7 @@ export const companyEmailText = "Company Email";
 export const roleText = "Role";
 export const businessRegistrationCertificateText =
   "Business Registration Certificate";
-export const companyInfoTextDesc =
+export const companyInfoTextDescText =
   "Please enter your company details to help us understand your business better.";
 
 export const firstNameText = "First Name";
@@ -158,7 +160,9 @@ export const companyContactNoOptionalText = "Country contact number (optional)";
 export const completeOwnerInfoText = "Complete owner info";
 export const completeOwnerInfoDescText =
   "Please provide the complete owner information to ensure accurate account setup and communication.";
-
+export const quickLinksText = "Quick Links"
+export const coinsText = "Coins"
+export const currentPasswordText = "Current Password"
 //reset password
 
 export const passwordHasBeenResetText = "Password has been reset";

@@ -9,6 +9,7 @@ import { MapStepWrapperComp } from "../../wrappers/map-step-wrapper";
 import {
   businessEmailText,
   cancelText,
+  didNotReceivedCodeText,
   saveText,
   verificationCodeText,
   verifyYourBusinessEmailText,
@@ -59,7 +60,7 @@ export const EmailDialog = ({
                 value={email}
                 inputStyle="input"
                 type="email"
-                title="Business email"
+                title={businessEmailText}
               />
               <div className="flex items-center justify-center gap-2 mt-4">
                 <SecondaryBtn
@@ -125,7 +126,7 @@ export const EmailDialog = ({
                 </div>
                 <div className="flex flex-col items-center text-center gap-1">
                   <p className="text-[12px] text-secondary">
-                    Didn't receive the code?
+                    {didNotReceivedCodeText}
                   </p>
                   <p className="text-[12px] text-main-primary cursor-pointer">
                     Resend code in 60s

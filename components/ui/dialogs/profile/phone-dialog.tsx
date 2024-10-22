@@ -29,7 +29,7 @@ export const PhoneDialog = ({
               value={phone}
               inputStyle="tel"
               type="text"
-              title="Phone"
+              title={phoneText}
             />
 
             <div className="flex items-center justify-center gap-2 mt-4">

@@ -10,8 +10,22 @@ import { PrimaryInput } from "@/components/ui/inputs/primary-input";
 import { renderPageNumbers } from "@/components/ui/render-paginated-page-no";
 import { cn } from "@/lib/utils";
 import {
+  activityText,
   addCreditOrDebitCardText,
+  addStaffText,
+  businesscenterText,
+  businessRegistrationCertificateText,
+  companyPaymentMethodsText,
+  companyProfileText,
+  companyWalletText,
+  contactUsToChangeCompanyInfo,
   creditOrDebitCardText,
+  exportText,
+  myTeamText,
+  orderText,
+  pointsText,
+  pointTranscationHistoryText,
+  topupText,
   visaText,
 } from "@/utils/constants";
 import {
@@ -387,7 +401,7 @@ export const BussinessCenterComp = () => {
       />
       {step === 0 && (
         <div className="p-4 flex flex-col gap-2 bg-white rounded-[7px]">
-          <h5 className="text-h5 font-[600]">Business center</h5>
+          <h5 className="text-h5 font-[600]">{businesscenterText}</h5>
           <div className="flex flex-col gap-2 h-[140px] justify-center p-4 bg-globalPrimary relative rounded-[7px]">
             <Image
               src="/assets/icons/sidebar/wallet-bg.svg"
@@ -397,10 +411,10 @@ export const BussinessCenterComp = () => {
               alt="wallt bg"
             />
             <h5 className="text-white text-h5 z-[10] font-[700]">
-              Company Wallet
+              {companyWalletText}
             </h5>
             <div className="flex items-center gap-1 text-primary text-h5 font-[700] z-[10]">
-              <h5 className="mb-0">1,288 points</h5>
+              <h5 className="mb-0">1,288 {pointsText}</h5>
               <ChevronRight
                 onClick={() => {
                   setStep(1);
@@ -416,7 +430,7 @@ export const BussinessCenterComp = () => {
             >
               <div className="flex items-center gap-2 ">
                 <Plus className="w-4 h-4" />
-                <p>Top up</p>
+                <p>{topupText}</p>
               </div>
             </PrimaryBtn>
           </div>
@@ -451,7 +465,9 @@ export const BussinessCenterComp = () => {
               >
                 <ArrowLeft className="w-4 h-4" />
               </div>
-              <h6 className="text-h5 font-[600]">Point transaction history</h6>
+              <h6 className="text-h5 font-[600]">
+                {pointTranscationHistoryText}
+              </h6>
             </div>
             <SecondaryBtn
               onClick={() => {
@@ -461,14 +477,14 @@ export const BussinessCenterComp = () => {
             >
               <div className="flex items-center gap-2">
                 <Download className="w-4 h-4" />
-                <p className="font-[500] text-p2">Export</p>
+                <p className="font-[500] text-p2">{exportText}</p>
               </div>
             </SecondaryBtn>
           </div>
           <div className="flex flex-col py-4">
             <div className="py-3 px-4 rounded-[7px] bg-[#EFEFEF] flex items-center justify-between text-p3 text-[#818181] font-[500]">
-              <p className="">Activity</p>
-              <p>Point</p>
+              <p className="">{activityText}</p>
+              <p>{pointsText}</p>
             </div>
             {orderData
               ?.slice(currentPage * limit, currentPage * limit + limit)
@@ -478,7 +494,7 @@ export const BussinessCenterComp = () => {
                     <div className="py-3 px-4 flex items-start justify-between text-p3 border-t-gray-400/20 border-t-[1px]">
                       <div className="flex flex-col items-start gap-1">
                         <p className="py-1 text-primary font-[500] text-p2">
-                          Order# {val.orderNo}
+                          {orderText}# {val.orderNo}
                         </p>
                         <p className="">Staff: {val.staffEmail}</p>
                         <p className="">{val.date}</p>
@@ -507,7 +523,7 @@ export const BussinessCenterComp = () => {
                 >
                   <ArrowLeft className="w-4 h-4" />
                 </div>
-                <h6 className="text-h5 font-[600]">Company Profile</h6>
+                <h6 className="text-h5 font-[600]">{companyProfileText}</h6>
               </div>
 
               <SecondaryBtn
@@ -518,7 +534,7 @@ export const BussinessCenterComp = () => {
               >
                 <div className="flex items-center gap-2">
                   <Download className="w-4 h-4" />
-                  <p className="font-[500] text-p2">Export</p>
+                  <p className="font-[500] text-p2">{exportText}</p>
                 </div>
               </SecondaryBtn>
             </div>
@@ -538,7 +554,7 @@ export const BussinessCenterComp = () => {
                 })}
                 <div className="flex flex-col gap-2 py-2">
                   <p className="font-[500] text-p2 text-primary">
-                    Business Registration Certificate
+                    {businessRegistrationCertificateText}
                   </p>
                   <div className=" w-[100px] height-[120px] rounded-[7px]">
                     <Image
@@ -556,7 +572,7 @@ export const BussinessCenterComp = () => {
                 >
                   <div className="flex items-center gap-2 ">
                     <PhoneCall className="w-4 h-4" />
-                    <p className="text-p2">Contact Us to change company info</p>
+                    <p className="text-p2">{contactUsToChangeCompanyInfo}</p>
                   </div>
                 </OutlinedBtn>
               </div>
@@ -577,7 +593,7 @@ export const BussinessCenterComp = () => {
                 >
                   <ArrowLeft className="w-4 h-4" />
                 </div>
-                <h6 className="text-h5 font-[600]">My team</h6>
+                <h6 className="text-h5 font-[600]">{myTeamText}</h6>
               </div>
             </div>
             <div className="flex items-center max-md:flex-wrap gap-2 justify-between">
@@ -612,7 +628,7 @@ export const BussinessCenterComp = () => {
               >
                 <div className="flex items-center gap-2 text-p2">
                   <Plus className="w-4 h-4" />
-                  <p>Add staff</p>
+                  <p>{addStaffText}</p>
                 </div>
               </PrimaryBtn>
             </div>
@@ -681,7 +697,9 @@ export const BussinessCenterComp = () => {
                 >
                   <ArrowLeft className="w-4 h-4" />
                 </div>
-                <h6 className="text-h5 font-[600]">Company payment methods</h6>
+                <h6 className="text-h5 font-[600]">
+                  {companyPaymentMethodsText}
+                </h6>
               </div>
             </div>
             <div>

@@ -5,13 +5,6 @@ import { PrimaryBtn } from "../../buttons/primary-btn";
 import { cn } from "@/lib/utils";
 import { Check } from "lucide-react";
 import { voucherData } from "@/utils/voucher-data";
-// import {
-//   applyText,
-//   availableVoucherText,
-//   discountNextText,
-//   expiresOnText,
-//   hkText,
-// } from "@/utils/constants";
 import { DictionariesContext } from "@/context/dictionary-context";
 
 export const AvailableVoucherDialog = ({

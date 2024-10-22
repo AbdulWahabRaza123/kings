@@ -7,13 +7,6 @@ import { PrimaryBtn } from "@/components/ui/buttons/primary-btn";
 import { DatePicker, DatePickerProps } from "antd";
 import { SecondaryBtn } from "@/components/ui/buttons/secondary-btn";
 import { pickupTime } from "@/utils/pickup-time-data";
-import {
-  arrangeADeliveryText,
-  clearText,
-  continueText,
-  nowText,
-  selectText,
-} from "@/utils/constants";
 import { DictionariesContext } from "@/context/dictionary-context";
 interface SelectedCustomTimeProps {
   selectedDate: string;

@@ -1,7 +1,6 @@
 "use client";
 import { DictionariesContext } from "@/context/dictionary-context";
 import { cn } from "@/lib/utils";
-// import { capacityText, maxLoadText, suitableForText } from "@/utils/constants";
 import Image from "next/image";
 import React from "react";
 interface VanCardProps {

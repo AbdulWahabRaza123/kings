@@ -1,25 +1,12 @@
 import React, { useState } from "react";
 import { DialogComp } from "../../dialog";
-import { DatePickerProps, Switch } from "antd";
+import { Switch } from "antd";
 import { SecondaryBtn } from "@/components/ui/buttons/secondary-btn";
 import { PrimaryBtn } from "@/components/ui/buttons/primary-btn";
 import { DetailCard } from "@/components/ui/cards/detail-card";
 import { ArrowLeft, CircleX, Info } from "lucide-react";
 import { TextInput } from "@/components/ui/inputs/text-input";
 import { ConfirmationDialog } from "../../confirmation-dialog";
-// import {
-//   accountStatusText,
-//   activeText,
-//   activityText,
-//   addText,
-//   anInvitationEmailText,
-//   businessEmailText,
-//   cancelText,
-//   removeStaffText,
-//   roleText,
-//   staffDetailsText,
-//   updateText,
-// } from "@/utils/constants";
 import { DictionariesContext } from "@/context/dictionary-context";
 export const ManageStaffDialog = ({
   open,

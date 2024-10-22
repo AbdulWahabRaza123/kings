@@ -94,6 +94,7 @@ const GoogleMapComponent: React.FC = () => {
         {destinationCoords && (
           <Marker position={destinationCoords} label="Islamabad" />
         )}
+
         {directionsResponse && (
           <DirectionsRenderer
             directions={directionsResponse}

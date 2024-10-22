@@ -1,5 +1,4 @@
 import { DictionariesContext } from "@/context/dictionary-context";
-// import { reorderText } from "@/utils/constants";
 import { RotateCcw } from "lucide-react";
 import Image from "next/image";
 

@@ -5,12 +5,6 @@ import { PrimaryBtn } from "../../buttons/primary-btn";
 import { SecondaryBtn } from "../../buttons/secondary-btn";
 import { PrimaryTextarea } from "../../inputs/primary-input";
 import { TextInput } from "../../inputs/text-input";
-// import {
-//   cancelText,
-//   contactCustomerServiceText,
-//   leaveYourMessageText,
-//   saveText,
-// } from "@/utils/constants";
 import { DictionariesContext } from "@/context/dictionary-context";
 
 export const ContactCustomerServiceDialog = ({

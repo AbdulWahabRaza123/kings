@@ -4,7 +4,6 @@ import { DialogComp } from "../dialog";
 import { PrimaryBtn } from "../../buttons/primary-btn";
 import { SecondaryBtn } from "../../buttons/secondary-btn";
 import { TextInput } from "../../inputs/text-input";
-// import { cancelText, roleText, updateText } from "@/utils/constants";
 import { DictionariesContext } from "@/context/dictionary-context";
 
 export const RoleDialog = ({

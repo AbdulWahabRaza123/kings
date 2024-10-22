@@ -2,14 +2,6 @@
 import React from "react";
 import { DialogComp } from "../dialog";
 import { TextInput } from "../../inputs/text-input";
-// import {
-//   cancelText,
-//   firstNameText,
-//   lastNameText,
-//   mobileNoText,
-//   orderContactText,
-//   saveText,
-// } from "@/utils/constants";
 import { PrimaryBtn } from "../../buttons/primary-btn";
 import { SecondaryBtn } from "../../buttons/secondary-btn";
 import { DictionariesContext } from "@/context/dictionary-context";
@@ -40,7 +32,7 @@ export const OrderContactDialog = ({
     orderContactText,
     saveText,
   } = dictionaries;
-  // Function to update specific field of orderContact
+
   const handleInputChange = (key: keyof OrderContactDetails, value: string) => {
     setOrderContact({
       ...orderContact,

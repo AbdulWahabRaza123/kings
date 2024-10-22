@@ -1,6 +1,5 @@
 "use client";
 import { DictionariesContext } from "@/context/dictionary-context";
-// import { powerKingText } from "@/utils/constants";
 import Link from "next/link";
 import React from "react";
 const footerLink = [

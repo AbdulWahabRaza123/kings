@@ -83,6 +83,9 @@ export const TopupDialog = ({
     topupCompanyWalletText,
     visaText,
     yourTopUpPointstext,
+    bankText,
+    accountHolderNameText,
+    accountNumberText,
   } = dictionaries;
   const [step, setStep] = useState(0);
   const [topupAmount, setTopupAmount] = useState("");
@@ -281,7 +284,20 @@ export const TopupDialog = ({
           <div className="flex flex-col gap-3 justify-start items-start py-3 w-full">
             <h1 className="text-[18px] font-[600]">{bankInformationText}</h1>
             <div>
-              {bankDetailsData.map((item, index) => {
+              {[
+                {
+                  title: bankText,
+                  desc: "The Hongkong and Shanghai Banking Corporation Limited (HSBC)",
+                },
+                {
+                  title: accountHolderNameText,
+                  desc: "Power King",
+                },
+                {
+                  title: accountNumberText,
+                  desc: "891-982092-929",
+                },
+              ].map((item, index) => {
                 return (
                   <>
                     <CopyTextComp

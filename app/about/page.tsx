@@ -1,4 +1,5 @@
 "use client";
+import { DictionariesContext } from "@/context/dictionary-context";
 import {
   allTopicsText,
   helpText,
@@ -22,6 +23,8 @@ const helpPagesData = [
   },
 ];
 const AboutPage = () => {
+  const { dictionaries } = DictionariesContext();
+  const { allTopicsText, helpText, membershipAndLoyaltyText } = dictionaries;
   const [pageNo, setPageNo] = useState(0);
   return (
     <>

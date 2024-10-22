@@ -1,12 +1,13 @@
 "use client";
 import { ContactCustomerServiceDialog } from "@/components/ui/dialogs/contact/contact-customer-service-dialog";
-import {
-  allTopicsText,
-  contactCustomerServiceText,
-  helpText,
-  membershipAndLoyaltyText,
-  needHelpText,
-} from "@/utils/constants";
+import { DictionariesContext } from "@/context/dictionary-context";
+// import {
+//   allTopicsText,
+//   contactCustomerServiceText,
+//   helpText,
+//   membershipAndLoyaltyText,
+//   needHelpText,
+// } from "@/utils/constants";
 import { Breadcrumb } from "antd";
 import { ChevronRight, List, UserRound } from "lucide-react";
 import React, { useState } from "react";
@@ -25,6 +26,14 @@ const helpPagesData = [
   },
 ];
 const HelpPage = () => {
+  const { dictionaries } = DictionariesContext();
+  const {
+    allTopicsText,
+    contactCustomerServiceText,
+    helpText,
+    membershipAndLoyaltyText,
+    needHelpText,
+  } = dictionaries;
   const [openContact, setOpenContact] = useState(false);
   const [pageNo, setPageNo] = useState(0);
   return (

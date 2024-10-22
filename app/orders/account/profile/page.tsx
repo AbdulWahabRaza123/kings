@@ -3,8 +3,8 @@ import { BussinessCenterComp } from "@/components/account/profile/business-cente
 import { CommunicationComp } from "@/components/account/profile/communication";
 import { MyProfileComp } from "@/components/account/profile/my-profile";
 import { SavedPlacesComp } from "@/components/account/profile/saved-places";
+import { DictionariesContext } from "@/context/dictionary-context";
 import { cn } from "@/lib/utils";
-import { AccountText } from "@/utils/constants";
 import Image from "next/image";
 
 import React, { useState } from "react";
@@ -32,6 +32,8 @@ const profileSettingsData = [
 ];
 
 const Profile = () => {
+  const { dictionaries } = DictionariesContext();
+  const { AccountText } = dictionaries;
   const [activeTab, setActiveTab] = useState(0);
 
   return (

@@ -1,6 +1,6 @@
 "use client";
+import { DictionariesContext } from "@/context/dictionary-context";
 import { cn } from "@/lib/utils";
-import { notificationsText } from "@/utils/constants";
 import React from "react";
 const notificationsData = [
   {
@@ -45,6 +45,8 @@ const notificationsData = [
   },
 ];
 const NotificationPage = () => {
+  const { dictionaries } = DictionariesContext();
+  const { notificationsText } = dictionaries;
   return (
     <>
       <main className="w-full min-h-screen py-10 flex flex-col items-center bg-[#FAFAFA]">

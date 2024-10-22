@@ -9,22 +9,24 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { promotionalData } from "@/utils/promotional-data";
-import {
-  arrangeADeliveryText,
-  continueText,
-  deliverWithPoweKingText,
-  deliverWithPowerKingDescText,
-  deliveryAppText,
-  downloadAppText,
-  driverAppText,
-  dropoffLocText,
-  phoneText,
-  pickupLocText,
-  pickupNowText,
-  promotionsText,
-  rewardText,
-} from "@/utils/constants";
+import { DictionariesContext } from "@/context/dictionary-context";
 const OrdersPage = () => {
+  const { dictionaries } = DictionariesContext();
+  const {
+    arrangeADeliveryText,
+    continueText,
+    deliverWithPoweKingText,
+    deliverWithPowerKingDescText,
+    deliveryAppText,
+    downloadAppText,
+    driverAppText,
+    dropoffLocText,
+    phoneText,
+    pickupLocText,
+    pickupNowText,
+    promotionsText,
+    rewardText,
+  } = dictionaries;
   const router = useRouter();
   const [pickupLoc, setPickupLoc] = useState("");
   const [dropupLoc, setDropupLoc] = useState("");

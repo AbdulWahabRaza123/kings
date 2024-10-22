@@ -11,26 +11,39 @@ import { CancelOrderDialog } from "@/components/ui/dialogs/orders/cancel-order-d
 import { OrderRatingDialog } from "@/components/ui/dialogs/orders/order-review-dialog";
 import GoogleMapComponent from "@/components/ui/map/google-map";
 import { MapStepWrapperComp } from "@/components/ui/wrappers/map-step-wrapper";
+import { DictionariesContext } from "@/context/dictionary-context";
 import { cn } from "@/lib/utils";
 import { rideStatus } from "@/types/ride-status-type";
 import { orderData } from "@/utils/account-order-data";
-import {
-  addReviewText,
-  cancellationPolicyText,
-  cancelOrderText,
-  checkQuotationAndConfirmOrderText,
-  contactCustomerServiceText,
-  driverText,
-  myOrdersText,
-  noteToDriverText,
-  orderContactText,
-} from "@/utils/constants";
+// import {
+//   addReviewText,
+//   cancellationPolicyText,
+//   cancelOrderText,
+//   checkQuotationAndConfirmOrderText,
+//   contactCustomerServiceText,
+//   driverText,
+//   myOrdersText,
+//   noteToDriverText,
+//   orderContactText,
+// } from "@/utils/constants";
 import { NotebookPen, PhoneCall } from "lucide-react";
 import Image from "next/image";
 import React, { useState } from "react";
 const statusOptions = ["All", "Pending", "On-going", "Completed", "Cancelled"];
 
 const MyOrders = () => {
+  const { dictionaries } = DictionariesContext();
+  const {
+    addReviewText,
+    cancellationPolicyText,
+    cancelOrderText,
+    checkQuotationAndConfirmOrderText,
+    contactCustomerServiceText,
+    driverText,
+    myOrdersText,
+    noteToDriverText,
+    orderContactText,
+  } = dictionaries;
   const [step, setStep] = useState(1);
   const [selectedOrderType, setSelectedOrderType] = useState(0);
   const [rideStatus, setRideStatus] = useState<rideStatus>("completed");

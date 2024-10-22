@@ -7,19 +7,20 @@ import { DetailCard } from "@/components/ui/cards/detail-card";
 import { ArrowLeft, CircleX, Info } from "lucide-react";
 import { TextInput } from "@/components/ui/inputs/text-input";
 import { ConfirmationDialog } from "../../confirmation-dialog";
-import {
-  accountStatusText,
-  activeText,
-  activityText,
-  addText,
-  anInvitationEmailText,
-  businessEmailText,
-  cancelText,
-  removeStaffText,
-  roleText,
-  staffDetailsText,
-  updateText,
-} from "@/utils/constants";
+// import {
+//   accountStatusText,
+//   activeText,
+//   activityText,
+//   addText,
+//   anInvitationEmailText,
+//   businessEmailText,
+//   cancelText,
+//   removeStaffText,
+//   roleText,
+//   staffDetailsText,
+//   updateText,
+// } from "@/utils/constants";
+import { DictionariesContext } from "@/context/dictionary-context";
 export const ManageStaffDialog = ({
   open,
   setOpen,
@@ -29,6 +30,20 @@ export const ManageStaffDialog = ({
   setOpen: (val: boolean) => void;
   edit?: boolean;
 }) => {
+  const { dictionaries } = DictionariesContext();
+  const {
+    accountStatusText,
+    activeText,
+    activityText,
+    addText,
+    anInvitationEmailText,
+    businessEmailText,
+    cancelText,
+    removeStaffText,
+    roleText,
+    staffDetailsText,
+    updateText,
+  } = dictionaries;
   const [isActive, setIsActive] = useState(false);
   const [email, setEmail] = useState("");
   const [role, setRole] = useState("");

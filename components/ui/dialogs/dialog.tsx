@@ -3,7 +3,8 @@ import React from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { X } from "lucide-react";
-import { closeText } from "@/utils/constants";
+// import { closeText } from "@/utils/constants";
+import { DictionariesContext } from "@/context/dictionary-context";
 
 export const DialogComp = ({
   open,
@@ -14,6 +15,8 @@ export const DialogComp = ({
   setOpen: (value: boolean) => void;
   children: React.ReactNode;
 }) => {
+  const { dictionaries } = DictionariesContext();
+  const { closeText } = dictionaries;
   return (
     <Dialog open={open}>
       <DialogContent className="bg-white border-[1px] border-[#00f4ff] rounded-[20px] max-w-[600px] max-h-[90vh] overflow-auto flex flex-col gap-7 p-5">

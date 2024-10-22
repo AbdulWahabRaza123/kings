@@ -12,31 +12,53 @@ import {
 import { useState } from "react";
 import Image from "next/image";
 import { SignInWrapper } from "../ui/wrappers/signin-wrapper";
-import {
-  businessEmailText,
-  changePasswordDescText,
-  continueText,
-  didntReceieveTheCodeText,
-  enterBusinessEmailText,
-  forgetPasswordDesc,
-  forgetPasswordText,
-  loginText,
-  passwordText,
-  resendCodeIn60Secs,
-  resetPasswordText,
-  setupBusinessAccountText,
-  verificationCodeSendToText,
-  verificationCodeText,
-  verifyText,
-  verifyYourBusinessEmailText,
-  welcomeBackDesc,
-  welcomeBackText,
-} from "@/utils/constants";
+// import {
+//   businessEmailText,
+//   changePasswordDescText,
+//   continueText,
+//   didntReceieveTheCodeText,
+//   enterBusinessEmailText,
+//   forgetPasswordDesc,
+//   forgetPasswordText,
+//   loginText,
+//   passwordText,
+//   resendCodeIn60Secs,
+//   resetPasswordText,
+//   setupBusinessAccountText,
+//   verificationCodeSendToText,
+//   verificationCodeText,
+//   verifyText,
+//   verifyYourBusinessEmailText,
+//   welcomeBackDesc,
+//   welcomeBackText,
+// } from "@/utils/constants";
+import { DictionariesContext } from "@/context/dictionary-context";
 export const SigninProfile = ({
   setIsSignIn,
 }: {
   setIsSignIn: (value: boolean) => void;
 }) => {
+  const { dictionaries } = DictionariesContext();
+  const {
+    businessEmailText,
+    changePasswordDescText,
+    continueText,
+    didntReceieveTheCodeText,
+    enterBusinessEmailText,
+    forgetPasswordDesc,
+    forgetPasswordText,
+    loginText,
+    passwordText,
+    resendCodeIn60Secs,
+    resetPasswordText,
+    setupBusinessAccountText,
+    verificationCodeSendToText,
+    verificationCodeText,
+    verifyText,
+    verifyYourBusinessEmailText,
+    welcomeBackDesc,
+    welcomeBackText,
+  } = dictionaries;
   const [pageNo, setPageNo] = useState(0);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

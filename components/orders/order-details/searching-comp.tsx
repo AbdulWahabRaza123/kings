@@ -1,10 +1,14 @@
-import {
-  searchingForDriversDescText,
-  searchingForDriversText,
-} from "@/utils/constants";
+"use client";
+import { DictionariesContext } from "@/context/dictionary-context";
+// import {
+//   searchingForDriversDescText,
+//   searchingForDriversText,
+// } from "@/utils/constants";
 import Image from "next/image";
 
 export const SearchingComp = () => {
+  const { dictionaries } = DictionariesContext();
+  const { searchingForDriversDescText, searchingForDriversText } = dictionaries;
   return (
     <>
       <div className="rounded-[7px] flex items-center gap-4 p-4 bg-[#FFF5E6]">

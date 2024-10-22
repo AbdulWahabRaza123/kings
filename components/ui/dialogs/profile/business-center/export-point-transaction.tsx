@@ -4,15 +4,16 @@ import { TextInput } from "@/components/ui/inputs/text-input";
 import { DatePicker, DatePickerProps } from "antd";
 import { Calendar } from "lucide-react";
 import { SelectInput } from "@/components/ui/inputs/select-input";
-import {
-  cancelText,
-  datePeriodText,
-  exportPointText,
-  exportText,
-  selectText,
-} from "@/utils/constants";
+// import {
+//   cancelText,
+//   datePeriodText,
+//   exportPointText,
+//   exportText,
+//   selectText,
+// } from "@/utils/constants";
 import { SecondaryBtn } from "@/components/ui/buttons/secondary-btn";
 import { PrimaryBtn } from "@/components/ui/buttons/primary-btn";
+import { DictionariesContext } from "@/context/dictionary-context";
 const typeOptions = [
   {
     label: "topup",
@@ -26,6 +27,14 @@ export const ExportTransactionHistoryDialog = ({
   open: boolean;
   setOpen: (val: boolean) => void;
 }) => {
+  const { dictionaries } = DictionariesContext();
+  const {
+    cancelText,
+    datePeriodText,
+    exportPointText,
+    exportText,
+    selectText,
+  } = dictionaries;
   const [selectedDate, setSelectedDate] = useState("");
   const [type, setType] = useState("topup");
   const handleDateChange: DatePickerProps["onChange"] = (date, dateString) => {

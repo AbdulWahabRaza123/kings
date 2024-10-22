@@ -3,10 +3,11 @@ import { ArrowLeft, Briefcase, Building } from "lucide-react";
 import { useState } from "react";
 import { BusinessAccount } from "./profile/business-profile";
 import { CompanyAccount } from "./profile/company-profile";
-import {
-  setupBusinessAccountText,
-  whatDoYouWantToDoText,
-} from "@/utils/constants";
+// import {
+//   setupBusinessAccountText,
+//   whatDoYouWantToDoText,
+// } from "@/utils/constants";
+import { DictionariesContext } from "@/context/dictionary-context";
 
 const cardData = [
   {
@@ -25,6 +26,8 @@ export const BusinessFlow = ({
 }: {
   setIsSignIn: (value: boolean) => void;
 }) => {
+  const { dictionaries } = DictionariesContext();
+  const { setupBusinessAccountText, whatDoYouWantToDoText } = dictionaries;
   const [isBusiness, setIsBusiness] = useState(false);
   const [pageNo, setPageNo] = useState(0);
 

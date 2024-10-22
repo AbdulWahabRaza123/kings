@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { DialogComp } from "./dialog";
 import { SecondaryBtn } from "@/components/ui/buttons/secondary-btn";
 import { PrimaryBtn } from "@/components/ui/buttons/primary-btn";
-import { cancelText, yesText } from "@/utils/constants";
+// import { cancelText, yesText } from "@/utils/constants";
+import { DictionariesContext } from "@/context/dictionary-context";
 export const ConfirmationDialog = ({
   open,
   setOpen,
@@ -16,6 +17,8 @@ export const ConfirmationDialog = ({
   desc: string;
   onSubmit: () => void;
 }) => {
+  const { dictionaries } = DictionariesContext();
+  const { cancelText, yesText } = dictionaries;
   return (
     <>
       <DialogComp open={open} setOpen={setOpen}>

@@ -6,12 +6,13 @@ import { SecondaryBtn } from "../../buttons/secondary-btn";
 import { PrimaryTextarea } from "../../inputs/primary-input";
 import { Rate } from "antd";
 import Image from "next/image";
-import {
-  deliverToText,
-  leaveCommentText,
-  rateYourDriverText,
-  submitText,
-} from "@/utils/constants";
+// import {
+//   deliverToText,
+//   leaveCommentText,
+//   rateYourDriverText,
+//   submitText,
+// } from "@/utils/constants";
+import { DictionariesContext } from "@/context/dictionary-context";
 const desc = ["terrible", "bad", "normal", "good", "wonderful"];
 export const OrderRatingDialog = ({
   open,
@@ -28,11 +29,16 @@ export const OrderRatingDialog = ({
   note: string;
   setNote: (val: string) => void;
 }) => {
+  const { dictionaries } = DictionariesContext();
+  const { deliverToText, leaveCommentText, rateYourDriverText, submitText } =
+    dictionaries;
   return (
     <DialogComp open={open} setOpen={setOpen}>
       <div className="flex flex-col gap-3">
         <div>
-          <h1 className="text-[18px] font-[600]">{deliverToText} 23 Lolo Road</h1>
+          <h1 className="text-[18px] font-[600]">
+            {deliverToText} 23 Lolo Road
+          </h1>
         </div>
         <div className="flex flex-col gap-3 justify-center items-center py-3">
           <p className="text-p2 text-secondary">3 June 2024 10:48 AM</p>

@@ -5,13 +5,14 @@ import { PrimaryBtn } from "../../buttons/primary-btn";
 import { cn } from "@/lib/utils";
 import { Check } from "lucide-react";
 import { voucherData } from "@/utils/voucher-data";
-import {
-  applyText,
-  availableVoucherText,
-  discountNextText,
-  expiresOnText,
-  hkText,
-} from "@/utils/constants";
+// import {
+//   applyText,
+//   availableVoucherText,
+//   discountNextText,
+//   expiresOnText,
+//   hkText,
+// } from "@/utils/constants";
+import { DictionariesContext } from "@/context/dictionary-context";
 
 export const AvailableVoucherDialog = ({
   open,
@@ -24,6 +25,14 @@ export const AvailableVoucherDialog = ({
   selectedVoucherId: number;
   setSelectedVoucherId: (val: number) => void;
 }) => {
+  const { dictionaries } = DictionariesContext();
+  const {
+    applyText,
+    availableVoucherText,
+    discountNextText,
+    expiresOnText,
+    hkText,
+  } = dictionaries;
   return (
     <DialogComp open={open} setOpen={setOpen}>
       <div className="flex flex-col gap-3">

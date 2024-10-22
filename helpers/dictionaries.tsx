@@ -7,6 +7,6 @@ const dictionary = {
   traditionalChinese: () =>
     import("../dictionary/traditional-chinese.json").then((r) => r.default),
 };
-export const getDictionary = (lang: LanguageDetails) => {
-  return dictionary[lang]();
+export const getDictionary = async (lang: LanguageDetails) => {
+  return await dictionary[lang]();
 };

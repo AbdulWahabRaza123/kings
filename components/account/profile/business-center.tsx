@@ -1,3 +1,4 @@
+"use client";
 import { OutlinedBtn } from "@/components/ui/buttons/outline-btn";
 import { PrimaryBtn } from "@/components/ui/buttons/primary-btn";
 import { SecondaryBtn } from "@/components/ui/buttons/secondary-btn";
@@ -8,26 +9,27 @@ import { ExportTransactionHistoryDialog } from "@/components/ui/dialogs/profile/
 import { ManageStaffDialog } from "@/components/ui/dialogs/profile/business-center/manage-staff-dialog";
 import { PrimaryInput } from "@/components/ui/inputs/primary-input";
 import { renderPageNumbers } from "@/components/ui/render-paginated-page-no";
+import { DictionariesContext } from "@/context/dictionary-context";
 import { cn } from "@/lib/utils";
-import {
-  activityText,
-  addCreditOrDebitCardText,
-  addStaffText,
-  businesscenterText,
-  businessRegistrationCertificateText,
-  companyPaymentMethodsText,
-  companyProfileText,
-  companyWalletText,
-  contactUsToChangeCompanyInfo,
-  creditOrDebitCardText,
-  exportText,
-  myTeamText,
-  orderText,
-  pointsText,
-  pointTranscationHistoryText,
-  topupText,
-  visaText,
-} from "@/utils/constants";
+// import {
+//   activityText,
+//   addCreditOrDebitCardText,
+//   addStaffText,
+//   businesscenterText,
+//   businessRegistrationCertificateText,
+//   companyPaymentMethodsText,
+//   companyProfileText,
+//   companyWalletText,
+//   contactUsToChangeCompanyInfo,
+//   creditOrDebitCardText,
+//   exportText,
+//   myTeamText,
+//   orderText,
+//   pointsText,
+//   pointTranscationHistoryText,
+//   topupText,
+//   visaText,
+// } from "@/utils/constants";
 import {
   ArrowLeft,
   Building2,
@@ -353,6 +355,26 @@ const teamData = [
 ];
 const teamBtns = ["All", "Active", "Deactivated"];
 export const BussinessCenterComp = () => {
+  const { dictionaries } = DictionariesContext();
+  const {
+    activityText,
+    addCreditOrDebitCardText,
+    addStaffText,
+    businesscenterText,
+    businessRegistrationCertificateText,
+    companyPaymentMethodsText,
+    companyProfileText,
+    companyWalletText,
+    contactUsToChangeCompanyInfo,
+    creditOrDebitCardText,
+    exportText,
+    myTeamText,
+    orderText,
+    pointsText,
+    pointTranscationHistoryText,
+    topupText,
+    visaText,
+  } = dictionaries;
   const [step, setStep] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const [openTransactionHistoryDialog, setOpenTransactionHistoryDialog] =

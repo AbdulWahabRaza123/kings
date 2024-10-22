@@ -4,7 +4,8 @@ import { DialogComp } from "../dialog";
 import { PrimaryBtn } from "../../buttons/primary-btn";
 import { SecondaryBtn } from "../../buttons/secondary-btn";
 import { TextInput } from "../../inputs/text-input";
-import { cancelText, phoneText, updateText } from "@/utils/constants";
+// import { cancelText, phoneText, updateText } from "@/utils/constants";
+import { DictionariesContext } from "@/context/dictionary-context";
 
 export const PhoneDialog = ({
   open,
@@ -13,6 +14,8 @@ export const PhoneDialog = ({
   open: boolean;
   setOpen: (value: boolean) => void;
 }) => {
+  const { dictionaries } = DictionariesContext();
+  const { cancelText, phoneText, updateText } = dictionaries;
   const [phone, setPhone] = useState("");
 
   return (

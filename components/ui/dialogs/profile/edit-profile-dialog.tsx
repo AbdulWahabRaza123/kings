@@ -7,7 +7,8 @@ import Slider from "rc-slider";
 import Cropper from "react-easy-crop";
 import "rc-slider/assets/index.css";
 import { Image } from "lucide-react";
-import { cancelText, selectProfileText, updateText } from "@/utils/constants";
+// import { cancelText, selectProfileText, updateText } from "@/utils/constants";
+import { DictionariesContext } from "@/context/dictionary-context";
 export const EditProfileDialog = ({
   open,
   setOpen,
@@ -15,6 +16,8 @@ export const EditProfileDialog = ({
   open: boolean;
   setOpen: (value: boolean) => void;
 }) => {
+  const { dictionaries } = DictionariesContext();
+  const { cancelText, selectProfileText, updateText } = dictionaries;
   const [crop, setCrop] = useState({ x: 0, y: 0 });
   const [zoom, setZoom] = useState(1);
   const [croppedArea, setCroppedArea] = useState(null);

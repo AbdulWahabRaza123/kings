@@ -1,4 +1,6 @@
-import { powerKingText } from "@/utils/constants";
+"use client";
+import { DictionariesContext } from "@/context/dictionary-context";
+// import { powerKingText } from "@/utils/constants";
 import Link from "next/link";
 import React from "react";
 const footerLink = [
@@ -20,6 +22,8 @@ const footerLink = [
   },
 ];
 export const FooterComp = () => {
+  const { dictionaries } = DictionariesContext();
+  const { powerKingText } = dictionaries;
   return (
     <footer className="bg-globalTertiary w-full md:py-20 max-md:py-10">
       <div className="md:px-20 max-md:px-4 flex items-start gap-7 justify-between max-lg:flex-wrap">

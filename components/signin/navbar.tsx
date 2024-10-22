@@ -7,22 +7,20 @@ import { Bell, ChevronDown, ChevronRight, Globe } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { NavDrawerAfterLoginComp } from "../ui/drawers/nav-drawer";
-import {
-  AccountText,
-  companyWalletText,
-  generalText,
-  loginText,
-  notificationsText,
-  pointsText,
-  quickLinksText,
-  signOutText,
-  signupText,
-} from "@/utils/constants";
-import { PrimaryBtn } from "../ui/buttons/primary-btn";
-import { Progress } from "antd";
-import Link from "next/link";
+// import {
+//   AccountText,
+//   companyWalletText,
+//   generalText,
+//   loginText,
+//   notificationsText,
+//   pointsText,
+//   quickLinksText,
+//   signOutText,
+//   signupText,
+// } from "@/utils/constants";
 import { MembershipCard } from "../ui/cards/membership-card";
 import { UserAuthContext } from "@/context/auth-context";
+import { DictionariesContext } from "@/context/dictionary-context";
 const options = [
   {
     name: "Home",
@@ -91,6 +89,18 @@ const Navbar = () => {
   const router = useRouter();
   const currentPage = usePathname();
   const { lng, setLng } = UserAuthContext();
+  const { dictionaries } = DictionariesContext();
+  const {
+    AccountText,
+    companyWalletText,
+    generalText,
+    loginText,
+    notificationsText,
+    pointsText,
+    quickLinksText,
+    signOutText,
+    signupText,
+  } = dictionaries;
   const [selectedPage, setSelectedPage] = useState({
     name: "Account",
     link: "/order/account",

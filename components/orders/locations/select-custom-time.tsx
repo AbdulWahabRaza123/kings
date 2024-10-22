@@ -1,3 +1,4 @@
+"use client";
 import { MapStepWrapperComp } from "@/components/ui/wrappers/map-step-wrapper";
 import React from "react";
 import { SelectInput } from "@/components/ui/inputs/select-input";
@@ -13,6 +14,7 @@ import {
   nowText,
   selectText,
 } from "@/utils/constants";
+import { DictionariesContext } from "@/context/dictionary-context";
 interface SelectedCustomTimeProps {
   selectedDate: string;
   setSelectedDate: (val: string) => void;
@@ -32,6 +34,9 @@ export const SelectCustomTimeComp = ({
   selectedTime,
   setSelectedTime,
 }: SelectedCustomTimeProps) => {
+  const { dictionaries } = DictionariesContext();
+  const { arrangeADeliveryText, clearText, continueText, nowText, selectText } =
+    dictionaries;
   const handleDateChange: DatePickerProps["onChange"] = (date, dateString) => {
     console.log(date, dateString);
     setSelectedDate(dateString as string);

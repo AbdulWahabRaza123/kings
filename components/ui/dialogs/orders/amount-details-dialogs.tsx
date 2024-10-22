@@ -2,16 +2,17 @@
 import React from "react";
 import { DialogComp } from "../dialog";
 import { Info } from "lucide-react";
-import {
-  amountDescText,
-  amountDetailsText,
-  balanceText,
-  companyWalletText,
-  estimatedTotalText,
-  hkText,
-  paymentMethodText,
-  pointsText,
-} from "@/utils/constants";
+// import {
+//   amountDescText,
+//   amountDetailsText,
+//   balanceText,
+//   companyWalletText,
+//   estimatedTotalText,
+//   hkText,
+//   paymentMethodText,
+//   pointsText,
+// } from "@/utils/constants";
+import { DictionariesContext } from "@/context/dictionary-context";
 const amountData = [
   {
     name: "Base fee",
@@ -37,6 +38,17 @@ export const AmountDetailsDialog = ({
   open: boolean;
   setOpen: (value: boolean) => void;
 }) => {
+  const { dictionaries } = DictionariesContext();
+  const {
+    amountDescText,
+    amountDetailsText,
+    balanceText,
+    companyWalletText,
+    estimatedTotalText,
+    hkText,
+    paymentMethodText,
+    pointsText,
+  } = dictionaries;
   return (
     <DialogComp open={open} setOpen={setOpen}>
       <div className="flex flex-col gap-3">

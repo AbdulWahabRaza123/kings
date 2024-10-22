@@ -4,15 +4,16 @@ import { DialogComp } from "../dialog";
 import { PrimaryBtn } from "../../buttons/primary-btn";
 import { SecondaryBtn } from "../../buttons/secondary-btn";
 import { TextInput } from "../../inputs/text-input";
-import {
-  cancelText,
-  changePasswordText,
-  currentPasswordText,
-  passwordText,
-  updateText,
-} from "@/utils/constants";
+// import {
+//   cancelText,
+//   changePasswordText,
+//   currentPasswordText,
+//   passwordText,
+//   updateText,
+// } from "@/utils/constants";
 import { Check, EyeIcon, EyeOff } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { DictionariesContext } from "@/context/dictionary-context";
 
 export const ChangePasswordDialog = ({
   open,
@@ -21,6 +22,14 @@ export const ChangePasswordDialog = ({
   open: boolean;
   setOpen: (value: boolean) => void;
 }) => {
+  const { dictionaries } = DictionariesContext();
+  const {
+    cancelText,
+    changePasswordText,
+    currentPasswordText,
+    passwordText,
+    updateText,
+  } = dictionaries;
   const [password, setPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
 

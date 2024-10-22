@@ -6,14 +6,15 @@ import { cn } from "@/lib/utils";
 import { PrimaryInput } from "../../inputs/primary-input";
 import { SecondaryBtn } from "../../buttons/secondary-btn";
 import { PrimaryBtn } from "../../buttons/primary-btn";
-import {
-  amountDetailsText,
-  cancelDescText,
-  cancellationPolicyText,
-  cancelText,
-  saveText,
-  specifyReasonText,
-} from "@/utils/constants";
+// import {
+//   amountDetailsText,
+//   cancelDescText,
+//   cancellationPolicyText,
+//   cancelText,
+//   saveText,
+//   specifyReasonText,
+// } from "@/utils/constants";
+import { DictionariesContext } from "@/context/dictionary-context";
 const reasonData = [
   {
     reason: "Driver did not arrive",
@@ -35,6 +36,15 @@ export const CancelOrderDialog = ({
   open: boolean;
   setOpen: (value: boolean) => void;
 }) => {
+  const { dictionaries } = DictionariesContext();
+  const {
+    amountDetailsText,
+    cancelDescText,
+    cancellationPolicyText,
+    cancelText,
+    saveText,
+    specifyReasonText,
+  } = dictionaries;
   const [selectedReason, setSelectedReason] = useState(0);
   const [otherReason, setOtherReason] = useState("");
   return (

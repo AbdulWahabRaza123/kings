@@ -2,11 +2,7 @@ import { PrimaryBtn } from "@/components/ui/buttons/primary-btn";
 import { DestinationEditCardComp } from "@/components/ui/cards/edit-card";
 import { VanCardComp } from "@/components/ui/cards/van-card";
 import { MapStepWrapperComp } from "@/components/ui/wrappers/map-step-wrapper";
-import {
-  chooseAVehicleText,
-  continueText,
-  howToChooseAVehicleText,
-} from "@/utils/constants";
+import { DictionariesContext } from "@/context/dictionary-context";
 import {
   fromDestination,
   pickupDateAndTime,
@@ -32,6 +28,9 @@ export const SelectedVehicleComp = ({
   openConfirmDialog,
   setOpenConfirmDialog,
 }: SelectedVehicleProps) => {
+  const { dictionaries } = DictionariesContext();
+  const { chooseAVehicleText, continueText, howToChooseAVehicleText } =
+    dictionaries;
   return (
     <MapStepWrapperComp
       title={chooseAVehicleText}

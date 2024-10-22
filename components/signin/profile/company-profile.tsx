@@ -12,34 +12,35 @@ import "react-phone-input-2/lib/style.css";
 import { SignInWrapper } from "@/components/ui/wrappers/signin-wrapper";
 import { ReviewInProgressDialog } from "@/components/ui/dialogs/onboarding/review-in-progress";
 import { cn } from "@/lib/utils";
-import {
-  businessEmailText,
-  businessRegistrationCertificateText,
-  companyContactNoOptionalText,
-  companyEmailText,
-  companyInfoTextDescText,
-  companyNameText,
-  companyProfileDesc,
-  completeOwnerInfoDescText,
-  completeOwnerInfoText,
-  completeText,
-  continueText,
-  createBusinessProfileText,
-  didNotReceivedCodeText,
-  enterBusinessEmailText,
-  enterCompanyInfoText,
-  firstNameText,
-  industryText,
-  lastNameText,
-  passwordText,
-  pleaseSpecifyText,
-  resetPasswordDescText,
-  resetPasswordText,
-  roleText,
-  verificationCodeSendToText,
-  verificationCodeText,
-  verifyYourBusinessEmailText,
-} from "@/utils/constants";
+// import {
+//   businessEmailText,
+//   businessRegistrationCertificateText,
+//   companyContactNoOptionalText,
+//   companyEmailText,
+//   companyInfoTextDescText,
+//   companyNameText,
+//   companyProfileDesc,
+//   completeOwnerInfoDescText,
+//   completeOwnerInfoText,
+//   completeText,
+//   continueText,
+//   createBusinessProfileText,
+//   didNotReceivedCodeText,
+//   enterBusinessEmailText,
+//   enterCompanyInfoText,
+//   firstNameText,
+//   industryText,
+//   lastNameText,
+//   passwordText,
+//   pleaseSpecifyText,
+//   resetPasswordDescText,
+//   resetPasswordText,
+//   roleText,
+//   verificationCodeSendToText,
+//   verificationCodeText,
+//   verifyYourBusinessEmailText,
+// } from "@/utils/constants";
+import { DictionariesContext } from "@/context/dictionary-context";
 const industryOptions = [
   {
     label: "Others",
@@ -62,6 +63,35 @@ export const CompanyAccount = ({
   nextPageNo: () => void;
   prevPageNo: () => void;
 }) => {
+  const { dictionaries } = DictionariesContext();
+  const {
+    businessEmailText,
+    businessRegistrationCertificateText,
+    companyContactNoOptionalText,
+    companyEmailText,
+    companyInfoTextDescText,
+    companyNameText,
+    companyProfileDesc,
+    completeOwnerInfoDescText,
+    completeOwnerInfoText,
+    completeText,
+    continueText,
+    createBusinessProfileText,
+    didNotReceivedCodeText,
+    enterBusinessEmailText,
+    enterCompanyInfoText,
+    firstNameText,
+    industryText,
+    lastNameText,
+    passwordText,
+    pleaseSpecifyText,
+    resetPasswordDescText,
+    resetPasswordText,
+    roleText,
+    verificationCodeSendToText,
+    verificationCodeText,
+    verifyYourBusinessEmailText,
+  } = dictionaries;
   const [email, setEmail] = useState("");
   const [code, setCode] = useState("");
   const [password, setPassword] = useState("");

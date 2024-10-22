@@ -4,13 +4,14 @@ import { DialogComp } from "../dialog";
 import { PrimaryBtn } from "../../buttons/primary-btn";
 import { SecondaryBtn } from "../../buttons/secondary-btn";
 import { TextInput } from "../../inputs/text-input";
-import {
-  cancelText,
-  firstNameText,
-  lastNameText,
-  nameText,
-  updateText,
-} from "@/utils/constants";
+// import {
+//   cancelText,
+//   firstNameText,
+//   lastNameText,
+//   nameText,
+//   updateText,
+// } from "@/utils/constants";
+import { DictionariesContext } from "@/context/dictionary-context";
 
 export const NameDialog = ({
   open,
@@ -19,6 +20,9 @@ export const NameDialog = ({
   open: boolean;
   setOpen: (value: boolean) => void;
 }) => {
+  const { dictionaries } = DictionariesContext();
+  const { cancelText, firstNameText, lastNameText, nameText, updateText } =
+    dictionaries;
   const [fName, setFName] = useState("");
   const [lName, setLName] = useState("");
 

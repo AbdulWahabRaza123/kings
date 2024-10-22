@@ -1,4 +1,5 @@
-import { reorderText } from "@/utils/constants";
+import { DictionariesContext } from "@/context/dictionary-context";
+// import { reorderText } from "@/utils/constants";
 import { RotateCcw } from "lucide-react";
 import Image from "next/image";
 
@@ -16,6 +17,8 @@ export const OrderCard = ({
   };
   nextStep: () => void;
 }) => {
+  const { dictionaries } = DictionariesContext();
+  const { reorderText } = dictionaries;
   const { imgSrc, title, date, time, id } = item;
   return (
     <>

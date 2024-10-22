@@ -6,18 +6,19 @@ import { SecondaryBtn } from "../../buttons/secondary-btn";
 import { PrimaryTextarea } from "../../inputs/primary-input";
 import { TextInput } from "../../inputs/text-input";
 import { MapStepWrapperComp } from "../../wrappers/map-step-wrapper";
-import {
-  businessEmailText,
-  cancelText,
-  didNotReceivedCodeText,
-  saveText,
-  verificationCodeText,
-  verifyYourBusinessEmailText,
-  verifyYourEmailText,
-} from "@/utils/constants";
+// import {
+//   businessEmailText,
+//   cancelText,
+//   didNotReceivedCodeText,
+//   saveText,
+//   verificationCodeText,
+//   verifyYourBusinessEmailText,
+//   verifyYourEmailText,
+// } from "@/utils/constants";
 import { InputOTP, InputOTPGroup, InputOTPSlot } from "../../input-otp";
 import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
+import { DictionariesContext } from "@/context/dictionary-context";
 
 export const EmailDialog = ({
   open,
@@ -26,6 +27,16 @@ export const EmailDialog = ({
   open: boolean;
   setOpen: (value: boolean) => void;
 }) => {
+  const { dictionaries } = DictionariesContext();
+  const {
+    businessEmailText,
+    cancelText,
+    didNotReceivedCodeText,
+    saveText,
+    verificationCodeText,
+    verifyYourBusinessEmailText,
+    verifyYourEmailText,
+  } = dictionaries;
   const [step, setStep] = useState(0);
   const [email, setEmail] = useState("");
   const [otp, setOtp] = useState("");

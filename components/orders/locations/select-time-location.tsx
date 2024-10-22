@@ -1,3 +1,4 @@
+"use client";
 import {
   DynamicPrimaryInputWithIcons,
   PrimaryInputWithIcons,
@@ -9,13 +10,14 @@ import { SelectInput } from "@/components/ui/inputs/select-input";
 import { Clock7 } from "lucide-react";
 import { PrimaryBtn } from "@/components/ui/buttons/primary-btn";
 import { pickupTime } from "@/utils/pickup-time-data";
-import {
-  addAStopText,
-  arrangeADeliveryText,
-  continueText,
-  pickupLocText,
-  pickupNowText,
-} from "@/utils/constants";
+// import {
+//   addAStopText,
+//   arrangeADeliveryText,
+//   continueText,
+//   pickupLocText,
+//   pickupNowText,
+// } from "@/utils/constants";
+import { DictionariesContext } from "@/context/dictionary-context";
 interface SelectedLocationProps {
   setOpenRecSavedDropdown: (val: boolean) => void;
   openRecSavedDropdown: boolean;
@@ -46,6 +48,14 @@ export const SelectLocationComp = ({
   step,
   setStep,
 }: SelectedLocationProps) => {
+  const { dictionaries } = DictionariesContext();
+  const {
+    addAStopText,
+    arrangeADeliveryText,
+    continueText,
+    pickupLocText,
+    pickupNowText,
+  } = dictionaries;
   const handleInputChange = (index: number, newAddress: string) => {
     const updatedDropupLoc = [...dropupLoc];
     updatedDropupLoc[index].address = newAddress;

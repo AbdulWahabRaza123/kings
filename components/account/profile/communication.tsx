@@ -1,10 +1,12 @@
-import {
-  communicationSettingsText,
-  marketingPreferencesText,
-  orderNotificationPreferencesText,
-  promotionalOffersText,
-  updatesFromDeliveryText,
-} from "@/utils/constants";
+"use client";
+import { DictionariesContext } from "@/context/dictionary-context";
+// import {
+//   communicationSettingsText,
+//   marketingPreferencesText,
+//   orderNotificationPreferencesText,
+//   promotionalOffersText,
+//   updatesFromDeliveryText,
+// } from "@/utils/constants";
 import { Switch } from "antd";
 import React, { useState } from "react";
 const orderNotification = [
@@ -28,6 +30,14 @@ const marketingNotification = [
   },
 ];
 export const CommunicationComp = () => {
+  const { dictionaries } = DictionariesContext();
+  const {
+    communicationSettingsText,
+    marketingPreferencesText,
+    orderNotificationPreferencesText,
+    promotionalOffersText,
+    updatesFromDeliveryText,
+  } = dictionaries;
   return (
     <>
       <div className="p-4 flex flex-col gap-2 bg-white rounded-[7px]">

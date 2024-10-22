@@ -6,7 +6,8 @@ import { EmailDialog } from "@/components/ui/dialogs/profile/email-dialog";
 import { NameDialog } from "@/components/ui/dialogs/profile/name-dialog";
 import { PhoneDialog } from "@/components/ui/dialogs/profile/phone-dialog";
 import { RoleDialog } from "@/components/ui/dialogs/profile/role-dialog";
-import { addNewText, deleteText, myProfileText } from "@/utils/constants";
+import { DictionariesContext } from "@/context/dictionary-context";
+// import { addNewText, deleteText, myProfileText } from "@/utils/constants";
 import { ChevronRight, Pencil, Trash } from "lucide-react";
 import Image from "next/image";
 import React, { useState } from "react";
@@ -33,6 +34,8 @@ const personalData = [
   },
 ];
 export const MyProfileComp = () => {
+  const { dictionaries } = DictionariesContext();
+  const { addNewText, deleteText, myProfileText } = dictionaries;
   const [openEditEmail, setOpenEditEmail] = useState(false);
   const [openEditRole, setOpenEditRole] = useState(false);
   const [openEditName, setOpenEditName] = useState(false);

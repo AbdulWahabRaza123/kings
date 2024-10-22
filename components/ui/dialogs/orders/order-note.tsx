@@ -4,7 +4,8 @@ import { DialogComp } from "../dialog";
 import { PrimaryBtn } from "../../buttons/primary-btn";
 import { SecondaryBtn } from "../../buttons/secondary-btn";
 import { PrimaryTextarea } from "../../inputs/primary-input";
-import { cancelText, noteToDriverText, saveText } from "@/utils/constants";
+// import { cancelText, noteToDriverText, saveText } from "@/utils/constants";
+import { DictionariesContext } from "@/context/dictionary-context";
 
 export const OrderNoteDialog = ({
   open,
@@ -17,6 +18,8 @@ export const OrderNoteDialog = ({
   note: string;
   setNote: (val: string) => void;
 }) => {
+  const { dictionaries } = DictionariesContext();
+  const { cancelText, noteToDriverText, saveText } = dictionaries;
   return (
     <DialogComp open={open} setOpen={setOpen}>
       <div className="flex flex-col gap-3">

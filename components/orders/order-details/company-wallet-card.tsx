@@ -1,8 +1,12 @@
-import { companyWalletText, hkText, pointText } from "@/utils/constants";
+"use client";
+import { DictionariesContext } from "@/context/dictionary-context";
+// import { companyWalletText, hkText, pointText } from "@/utils/constants";
 import { Info } from "lucide-react";
 import Image from "next/image";
 
 export const CompanyWalletCard = () => {
+  const { dictionaries } = DictionariesContext();
+  const { companyWalletText, hkText, pointText } = dictionaries;
   return (
     <>
       <div className="p-4 flex flex-row items-center gap-2 border-[1px] border-gray-400/40 rounded-[7px] bg-[#FAFAFA]">

@@ -5,12 +5,13 @@ import { VanCardComp } from "../../cards/van-card";
 import { LabledCheckbox } from "../../inputs/labled-checkbox";
 import { PrimaryBtn } from "../../buttons/primary-btn";
 import { vansData } from "@/utils/van-data";
-import {
-  continueText,
-  IAgreeText,
-  proceedWithDescText,
-  proceedWithText,
-} from "@/utils/constants";
+// import {
+//   continueText,
+//   IAgreeText,
+//   proceedWithDescText,
+//   proceedWithText,
+// } from "@/utils/constants";
+import { DictionariesContext } from "@/context/dictionary-context";
 
 export const SelectedVanDialog = ({
   open,
@@ -25,6 +26,9 @@ export const SelectedVanDialog = ({
   step: number;
   setStep: (val: number) => void;
 }) => {
+  const { dictionaries } = DictionariesContext();
+  const { continueText, IAgreeText, proceedWithDescText, proceedWithText } =
+    dictionaries;
   const [confirmCheck, setConfirmCheck] = useState(false);
   return (
     <DialogComp open={open} setOpen={setOpen}>

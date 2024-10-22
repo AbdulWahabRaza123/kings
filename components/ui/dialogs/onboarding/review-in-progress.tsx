@@ -3,11 +3,12 @@ import React from "react";
 import Image from "next/image";
 import { PrimaryBtn } from "../../buttons/primary-btn";
 import { DialogComp } from "../dialog";
-import {
-  gotItText,
-  reviewInProgressDescText,
-  reviewInProgressText,
-} from "@/utils/constants";
+// import {
+//   gotItText,
+//   reviewInProgressDescText,
+//   reviewInProgressText,
+// } from "@/utils/constants";
+import { DictionariesContext } from "@/context/dictionary-context";
 
 export const ReviewInProgressDialog = ({
   open,
@@ -16,6 +17,9 @@ export const ReviewInProgressDialog = ({
   open: boolean;
   setOpen: (value: boolean) => void;
 }) => {
+  const { dictionaries } = DictionariesContext();
+  const { gotItText, reviewInProgressDescText, reviewInProgressText } =
+    dictionaries;
   return (
     <DialogComp open={open} setOpen={setOpen}>
       <div className="flex flex-col gap-3">

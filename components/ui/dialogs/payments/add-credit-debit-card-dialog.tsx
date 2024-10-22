@@ -3,15 +3,16 @@ import React, { useState } from "react";
 import { DialogComp } from "../dialog";
 import { PrimaryBtn } from "../../buttons/primary-btn";
 import { SecondaryBtn } from "../../buttons/secondary-btn";
-import {
-  addCreditOrDebitCardText,
-  addText,
-  cancelText,
-  removeCardText,
-} from "@/utils/constants";
+// import {
+//   addCreditOrDebitCardText,
+//   addText,
+//   cancelText,
+//   removeCardText,
+// } from "@/utils/constants";
 import { CreditOrDebitCardInput } from "../../common/credit-or-debit-card-inputs";
 import { CircleX } from "lucide-react";
 import { ConfirmationDialog } from "../confirmation-dialog";
+import { DictionariesContext } from "@/context/dictionary-context";
 
 export const AddCreditOrDebitDialog = ({
   open,
@@ -22,6 +23,9 @@ export const AddCreditOrDebitDialog = ({
   setOpen: (value: boolean) => void;
   edit: boolean;
 }) => {
+  const { dictionaries } = DictionariesContext();
+  const { addCreditOrDebitCardText, addText, cancelText, removeCardText } =
+    dictionaries;
   const [cardNo, setCardNo] = useState("");
   const [expiryDate, setExpiryDate] = useState("");
   const [cvv, setCvv] = useState("");

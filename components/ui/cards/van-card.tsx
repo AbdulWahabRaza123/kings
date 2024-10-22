@@ -1,5 +1,7 @@
+"use client";
+import { DictionariesContext } from "@/context/dictionary-context";
 import { cn } from "@/lib/utils";
-import { capacityText, maxLoadText, suitableForText } from "@/utils/constants";
+// import { capacityText, maxLoadText, suitableForText } from "@/utils/constants";
 import Image from "next/image";
 import React from "react";
 interface VanCardProps {
@@ -21,6 +23,8 @@ export const VanCardComp = ({
   setSelectedItem: (val: number) => void;
   index: number;
 }) => {
+  const { dictionaries } = DictionariesContext();
+  const { capacityText, maxLoadText, suitableForText } = dictionaries;
   const { iconSrc, name, suitable, capacity, maxLoad, price } = item;
   return (
     <div

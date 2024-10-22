@@ -1,9 +1,12 @@
-import { useCurrentLocationText } from "@/utils/constants";
+import { DictionariesContext } from "@/context/dictionary-context";
+// import { useCurrentLocationText } from "@/utils/constants";
 import { recLocationsData } from "@/utils/location-data";
 import Image from "next/image";
 import React from "react";
 
 export const RecentLocationComp = () => {
+  const { dictionaries } = DictionariesContext();
+  const { useCurrentLocationText } = dictionaries;
   return (
     <section className="flex flex-col gap-2">
       <div className="border-b-gray-400/40 border-b-[1px] flex items-center gap-1 py-4 px-2 hover:bg-gray-400/20 rounded-[7px] cursor-pointer">

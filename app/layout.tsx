@@ -4,6 +4,7 @@ import Navbar from "@/components/signin/navbar";
 import { AuthContextProvider } from "@/context/auth-context";
 import { Suspense } from "react";
 import QueryProvider from "@/lib/query-provider";
+import { DictionaryContextProvider } from "@/context/dictionary-context";
 
 export const metadata: Metadata = {
   title: "Transportation",
@@ -24,10 +25,12 @@ export default function RootLayout({
         <Suspense>
           <QueryProvider>
             <AuthContextProvider>
-              <main className="bg-main w-full relative">
-                <Navbar />
-                <section className="">{children}</section>
-              </main>
+              <DictionaryContextProvider>
+                <main className="bg-main w-full relative">
+                  <Navbar />
+                  <section className="">{children}</section>
+                </main>
+              </DictionaryContextProvider>
             </AuthContextProvider>
           </QueryProvider>
         </Suspense>

@@ -6,24 +6,25 @@ import { TextInput } from "../../inputs/text-input";
 import { ArrowLeft, Check, ChevronRight, Copy, Info, Plus } from "lucide-react";
 import { SecondaryBtn } from "../../buttons/secondary-btn";
 import Image from "next/image";
-import {
-  addCreditOrDebitCardText,
-  addText,
-  bankInformationText,
-  bankInText,
-  cancelText,
-  continueTopupText,
-  creditOrDebitCardText,
-  hkText,
-  otherMethodsText,
-  paymentMethodText,
-  pointText,
-  proofOfPaymentText,
-  topupCompanyWalletText,
-  visaText,
-  yourTopUpPointstext,
-} from "@/utils/constants";
+// import {
+//   addCreditOrDebitCardText,
+//   addText,
+//   bankInformationText,
+//   bankInText,
+//   cancelText,
+//   continueTopupText,
+//   creditOrDebitCardText,
+//   hkText,
+//   otherMethodsText,
+//   paymentMethodText,
+//   pointText,
+//   proofOfPaymentText,
+//   topupCompanyWalletText,
+//   visaText,
+//   yourTopUpPointstext,
+// } from "@/utils/constants";
 import { CreditOrDebitCardInput } from "../../common/credit-or-debit-card-inputs";
+import { DictionariesContext } from "@/context/dictionary-context";
 const bankDetailsData = [
   {
     title: "Bank",
@@ -65,6 +66,24 @@ export const TopupDialog = ({
   selectedPaymentMethodId: number;
   setSelectedPaymentMethodId: (val: number) => void;
 }) => {
+  const { dictionaries } = DictionariesContext();
+  const {
+    addCreditOrDebitCardText,
+    addText,
+    bankInformationText,
+    bankInText,
+    cancelText,
+    continueTopupText,
+    creditOrDebitCardText,
+    hkText,
+    otherMethodsText,
+    paymentMethodText,
+    pointText,
+    proofOfPaymentText,
+    topupCompanyWalletText,
+    visaText,
+    yourTopUpPointstext,
+  } = dictionaries;
   const [step, setStep] = useState(0);
   const [topupAmount, setTopupAmount] = useState("");
   const [cardNo, setCardNo] = useState("");

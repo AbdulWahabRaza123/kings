@@ -1,5 +1,6 @@
 "use client";
-import { coinsText, tierExpiresText } from "@/utils/constants";
+import { DictionariesContext } from "@/context/dictionary-context";
+// import { coinsText, tierExpiresText } from "@/utils/constants";
 import { Progress } from "antd";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
@@ -9,6 +10,8 @@ import React from "react";
 export const MembershipCard = () => {
   const router = useRouter();
   const plan = 0;
+  const { dictionaries } = DictionariesContext();
+  const { coinsText, tierExpiresText } = dictionaries;
 
   const selectMeAPlanGradient = () => {
     if (plan === 0) {

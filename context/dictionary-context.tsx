@@ -8,6 +8,8 @@ import React, {
   useContext,
   ReactNode,
 } from "react";
+import { UserAuthContext } from "./auth-context";
+import { LanguageDetails } from "@/interface/language-interface";
 
 interface AuthContextType {
   dictionaries: any;
@@ -20,12 +22,11 @@ export const DictionaryContextProvider = ({
 }: {
   children: ReactNode;
 }) => {
-  //   const { lng } = UserAuthandSimulationContext();
-  const lng = "english";
+  const { lng } = UserAuthContext();
   const [dictionaries, setDictionaries] = useState({});
 
   const fetchedDictionaries = useMemo(async () => {
-    const createDictionary = await getDictionary(lng);
+    const createDictionary = await getDictionary(lng as LanguageDetails);
 
     return {
       createDictionary,

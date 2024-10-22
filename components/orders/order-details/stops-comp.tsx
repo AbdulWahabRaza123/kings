@@ -1,9 +1,13 @@
+"use client";
+import { DictionariesContext } from "@/context/dictionary-context";
 import { cn } from "@/lib/utils";
-import { estTimeText, stopsDescText } from "@/utils/constants";
 import { stopsData } from "@/utils/stops-data";
 import Image from "next/image";
 
 export const StopsComp = () => {
+  const { dictionaries } = DictionariesContext();
+  const { estTimeText, stopsDescText } = dictionaries;
+
   return (
     <>
       <div className="bg-white rounded-[7px] p-4 mt-4 flex flex-col gap-2 relative">

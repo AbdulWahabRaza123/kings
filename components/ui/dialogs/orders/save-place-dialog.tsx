@@ -3,14 +3,15 @@ import React, { useState } from "react";
 import { DialogComp } from "../dialog";
 import Image from "next/image";
 import { TextInput } from "../../inputs/text-input";
-import {
-  addPlaceText,
-  addressText,
-  labelText,
-  removeSavedPlaceText,
-  searchAddressText,
-} from "@/utils/constants";
+// import {
+//   addPlaceText,
+//   addressText,
+//   labelText,
+//   removeSavedPlaceText,
+//   searchAddressText,
+// } from "@/utils/constants";
 import { CircleX } from "lucide-react";
+import { DictionariesContext } from "@/context/dictionary-context";
 const savedLocationsData = [
   {
     title: "17 Hoi Wan St",
@@ -78,6 +79,14 @@ export const SavedPlaceDialog = ({
   setOpen: (value: boolean) => void;
   edit?: boolean;
 }) => {
+  const { dictionaries } = DictionariesContext();
+  const {
+    addPlaceText,
+    addressText,
+    labelText,
+    removeSavedPlaceText,
+    searchAddressText,
+  } = dictionaries;
   const [label, setLabel] = useState("");
   const [address, setAddress] = useState("");
   return (

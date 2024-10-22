@@ -1,9 +1,13 @@
+"use client";
 import Image from "next/image";
 import React, { useState } from "react";
 import { SavedPlaceDialog } from "../ui/dialogs/orders/save-place-dialog";
 import { savedLocationsData } from "@/utils/saved-location-data";
-import { addNewText } from "@/utils/constants";
+// import { addNewText } from "@/utils/constants";
+import { DictionariesContext } from "@/context/dictionary-context";
 export const SavedLocationComp = () => {
+  const { dictionaries } = DictionariesContext();
+  const { addNewText } = dictionaries;
   const [openAddNewDialog, setOpenAddNewDialog] = useState(false);
   return (
     <>

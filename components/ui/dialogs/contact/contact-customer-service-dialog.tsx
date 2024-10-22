@@ -5,12 +5,13 @@ import { PrimaryBtn } from "../../buttons/primary-btn";
 import { SecondaryBtn } from "../../buttons/secondary-btn";
 import { PrimaryTextarea } from "../../inputs/primary-input";
 import { TextInput } from "../../inputs/text-input";
-import {
-  cancelText,
-  contactCustomerServiceText,
-  leaveYourMessageText,
-  saveText,
-} from "@/utils/constants";
+// import {
+//   cancelText,
+//   contactCustomerServiceText,
+//   leaveYourMessageText,
+//   saveText,
+// } from "@/utils/constants";
+import { DictionariesContext } from "@/context/dictionary-context";
 
 export const ContactCustomerServiceDialog = ({
   open,
@@ -19,6 +20,13 @@ export const ContactCustomerServiceDialog = ({
   open: boolean;
   setOpen: (value: boolean) => void;
 }) => {
+  const { dictionaries } = DictionariesContext();
+  const {
+    cancelText,
+    contactCustomerServiceText,
+    leaveYourMessageText,
+    saveText,
+  } = dictionaries;
   const [step, setStep] = useState(0);
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");

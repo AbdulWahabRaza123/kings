@@ -1,7 +1,9 @@
+"use client";
 import React from "react";
 import { TextInput } from "../inputs/text-input";
 import { Info } from "lucide-react";
-import { yourPaymentInfoText } from "@/utils/constants";
+// import { yourPaymentInfoText } from "@/utils/constants";
+import { DictionariesContext } from "@/context/dictionary-context";
 interface CardInterface {
   cardNo: string;
   setCardNo: (val: string) => void;
@@ -18,6 +20,8 @@ export const CreditOrDebitCardInput = ({
   cvv,
   setCvv,
 }: CardInterface) => {
+  const { dictionaries } = DictionariesContext();
+  const { yourPaymentInfoText } = dictionaries;
   return (
     <div className="flex flex-col gap-3 justify-start items-start py-3 w-full">
       <TextInput

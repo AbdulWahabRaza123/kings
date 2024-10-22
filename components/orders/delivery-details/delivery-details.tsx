@@ -1,17 +1,19 @@
+"use client";
 import { DeliveryDetailsCard } from "@/components/ui/cards/delivery-details-card";
 import { DestinationEditCardComp } from "@/components/ui/cards/edit-card";
 import { VanCardComp } from "@/components/ui/cards/van-card";
 import { MapStepWrapperComp } from "@/components/ui/wrappers/map-step-wrapper";
-import {
-  arrangeADeliveryText,
-  deliveryDetailsText,
-  englishDriverText,
-  goodsLongerThan6ftsText,
-  newVanText,
-  passengetText,
-  petFreindlyDriverText,
-  rentCartText,
-} from "@/utils/constants";
+import { DictionariesContext } from "@/context/dictionary-context";
+// import {
+//   arrangeADeliveryText,
+//   deliveryDetailsText,
+//   englishDriverText,
+//   goodsLongerThan6ftsText,
+//   newVanText,
+//   passengetText,
+//   petFreindlyDriverText,
+//   rentCartText,
+// } from "@/utils/constants";
 import {
   fromDestination,
   pickupDateAndTime,
@@ -75,6 +77,17 @@ export const DeliveryDetailsComp = ({
   englishDriverPrice,
   setEnglishDriverPrice,
 }: DeliveryDetailsProps) => {
+  const { dictionaries } = DictionariesContext();
+  const {
+    arrangeADeliveryText,
+    deliveryDetailsText,
+    englishDriverText,
+    goodsLongerThan6ftsText,
+    newVanText,
+    passengetText,
+    petFreindlyDriverText,
+    rentCartText,
+  } = dictionaries;
   return (
     <MapStepWrapperComp
       title={arrangeADeliveryText}

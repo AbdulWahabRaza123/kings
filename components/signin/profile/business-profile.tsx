@@ -11,30 +11,7 @@ import { useState } from "react";
 import { SignInWrapper } from "../../ui/wrappers/signin-wrapper";
 import { ReviewInProgressDialog } from "../../ui/dialogs/onboarding/review-in-progress";
 import { cn } from "@/lib/utils";
-// import {
-//   businessEmailText,
-//   businessProfileDescText,
-//   companyNameText,
-//   completeText,
-//   continueText,
-//   createBusinessProfileText,
-//   didNotReceivedCodeText,
-//   enterBusinessEmailText,
-//   enterCompanyInfoText,
-//   firstNameText,
-//   lastNameText,
-//   mobileNoText,
-//   resendCodeIn60Secs,
-//   resetPasswordDescText,
-//   resetPasswordText,
-//   roleText,
-//   verificationCodeSendToText,
-//   verificationCodeText,
-//   verifyText,
-//   verifyYourBusinessEmailText,
-// } from "@/utils/constants";
 import { DictionariesContext } from "@/context/dictionary-context";
-
 export const BusinessAccount = ({
   isBusiness,
   pageNo,

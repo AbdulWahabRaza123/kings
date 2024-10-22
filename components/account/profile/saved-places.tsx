@@ -2,9 +2,7 @@
 import { OutlinedBtn } from "@/components/ui/buttons/outline-btn";
 import { SavedPlaceDialog } from "@/components/ui/dialogs/orders/save-place-dialog";
 import { DictionariesContext } from "@/context/dictionary-context";
-// import { addASavedPlaceText, savedPlacesText } from "@/utils/constants";
 import { ChevronRight, Plus, Star } from "lucide-react";
-import Image from "next/image";
 import React, { useState } from "react";
 const savedPlacesData = [
   {

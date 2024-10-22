@@ -1,3 +1,5 @@
+//I have translated because thsi data will come from api
+
 export const vansData = [
     {
         iconSrc: "/assets/vehicles/van.svg",

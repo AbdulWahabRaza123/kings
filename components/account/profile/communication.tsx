@@ -1,14 +1,7 @@
 "use client";
 import { DictionariesContext } from "@/context/dictionary-context";
-// import {
-//   communicationSettingsText,
-//   marketingPreferencesText,
-//   orderNotificationPreferencesText,
-//   promotionalOffersText,
-//   updatesFromDeliveryText,
-// } from "@/utils/constants";
 import { Switch } from "antd";
-import React, { useState } from "react";
+import React from "react";
 const orderNotification = [
   {
     name: "Notification",

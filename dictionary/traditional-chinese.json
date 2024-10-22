@@ -1,4 +1,6 @@
 {
+  "homeText": "首頁",
+  "aboutText": "關於",
   "deliverWithPoweKingText": "与Power King配送",
   "deliverWithPowerKingDescText": "我们便捷的送货服务将产品直接送到您选择的目的地。",
   "arrangeADeliveryText": "安排配送",
@@ -196,5 +198,37 @@
   "updatesFromDeliveryText": "配送订单的更新。",
   "companyProfileDescText": "公司简介是对企业的简要概述，重点介绍其使命、产品和主要成就。",
   "quickLinksText": "快捷链接",
-  "currentPasswordText": "当前密码"
+  "currentPasswordText": "当前密码",
+  "businessOptions": [
+    {
+      "title": "公司簡介",
+      "desc": "檢查您的註冊公司資訊",
+      "key": "company_profile"
+    },
+    {
+      "title": "我的團隊",
+      "desc": "管理並將員工添加到您的商業檔案",
+      "key": "my_team"
+    },
+    {
+      "title": "付款方式",
+      "desc": "管理您的商業檔案的付款方式",
+      "key": "payment_methods"
+    }
+  ],
+  "teamBtns": ["全部", "活躍", "已停用"],
+  "industryOptions": [
+    {
+      "label": "其他",
+      "value": "others"
+    },
+    {
+      "label": "軟件",
+      "value": "software"
+    }
+  ],
+  "joinYourCompanyAccountText": "加入您公司的帳戶",
+  "joinYourCompanyAccountDescText": "如果您的公司與我們有帳戶，您可以這樣做",
+  "createBusinessProfileForYourCompanyText": "為您的公司創建商業檔案",
+  "createBusinessProfileForYourCompanyDescText": "使報銷和個人跟蹤更容易"
 }

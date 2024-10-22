@@ -1,3 +1,5 @@
+//I have translated because thsi data will come from api
+
 export const stopsData = [
     {
         name: "23 Lolo Road",

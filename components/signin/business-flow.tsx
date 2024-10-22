@@ -3,10 +3,6 @@ import { ArrowLeft, Briefcase, Building } from "lucide-react";
 import { useState } from "react";
 import { BusinessAccount } from "./profile/business-profile";
 import { CompanyAccount } from "./profile/company-profile";
-// import {
-//   setupBusinessAccountText,
-//   whatDoYouWantToDoText,
-// } from "@/utils/constants";
 import { DictionariesContext } from "@/context/dictionary-context";
 
 const cardData = [
@@ -27,7 +23,14 @@ export const BusinessFlow = ({
   setIsSignIn: (value: boolean) => void;
 }) => {
   const { dictionaries } = DictionariesContext();
-  const { setupBusinessAccountText, whatDoYouWantToDoText } = dictionaries;
+  const {
+    setupBusinessAccountText,
+    whatDoYouWantToDoText,
+    joinYourCompanyAccountText,
+    joinYourCompanyAccountDescText,
+    createBusinessProfileForYourCompanyText,
+    createBusinessProfileForYourCompanyDescText,
+  } = dictionaries;
   const [isBusiness, setIsBusiness] = useState(false);
   const [pageNo, setPageNo] = useState(0);
 
@@ -57,7 +60,18 @@ export const BusinessFlow = ({
                 {whatDoYouWantToDoText}
               </h1>
               <div className="flex flex-col gap-2 mt-5">
-                {cardData.map((item, index) => (
+                {[
+                  {
+                    title: joinYourCompanyAccountText,
+                    description: joinYourCompanyAccountDescText,
+                    icon: <Briefcase className="w-5 h-5" />,
+                  },
+                  {
+                    title: createBusinessProfileForYourCompanyText,
+                    description: createBusinessProfileForYourCompanyDescText,
+                    icon: <Building className="w-5 h-5" />,
+                  },
+                ].map((item, index) => (
                   <div
                     key={index}
                     onClick={() => {

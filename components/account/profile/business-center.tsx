@@ -10,30 +10,11 @@ import { ManageStaffDialog } from "@/components/ui/dialogs/profile/business-cent
 import { PrimaryInput } from "@/components/ui/inputs/primary-input";
 import { renderPageNumbers } from "@/components/ui/render-paginated-page-no";
 import { DictionariesContext } from "@/context/dictionary-context";
+import { BusinessOptionDetails } from "@/interface/business-center-interface";
 import { cn } from "@/lib/utils";
-// import {
-//   activityText,
-//   addCreditOrDebitCardText,
-//   addStaffText,
-//   businesscenterText,
-//   businessRegistrationCertificateText,
-//   companyPaymentMethodsText,
-//   companyProfileText,
-//   companyWalletText,
-//   contactUsToChangeCompanyInfo,
-//   creditOrDebitCardText,
-//   exportText,
-//   myTeamText,
-//   orderText,
-//   pointsText,
-//   pointTranscationHistoryText,
-//   topupText,
-//   visaText,
-// } from "@/utils/constants";
 import {
   ArrowLeft,
   Building2,
-  Check,
   ChevronRight,
   Download,
   PhoneCall,
@@ -44,23 +25,15 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import React, { useState } from "react";
-const businessOptions = [
-  {
-    Icon: Building2,
-    title: "Company profile",
-    desc: "Check your registered company information",
-  },
-  {
-    Icon: UsersRound,
-    title: "My team",
-    desc: "Manage and add staff members to your business profile",
-  },
-  {
-    Icon: Wallet,
-    title: "Payment methods",
-    desc: "Manage payment methods for your business profile",
-  },
-];
+const giveMyBusinessOptionIcon = (key: string) => {
+  if (key === "company_profile") {
+    return Building2;
+  } else if (key === "my_team") {
+    return UsersRound;
+  } else if (key === "payment_methods") {
+    return Wallet;
+  }
+};
 const orderData = [
   {
     orderNo: "#9089088",
@@ -353,7 +326,6 @@ const teamData = [
     active: true,
   },
 ];
-const teamBtns = ["All", "Active", "Deactivated"];
 export const BussinessCenterComp = () => {
   const { dictionaries } = DictionariesContext();
   const {
@@ -374,6 +346,8 @@ export const BussinessCenterComp = () => {
     pointTranscationHistoryText,
     topupText,
     visaText,
+    businessOptions,
+    teamBtns,
   } = dictionaries;
   const [step, setStep] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
@@ -457,21 +431,29 @@ export const BussinessCenterComp = () => {
             </PrimaryBtn>
           </div>
           <div className="py-4 flex flex-col gap-4">
-            {businessOptions?.map((val, index) => {
-              return (
-                <>
-                  <div
-                    key={val.title}
-                    className="cursor-pointer"
-                    onClick={() => {
-                      setStep(index + 2);
-                    }}
-                  >
-                    <ListCard val={val} />
-                  </div>
-                </>
-              );
-            })}
+            {businessOptions?.map(
+              (val: BusinessOptionDetails, index: number) => {
+                return (
+                  <>
+                    <div
+                      key={val.title}
+                      className="cursor-pointer"
+                      onClick={() => {
+                        setStep(index + 2);
+                      }}
+                    >
+                      <ListCard
+                        val={{
+                          Icon: giveMyBusinessOptionIcon(val.key),
+                          title: val.title,
+                          desc: val.desc,
+                        }}
+                      />
+                    </div>
+                  </>
+                );
+              }
+            )}
           </div>
         </div>
       )}
@@ -620,7 +602,7 @@ export const BussinessCenterComp = () => {
             </div>
             <div className="flex items-center max-md:flex-wrap gap-2 justify-between">
               <div className="flex items-center gap-2 py-4">
-                {teamBtns?.map((val, index) => {
+                {teamBtns?.map((val: string, index: number) => {
                   return (
                     <>
                       <button

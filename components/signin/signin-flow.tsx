@@ -1,5 +1,5 @@
 "use client";
-import { ArrowLeft, Check, EyeIcon, EyeOff } from "lucide-react";
+import { Check, EyeIcon, EyeOff } from "lucide-react";
 import { PrimaryBtn } from "../ui/buttons/primary-btn";
 import { TextInput } from "../ui/inputs/text-input";
 import { SecondaryBtn } from "@/components/ui/buttons/secondary-btn";
@@ -10,28 +10,7 @@ import {
   InputOTPSlot,
 } from "@/components/ui/input-otp";
 import { useState } from "react";
-import Image from "next/image";
 import { SignInWrapper } from "../ui/wrappers/signin-wrapper";
-// import {
-//   businessEmailText,
-//   changePasswordDescText,
-//   continueText,
-//   didntReceieveTheCodeText,
-//   enterBusinessEmailText,
-//   forgetPasswordDesc,
-//   forgetPasswordText,
-//   loginText,
-//   passwordText,
-//   resendCodeIn60Secs,
-//   resetPasswordText,
-//   setupBusinessAccountText,
-//   verificationCodeSendToText,
-//   verificationCodeText,
-//   verifyText,
-//   verifyYourBusinessEmailText,
-//   welcomeBackDesc,
-//   welcomeBackText,
-// } from "@/utils/constants";
 import { DictionariesContext } from "@/context/dictionary-context";
 export const SigninProfile = ({
   setIsSignIn,

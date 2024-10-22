@@ -7,7 +7,6 @@ import Slider from "rc-slider";
 import Cropper from "react-easy-crop";
 import "rc-slider/assets/index.css";
 import { Image } from "lucide-react";
-// import { cancelText, selectProfileText, updateText } from "@/utils/constants";
 import { DictionariesContext } from "@/context/dictionary-context";
 export const EditProfileDialog = ({
   open,

@@ -3,73 +3,74 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { SecondaryBtn } from "../ui/buttons/secondary-btn";
 import { SelectInput } from "../ui/inputs/select-input";
-import { Bell, ChevronDown, ChevronRight, Globe } from "lucide-react";
+import { Bell, ChevronRight, Globe } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { NavDrawerAfterLoginComp } from "../ui/drawers/nav-drawer";
-// import {
-//   AccountText,
-//   companyWalletText,
-//   generalText,
-//   loginText,
-//   notificationsText,
-//   pointsText,
-//   quickLinksText,
-//   signOutText,
-//   signupText,
-// } from "@/utils/constants";
 import { MembershipCard } from "../ui/cards/membership-card";
 import { UserAuthContext } from "@/context/auth-context";
 import { DictionariesContext } from "@/context/dictionary-context";
-const options = [
-  {
-    name: "Home",
-    link: "/",
-    inactive: "/assets/icons/inactive/navbar-home.svg",
-    active: "/assets/icons/active/navbar-home.svg",
-  },
-  {
-    name: "Orders",
-    link: "/orders",
-    inactive: "/assets/icons/inactive/navbar-orders.svg",
-    active: "/assets/icons/active/navbar-orders.svg",
-  },
-];
-
-const accountPagesData = [
-  {
-    name: "My Profile",
-    link: "/orders/account/profile",
-    icon: "/assets/icons/sidebar/my-profile.svg",
-  },
-  {
-    name: "Saved places",
-    link: "/orders/account/profile",
-    icon: "/assets/icons/sidebar/saved-places.svg",
-  },
-  {
-    name: "Business center",
-    link: "/orders/account/profile",
-    icon: "/assets/icons/sidebar/business-center.svg",
-  },
-  {
-    name: "Communication settings",
-    link: "/orders/account/profile",
-    icon: "/assets/icons/sidebar/communication-setting.svg",
-  },
-];
-const generalPagesData = [
-  {
-    name: "Help",
-    link: "/help",
-    icon: "/assets/icons/sidebar/help.svg",
-  },
-  {
-    name: "About",
-    link: "/about",
-    icon: "/assets/icons/sidebar/about.svg",
-  },
-];
+import Link from "next/link";
+const giveMyHomeOptions = (homeText: string, orderText: string) => {
+  const options = [
+    {
+      name: homeText,
+      link: "/",
+      inactive: "/assets/icons/inactive/navbar-home.svg",
+      active: "/assets/icons/active/navbar-home.svg",
+    },
+    {
+      name: orderText,
+      link: "/orders",
+      inactive: "/assets/icons/inactive/navbar-orders.svg",
+      active: "/assets/icons/active/navbar-orders.svg",
+    },
+  ];
+  return options;
+};
+const giveMyAccountPagesData = (
+  myProfileText: string,
+  savedPlacesText: string,
+  businesscenterText: string,
+  communicationSettingsText: string
+) => {
+  return [
+    {
+      name: myProfileText,
+      link: "/orders/account/profile",
+      icon: "/assets/icons/sidebar/my-profile.svg",
+    },
+    {
+      name: savedPlacesText,
+      link: "/orders/account/profile",
+      icon: "/assets/icons/sidebar/saved-places.svg",
+    },
+    {
+      name: businesscenterText,
+      link: "/orders/account/profile",
+      icon: "/assets/icons/sidebar/business-center.svg",
+    },
+    {
+      name: communicationSettingsText,
+      link: "/orders/account/profile",
+      icon: "/assets/icons/sidebar/communication-setting.svg",
+    },
+  ];
+};
+const giveMyGeneralPagesData = (helpText: string, aboutText: string) => {
+  return [
+    {
+      name: helpText,
+      link: "/help",
+      icon: "/assets/icons/sidebar/help.svg",
+    },
+    {
+      name: aboutText,
+      link: "/about",
+      icon: "/assets/icons/sidebar/about.svg",
+    },
+  ];
+};
 const lngOptions = [
   {
     label: "English",
@@ -100,6 +101,14 @@ const Navbar = () => {
     quickLinksText,
     signOutText,
     signupText,
+    homeText,
+    orderText,
+    myProfileText,
+    savedPlacesText,
+    businesscenterText,
+    communicationSettingsText,
+    helpText,
+    aboutText,
   } = dictionaries;
   const [selectedPage, setSelectedPage] = useState({
     name: "Account",
@@ -123,8 +132,8 @@ const Navbar = () => {
           }}
         />
         <div className="flex items-center gap-3 max-lg:hidden">
-          {options.map((option) => (
-            <a
+          {giveMyHomeOptions(homeText, orderText).map((option) => (
+            <Link
               href={option.link}
               key={option.name}
               className={cn(
@@ -150,7 +159,7 @@ const Navbar = () => {
               >
                 {option.name}
               </p>
-            </a>
+            </Link>
           ))}
         </div>
       </div>
@@ -158,7 +167,10 @@ const Navbar = () => {
       <div className="flex flex-row items-center gap-3 max-lg:hidden">
         <SelectInput
           active={lng}
-          setActive={setLng}
+          setActive={(l) => {
+            localStorage.setItem("kings-lng", l);
+            setLng(l);
+          }}
           options={lngOptions}
           className="border-none w-auto"
         >
@@ -273,7 +285,7 @@ const Navbar = () => {
                   <Bell className="w-4 h-4 text-secondary" />
                   <p>{notificationsText}</p>
                 </div>
-                {options?.map((val) => {
+                {giveMyHomeOptions(homeText, orderText)?.map((val) => {
                   return (
                     <>
                       <div
@@ -301,7 +313,12 @@ const Navbar = () => {
             <div className="flex flex-col gap-2">
               <p className="font-[700] text-h5">{AccountText}</p>
               <div className="">
-                {accountPagesData?.map((val) => {
+                {giveMyAccountPagesData(
+                  myProfileText,
+                  savedPlacesText,
+                  businesscenterText,
+                  communicationSettingsText
+                )?.map((val) => {
                   return (
                     <>
                       <div
@@ -329,7 +346,7 @@ const Navbar = () => {
             <div className="flex flex-col gap-2">
               <p className="font-[700] text-h5">{generalText}</p>
               <div className="">
-                {generalPagesData?.map((val) => {
+                {giveMyGeneralPagesData(helpText, aboutText)?.map((val) => {
                   return (
                     <>
                       <div
@@ -362,42 +379,6 @@ const Navbar = () => {
           </div>
         </NavDrawerAfterLoginComp>
       </div>
-      {/* <div className="md:hidden">
-        <NavDrawerComp open={openSideDrawer} setOpen={setOpenSideDrawer}>
-          <div className="flex flex-col items-start gap-4 md:hidden">
-            {options.map((option) => (
-              <a
-                href={option.link}
-                key={option.name}
-                className={cn(
-                  "flex items-center gap-2",
-                  currentPage === option.link && "font-[500] text-primary"
-                )}
-              >
-                <Image
-                  src={
-                    currentPage === option.link
-                      ? option.active
-                      : option.inactive
-                  }
-                  width={24}
-                  height={24}
-                  alt={option.name}
-                  className="object-cover"
-                />
-                <p
-                  className={cn(
-                    " text-[14px]",
-                    currentPage === option.link ? "text-black" : "text-primary"
-                  )}
-                >
-                  {option.name}
-                </p>
-              </a>
-            ))}
-          </div>
-        </NavDrawerComp>
-      </div> */}
     </nav>
   );
 };

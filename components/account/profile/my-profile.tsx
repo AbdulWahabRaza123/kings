@@ -7,35 +7,21 @@ import { NameDialog } from "@/components/ui/dialogs/profile/name-dialog";
 import { PhoneDialog } from "@/components/ui/dialogs/profile/phone-dialog";
 import { RoleDialog } from "@/components/ui/dialogs/profile/role-dialog";
 import { DictionariesContext } from "@/context/dictionary-context";
-// import { addNewText, deleteText, myProfileText } from "@/utils/constants";
-import { ChevronRight, Pencil, Trash } from "lucide-react";
+import { Pencil, Trash } from "lucide-react";
 import Image from "next/image";
 import React, { useState } from "react";
-const personalData = [
-  {
-    title: "Business email",
-    value: "tony.lam@company.com",
-  },
-  {
-    title: "Role",
-    value: "Operation executive - OPS",
-  },
-  {
-    title: "Name",
-    value: "Tony Lam",
-  },
-  {
-    title: "Mobile number",
-    value: "+852 9876 5432",
-  },
-  {
-    title: "Change password",
-    value: "***************",
-  },
-];
 export const MyProfileComp = () => {
   const { dictionaries } = DictionariesContext();
-  const { addNewText, deleteText, myProfileText } = dictionaries;
+  const {
+    addNewText,
+    deleteText,
+    myProfileText,
+    businessEmailText,
+    roleText,
+    nameText,
+    mobileNoText,
+    changePasswordText,
+  } = dictionaries;
   const [openEditEmail, setOpenEditEmail] = useState(false);
   const [openEditRole, setOpenEditRole] = useState(false);
   const [openEditName, setOpenEditName] = useState(false);
@@ -94,7 +80,28 @@ export const MyProfileComp = () => {
           </div>
         </div>
         <div className="py-4 flex flex-col">
-          {personalData?.map((val, index) => {
+          {[
+            {
+              title: businessEmailText,
+              value: "tony.lam@company.com",
+            },
+            {
+              title: roleText,
+              value: "Operation executive - OPS",
+            },
+            {
+              title: nameText,
+              value: "Tony Lam",
+            },
+            {
+              title: mobileNoText,
+              value: "+852 9876 5432",
+            },
+            {
+              title: changePasswordText,
+              value: "***************",
+            },
+          ]?.map((val, index) => {
             return (
               <>
                 <DetailCard

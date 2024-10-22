@@ -1,5 +1,4 @@
 //I have translated because thsi data will come from api
-
 export const voucherData = [
     {
         id: 1,

@@ -4,19 +4,6 @@ import { useState } from "react";
 import { BusinessAccount } from "./profile/business-profile";
 import { CompanyAccount } from "./profile/company-profile";
 import { DictionariesContext } from "@/context/dictionary-context";
-
-const cardData = [
-  {
-    title: "Join your company’s account",
-    description: "You might do if your company has an account with us",
-    icon: <Briefcase className="w-5 h-5" />,
-  },
-  {
-    title: "Create business profile for your company",
-    description: "Make reimbursements and personal tracking easier",
-    icon: <Building className="w-5 h-5" />,
-  },
-];
 export const BusinessFlow = ({
   setIsSignIn,
 }: {

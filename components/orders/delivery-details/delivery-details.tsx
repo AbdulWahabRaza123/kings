@@ -4,16 +4,6 @@ import { DestinationEditCardComp } from "@/components/ui/cards/edit-card";
 import { VanCardComp } from "@/components/ui/cards/van-card";
 import { MapStepWrapperComp } from "@/components/ui/wrappers/map-step-wrapper";
 import { DictionariesContext } from "@/context/dictionary-context";
-// import {
-//   arrangeADeliveryText,
-//   deliveryDetailsText,
-//   englishDriverText,
-//   goodsLongerThan6ftsText,
-//   newVanText,
-//   passengetText,
-//   petFreindlyDriverText,
-//   rentCartText,
-// } from "@/utils/constants";
 import {
   fromDestination,
   pickupDateAndTime,

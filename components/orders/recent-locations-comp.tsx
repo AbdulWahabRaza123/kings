@@ -1,5 +1,4 @@
 import { DictionariesContext } from "@/context/dictionary-context";
-// import { useCurrentLocationText } from "@/utils/constants";
 import { recLocationsData } from "@/utils/location-data";
 import Image from "next/image";
 import React from "react";

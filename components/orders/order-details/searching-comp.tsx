@@ -1,9 +1,5 @@
 "use client";
 import { DictionariesContext } from "@/context/dictionary-context";
-// import {
-//   searchingForDriversDescText,
-//   searchingForDriversText,
-// } from "@/utils/constants";
 import Image from "next/image";
 
 export const SearchingComp = () => {

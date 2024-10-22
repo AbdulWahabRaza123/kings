@@ -3,11 +3,6 @@ import React from "react";
 import Image from "next/image";
 import { PrimaryBtn } from "../../buttons/primary-btn";
 import { DialogComp } from "../dialog";
-// import {
-//   gotItText,
-//   reviewInProgressDescText,
-//   reviewInProgressText,
-// } from "@/utils/constants";
 import { DictionariesContext } from "@/context/dictionary-context";
 
 export const ReviewInProgressDialog = ({

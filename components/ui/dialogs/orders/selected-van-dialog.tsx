@@ -5,12 +5,6 @@ import { VanCardComp } from "../../cards/van-card";
 import { LabledCheckbox } from "../../inputs/labled-checkbox";
 import { PrimaryBtn } from "../../buttons/primary-btn";
 import { vansData } from "@/utils/van-data";
-// import {
-//   continueText,
-//   IAgreeText,
-//   proceedWithDescText,
-//   proceedWithText,
-// } from "@/utils/constants";
 import { DictionariesContext } from "@/context/dictionary-context";
 
 export const SelectedVanDialog = ({

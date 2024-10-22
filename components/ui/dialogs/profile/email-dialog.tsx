@@ -3,18 +3,7 @@ import React, { useState } from "react";
 import { DialogComp } from "../dialog";
 import { PrimaryBtn } from "../../buttons/primary-btn";
 import { SecondaryBtn } from "../../buttons/secondary-btn";
-import { PrimaryTextarea } from "../../inputs/primary-input";
 import { TextInput } from "../../inputs/text-input";
-import { MapStepWrapperComp } from "../../wrappers/map-step-wrapper";
-// import {
-//   businessEmailText,
-//   cancelText,
-//   didNotReceivedCodeText,
-//   saveText,
-//   verificationCodeText,
-//   verifyYourBusinessEmailText,
-//   verifyYourEmailText,
-// } from "@/utils/constants";
 import { InputOTP, InputOTPGroup, InputOTPSlot } from "../../input-otp";
 import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
@@ -36,6 +25,8 @@ export const EmailDialog = ({
     verificationCodeText,
     verifyYourBusinessEmailText,
     verifyYourEmailText,
+    resendCodeText,
+    updateText,
   } = dictionaries;
   const [step, setStep] = useState(0);
   const [email, setEmail] = useState("");
@@ -140,10 +131,10 @@ export const EmailDialog = ({
                     {didNotReceivedCodeText}
                   </p>
                   <p className="text-[12px] text-main-primary cursor-pointer">
-                    Resend code in 60s
+                    {resendCodeText}
                   </p>
                 </div>
-                <PrimaryBtn onClick={() => {}}>Update</PrimaryBtn>
+                <PrimaryBtn onClick={() => {}}>{updateText}</PrimaryBtn>
               </div>
             </div>
           )}

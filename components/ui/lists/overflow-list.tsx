@@ -20,7 +20,7 @@ export const OverflowListComp = ({ title, data }: OverflowListProps) => {
     if (scrollContainerRef.current) {
       const { scrollLeft, clientWidth, scrollWidth } =
         scrollContainerRef.current;
-      const scrollAmount = clientWidth / 2; // Scroll by half of the visible width
+      const scrollAmount = clientWidth / 2;
       let newScrollPosition = scrollLeft;
 
       if (direction === "right") {
@@ -37,13 +37,11 @@ export const OverflowListComp = ({ title, data }: OverflowListProps) => {
         behavior: "smooth",
       });
 
-      // Update button visibility
       setShowScrollLeft(newScrollPosition > 0);
       setShowScrollRight(newScrollPosition < scrollWidth - clientWidth);
     }
   };
   useEffect(() => {
-    // Check if the content is overflowing initially
     if (scrollContainerRef.current) {
       const { scrollWidth, clientWidth } = scrollContainerRef.current;
       setShowScrollRight(scrollWidth > clientWidth);

@@ -3,11 +3,6 @@ import React from "react";
 import Image from "next/image";
 import { PrimaryBtn } from "../../buttons/primary-btn";
 import { DialogComp } from "../dialog";
-// import {
-//   loginText,
-//   passwordHasBeenResetDescText,
-//   passwordHasBeenResetText,
-// } from "@/utils/constants";
 import { DictionariesContext } from "@/context/dictionary-context";
 
 export const ResetPasswordDialog = ({

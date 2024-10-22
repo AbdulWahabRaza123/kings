@@ -13,7 +13,7 @@ const containerStyle = {
 };
 
 const center = {
-  lat: 32.0, // Center between Lahore and Islamabad
+  lat: 32.0,
   lng: 73.5,
 };
 
@@ -30,7 +30,6 @@ const GoogleMapComponent: React.FC = () => {
     setIsLoaded(true);
   };
 
-  // Fetch coordinates using Geocoding API
   const getCoordinates = async (address: string) => {
     try {
       const geocoder = new google.maps.Geocoder();
@@ -46,15 +45,14 @@ const GoogleMapComponent: React.FC = () => {
     return null;
   };
 
-  // Get directions between the geocoded locations
   const calculateRoute = async () => {
     if (!originCoords || !destinationCoords || !isLoaded) return;
 
     try {
       const directionsService = new google.maps.DirectionsService();
       const result = await directionsService.route({
-        origin: originCoords, // Use coordinates from Geocoding API
-        destination: destinationCoords, // Use coordinates from Geocoding API
+        origin: originCoords,
+        destination: destinationCoords,
         travelMode: google.maps.TravelMode.DRIVING,
       });
 
@@ -64,7 +62,6 @@ const GoogleMapComponent: React.FC = () => {
     }
   };
 
-  // Use effect to load the coordinates and calculate route
   useEffect(() => {
     if (isLoaded) {
       const fetchCoords = async () => {
@@ -81,7 +78,6 @@ const GoogleMapComponent: React.FC = () => {
     }
   }, [isLoaded]);
 
-  // Call the calculateRoute function once the coordinates are loaded
   useEffect(() => {
     if (originCoords && destinationCoords) {
       calculateRoute();
@@ -94,13 +90,11 @@ const GoogleMapComponent: React.FC = () => {
       onLoad={onLoad}
     >
       <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={6}>
-        {/* Add markers for origin and destination */}
         {originCoords && <Marker position={originCoords} label="Lahore" />}
         {destinationCoords && (
           <Marker position={destinationCoords} label="Islamabad" />
         )}
 
-        {/* Render the directions with a red polyline */}
         {directionsResponse && (
           <DirectionsRenderer
             directions={directionsResponse}

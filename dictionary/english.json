@@ -63,10 +63,10 @@
     "removeCardText": "Remove card",
     "bankInformationText": "Bank Information",
     "proofOfPaymentText": "Proof of payment",
-    "yourTopUpPointsText": "Your top-up points will be updated in 3 working days after confirming the bank transfer.",
+    "yourTopUpPointstext": "Your top-up points will be updated in 3 working days after confirming the bank transfer.",
     "removeSavedPlaceText": "Remove saved place",
     "deliverToText": "Deliver To",
-    "noteToDriverText": "Note To Driver",
+    "noteToDriver": "Note To Driver",
     "discountNextText": "discount on your next order",
     "expiresOnText": "Expires On",
     "suitableForText": "Suitable for",
@@ -82,10 +82,11 @@
     "exportPointText": "Export point transaction history",
     "datePeriodText": "Date period",
     "staffDetailsText": "Staff details",
-    "anInvitationEmailText": "An invitation email with an account set up link will be sent to the staff member’s business email. The staff has to set up the account via Power King mobile app.",
+    "anInvitationEmailText": "An invitation email with an account setup link will be sent to the staff member’s business email. The staff has to set up the account via Powder King mobile app.",
     "accountStatusText": "Account Status",
     "activeText": "Active",
     "removeStaffText": "Remove Staff",
+    "updatesFromDeliveryText": "Updates from delivery orders.",
     "createBusinessProfileText": "Create business profile",
     "enterBusinessEmailText": "Enter business email",
     "setupBusinessAccountText": "Set up business account",
@@ -98,8 +99,9 @@
     "verifyText": "Verify",
     "resetPasswordText": "Reset password",
     "changePasswordDescText": "Please enter your new password to update your account security",
-    "businessProfileDescText": "A business profile effectively showcases your brand identity, mission, and unique offerings to potential clients.",
+    "businessProfileDescText": "A business profile effectively showcases your brand identity, mission, and unique offerings to potential clients",
     "resetPasswordDescText": "Reset your password and regain access to your account securely.",
+    "companyProfileDesc": "A company profile is a brief overview of a business, highlighting its mission, products, and key achievements.",
     "welcomeBackText": "Welcome back",
     "welcomeBackDesc": "Log in to your Power King Business account.",
     "enterCompanyInfoText": "Enter Company Info",
@@ -107,12 +109,12 @@
     "companyEmailText": "Company Email",
     "roleText": "Role",
     "businessRegistrationCertificateText": "Business Registration Certificate",
-    "companyInfoTextDesc": "Please enter your company details to help us understand your business better.",
+    "companyInfoTextDescText": "Please enter your company details to help us understand your business better.",
     "firstNameText": "First Name",
     "lastNameText": "Last Name",
     "passwordText": "Password",
     "forgetPasswordText": "Forget Password?",
-    "forgetPasswordDescText": "Enter your email address to receive instructions for resetting your password.",
+    "forgetPasswordDesc": "Enter your email address to receive instructions for resetting your password.",
     "whatDoYouWantToDoText": "What do you want to do?",
     "loginText": "Login",
     "signupText": "Signup",
@@ -123,6 +125,9 @@
     "companyContactNoOptionalText": "Country contact number (optional)",
     "completeOwnerInfoText": "Complete owner info",
     "completeOwnerInfoDescText": "Please provide the complete owner information to ensure accurate account setup and communication.",
+    "quickLinksText": "Quick Links",
+    "coinsText": "Coins",
+    "currentPasswordText": "Current Password",
     "passwordHasBeenResetText": "Password has been reset",
     "passwordHasBeenResetDescText": "Your password has been reset successfully. Please login to your account.",
     "reviewInProgressText": "Review in progress",
@@ -133,7 +138,7 @@
     "addressText": "Address",
     "searchAddressText": "Search Address",
     "proceedWithText": "Proceed with",
-    "proceedWithDescText": "You have selected the vehicle; please review its details and confirm your choice.",
+    "proceedWithDescText": "You have selected the vehicle; please review its details and confirm your choice",
     "IAgreeText": "I agree the Terms and Conditions and Privacy Policies.",
     "deliveryDetailsText": "Delivery Details",
     "orderDetailsText": "Order details",
@@ -150,7 +155,7 @@
     "bankInText": "Bank in",
     "addText": "Add",
     "notEnoughPointBalanceText": "Not enough point balance",
-    "notEnoughPointBalanceDescText": "Please contact company admin to top up the Company Wallet to proceed the order.",
+    "notEnoughPointBalanceDesc": "Please contact company admin to top up the Company Wallet to proceed with the order.",
     "topupText": "Topup",
     "driverWillCallYouConfirmationText": "Driver will call to confirm quote after order is placed.",
     "qouteText": "Quote",
@@ -172,6 +177,7 @@
     "checkQuotationAndConfirmOrderText": "Check quotation and confirm order",
     "addReviewText": "Add Review",
     "orderContactText": "Order Contact",
+    "noteToDriverText": "Note to driver",
     "contactCustomerServiceText": "Contact customer service",
     "cancellationPolicyText": "Cancellation policy",
     "cancelOrderText": "Cancel order",
@@ -184,15 +190,91 @@
     "specifyReasonText": "Please specify your reason for canceling the order.",
     "availableVoucherText": "Available Voucher",
     "applyText": "Apply",
-    "amountDescText": "The total fee is subject to change if other tunnels, bridges, parking and extra services are used.",
+    "amountDescText": "The total fee is subject to change if other tunnels, bridges, parking, and extra services are used.",
     "balanceText": "Balance",
     "pointsText": "Points",
-    "updatesFromDeliveryText": "Updates from delivery orders.",
-    "companyProfileDescText": "A company profile is a brief overview of a business, highlighting its mission, products, and key achievements.",
-    "quickLinksText": "Quick Links",
-    "currentPasswordText": "Current Password"
+    "aboutPagesData":[
+        {
+          "name": "Terms & conditions",
+          "link":"/"
+        },
+        {
+          "name": "Privacy policy",
+          "link":"/"
+        },
+        {
+          "name": "Legal policy",
+          "link":"/"
 
-    
+        },
+        {
+          "name": "Cancellation policy",
+          "link":"/"
+        }
+      ],
+    "helpPagesData" : [
+        {
+          "name": "Help  with a trip",
+          "link":"/"
+        },
+        {
+          "name": "Account",
+          "link":"/"
+        },
+        {
+          "name": "Help  with a trip",
+          "link":"/"
+        },
+        {
+          "name": "Help  with a trip",
+          "link":"/"
+        }
+      ] ,
+      "statusOptions" : ["All", "Pending", "On-going", "Completed", "Cancelled"],
 
+       "profileSettingsData" : [
+        {
+          "name": "My Profile",
+          "link": "/order/account/profile",
+          "icon": "/assets/icons/sidebar/my-profile.svg"
+        },
+        {
+          "name": "Saved places",
+          "link": "/order/account/places",
+          "icon": "/assets/icons/sidebar/saved-places.svg"
+        },
+        {
+          "name": "Business center",
+          "link": "/order/account/business",
+          "icon": "/assets/icons/sidebar/business-center.svg"
+        },
+        {
+          "name": "Communication settings",
+          "link": "/order/account/communication",
+          "icon": "/assets/icons/sidebar/communication-setting.svg"
+        }
+      ],
+
+       "reasonData" : [
+        {
+          "reason": "Driver did not arrive"
+        },
+        {
+          "reason": "Price concerns"
+        },
+        {
+          "reason": "Change of mind"
+        },
+        {
+          "reason": "Other"
+        }
+      ],
+
+      "bankText" : "Bank",
+      "accountHolderNameText" : "Account holder’s name",
+      "accountNumberText" : "Account number",
+      "label": "topup"
+      
+        
   }
   

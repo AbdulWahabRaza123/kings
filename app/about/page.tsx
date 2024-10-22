@@ -1,30 +1,14 @@
 "use client";
 import { DictionariesContext } from "@/context/dictionary-context";
-import {
-  allTopicsText,
-  helpText,
-  membershipAndLoyaltyText,
-} from "@/utils/constants";
+import { AboutPageDetails } from "@/interface/help-page-interface";
 import { Breadcrumb } from "antd";
 import { ChevronRight, List } from "lucide-react";
 import React, { useState } from "react";
-const helpPagesData = [
-  {
-    name: "Terms & conditions",
-  },
-  {
-    name: "Privacy policy",
-  },
-  {
-    name: "Legal policy",
-  },
-  {
-    name: "Cancellation policy",
-  },
-];
+
 const AboutPage = () => {
   const { dictionaries } = DictionariesContext();
-  const { allTopicsText, helpText, membershipAndLoyaltyText } = dictionaries;
+  const { allTopicsText, helpText, membershipAndLoyaltyText, aboutPagesData } =
+    dictionaries;
   const [pageNo, setPageNo] = useState(0);
   return (
     <>
@@ -36,27 +20,29 @@ const AboutPage = () => {
               <div className="flex flex-col rounded-[7px] p-6 bg-white">
                 <h1 className="font-[600] text-p1">{allTopicsText}</h1>
                 <div className="flex flex-col gap-2 py-4">
-                  {helpPagesData?.map((val, index) => {
-                    return (
-                      <>
-                        <div
-                          key={index}
-                          className="flex flex-row items-center gap-4 py-4 relative"
-                        >
-                          <List className="text-primary" />
-                          <div className="flex flex-col">
-                            <p className="text-p2 font-[500]">{val.name}</p>
+                  {aboutPagesData?.map(
+                    (val: AboutPageDetails, index: number) => {
+                      return (
+                        <>
+                          <div
+                            key={index}
+                            className="flex flex-row items-center gap-4 py-4 relative"
+                          >
+                            <List className="text-primary" />
+                            <div className="flex flex-col">
+                              <p className="text-p2 font-[500]">{val.name}</p>
+                            </div>
+                            <ChevronRight
+                              onClick={() => {
+                                setPageNo(index + 1);
+                              }}
+                              className="w-6 h-6 absolute right-[10px] text-secondary cursor-pointer"
+                            />
                           </div>
-                          <ChevronRight
-                            onClick={() => {
-                              setPageNo(index + 1);
-                            }}
-                            className="w-6 h-6 absolute right-[10px] text-secondary cursor-pointer"
-                          />
-                        </div>
-                      </>
-                    );
-                  })}
+                        </>
+                      );
+                    }
+                  )}
                 </div>
               </div>
             </div>
@@ -79,7 +65,7 @@ const AboutPage = () => {
                     ),
                   },
                   {
-                    title: helpPagesData[pageNo - 1].name,
+                    title: aboutPagesData[pageNo - 1].name,
                   },
                 ]}
               />

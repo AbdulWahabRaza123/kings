@@ -4,13 +4,6 @@ import { DialogComp } from "../dialog";
 import { PrimaryBtn } from "../../buttons/primary-btn";
 import { SecondaryBtn } from "../../buttons/secondary-btn";
 import { TextInput } from "../../inputs/text-input";
-// import {
-//   cancelText,
-//   changePasswordText,
-//   currentPasswordText,
-//   passwordText,
-//   updateText,
-// } from "@/utils/constants";
 import { Check, EyeIcon, EyeOff } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { DictionariesContext } from "@/context/dictionary-context";
